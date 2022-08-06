@@ -5,8 +5,6 @@ import styled from "styled-components";
 import { sliderItems } from "../data";
 import { useNavigate } from "react-router-dom";
 
-import AwesomeSlider from 'react-awesome-slider';
-import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 
 const Container = styled.div`
   width: 100%;
