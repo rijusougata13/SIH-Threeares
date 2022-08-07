@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 import HomeSecondary from './pages/HomeSecondary';
 import Transport from './pages/Transport';
 import Equipment from './pages/Equipment';
+import Material from './pages/Material';
 
 // ----------------------------------------------------------------------
 
@@ -27,6 +28,10 @@ export default function Router() {
       path: "/equipment",
       element: <Equipment />,
     },
+    {
+      path: "/material",
+      element: <Material />
+    }
 
 
   ]);
