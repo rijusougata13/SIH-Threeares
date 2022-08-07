@@ -304,7 +304,7 @@ const materialDetails = [
         "Unit": "Sft",
         "$$\/Unit (2009)": 1.9300000000000002
     },
-    null,
+    
     {
         "Material Description": "Renewable wood",
         "Unit": "Ton",
