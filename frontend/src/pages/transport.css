@@ -2,7 +2,21 @@
 .main-container{
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 .title{
 
+}
+
+.form-grid {
+    padding: 30px;
+    display: flex;
+}
+
+.form-grid > TextField {
+    width: 500px;
+}
+
+.calculate-btn {
+    margin: 20px;
 }

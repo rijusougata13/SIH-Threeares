@@ -69,10 +69,13 @@ const Transport = () => {
               alignItems="center"
             // minHeight="100vh"
             >
+              
               <Grid container
+                className="form-grid"
+                xs={12} lg={6}
                 direction={"column"} spacing={5}
                 justifyContent="center">
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12}>
 
 
                   <TextField required fullWidth id="outlined-basic" label="ORIGIN" variant="outlined" value={origin}
@@ -82,21 +85,35 @@ const Transport = () => {
 
 
                 </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField required fullWidth id="outlined-basic" label="DESTINATION" variant="outlined" value={dest} onChange={(e) => {
+                <Grid item xs={12}>
+                  <TextField style={{
+                    width: "100%"
+                  }} required  id="outlined-basic" label="DESTINATION" variant="outlined" value={dest} onChange={(e) => {
                     setDest(e.target.value)
                   }} />
                 </Grid>
-                <Grid item xs={12}>
-                  <TextField id="outlined-basic" label="CARGO MASS" variant="outlined" value={mass} onChange={(e) => {
+
+                <Grid item xs={12} >
+                  <TextField style={{
+                    width: "100%"
+                  }} id="outlined-basic" label="CARGO MASS" variant="outlined" value={mass} onChange={(e) => {
                     setMass(e.target.value)
                   }} />
 
                 </Grid>
                 <Grid item xs={12}>
-                  <FormControl>
-                    <FormLabel id="demo-radio-buttons-group-label">Means</FormLabel>
-                    <RadioGroup
+                  <FormControl style={{
+                    display: "flex", 
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "center"
+                    }}>
+                    <FormLabel id="demo-radio-buttons-group-label">Means &nbsp; &nbsp;</FormLabel>
+                    <RadioGroup 
+                      style={{
+                        display: "flex", 
+                        flexDirection: "row",
+                      }}
                       aria-labelledby="demo-radio-buttons-group-label"
                       // defaultValue="female"
                       value={value}
@@ -109,12 +126,25 @@ const Transport = () => {
                   </FormControl>
                 </Grid>
               </Grid>
-
+                    
+              
 
             </Box>
+            <Button className="calculate-btn" style={{
+          width: "300px",
+          textAlign: "center"
+        }} variant="contained" onClick={calculate}>Calculate</Button>
+
+        <div className='results'>
+        <TextField style={{
+          margin: "20px",
+          width: "300px"
+        }}disabled={true} id="outlined-basic" label="YOUR RESULTS" variant="outlined" value={"Add results here"}
+         />
+        </div>
           </Paper>
         </div>
-        <Button variant="contained" onClick={calculate}>Calculate</Button>
+
       </div>
     </>
   )
