@@ -14,19 +14,25 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { useNavigate } from 'react-router-dom';
 
-const pages = [  
-  {name: 'Material Estimator',
-  linkTo: '/material',},
-  {name:'Equipments Estimator',
-  linkTo:'/equip',},
-  { name:'Transportation GHG Estimator',
-linkTo: '/transport'},];
+const pages = [
+  {
+    name: 'Material Estimator',
+    linkTo: '/material',
+  },
+  {
+    name: 'Equipments Estimator',
+    linkTo: '/equipment',
+  },
+  {
+    name: 'Transportation GHG Estimator',
+    linkTo: '/transport'
+  },];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const navigate= useNavigate()
+  const navigate = useNavigate()
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -41,7 +47,7 @@ const ResponsiveAppBar = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-  const handleLink =(pages)=>{
+  const handleLink = (pages) => {
     // console.log("hii",pages.linkTo)
     navigate(`${pages.linkTo}`)
   }
@@ -98,7 +104,7 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.name} onClick={()=>handleLink(page)}>
+                <MenuItem key={page.name} onClick={() => handleLink(page)}>
                   <Typography textAlign="center">{page.name}</Typography>
                 </MenuItem>
               ))}
@@ -127,7 +133,7 @@ const ResponsiveAppBar = () => {
             {pages.map((page) => (
               <Button
                 key={page.name}
-                onClick={()=>handleLink(page)}
+                onClick={() => handleLink(page)}
                 sx={{ my: 2, color: 'black', display: 'block' }}
               >
                 {page.name}

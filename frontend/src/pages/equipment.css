@@ -1,0 +1,20 @@
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.form-grid {
+    padding: 30px;
+    display: flex;
+}
+
+.form-grid > FormControl > TextField {
+    width: 500px;
+}
+
+.calculate-btn {
+    margin: 20px;
+}
