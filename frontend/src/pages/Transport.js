@@ -10,7 +10,7 @@ const Transport = () => {
   const [mass, setMass] = useState('')
   const [value, setValue] = React.useState('ROAD');
   const [dist, setDist] = useState(0)
-  const [loading, setLoading] = useState(false)
+  const [res, setRes] = useState(0)
   var emissions_rate = 0
 
   const handleChange = (event) => {
@@ -18,6 +18,7 @@ const Transport = () => {
     setValue(event.target.value);
   };
   const calculate = async () => {
+    setDist(null)
     const request = {
       method: "GET",
 
@@ -34,15 +35,20 @@ const Transport = () => {
       emissions_rate = .0157
     else if (value === 'AIR')
       emissions_rate = 1.404
+
     axios.get(`http://localhost:5000/distance?origin=${origin}&destination=${dest}`).then((response) => {
-      setDist(response.data)
+      // setDist(parseInt(response.data))
+      setRes(parseInt(parseInt(response.data) * emissions_rate * mass))
     })
-    // }).then((data) => {
-    //   console.log(data)
-    // })
-    console.log(dist)
-    // console.log(dist, emissions_rate, mass)
+
+
   }
+  // if (!dist) {
+  //   return (
+  //     <p>Loading</p>
+  //   )
+  // }
+
   return (
     <>
       <div className='appbar'>
@@ -69,10 +75,13 @@ const Transport = () => {
               alignItems="center"
             // minHeight="100vh"
             >
+
               <Grid container
+                className="form-grid"
+                xs={12} lg={6}
                 direction={"column"} spacing={5}
                 justifyContent="center">
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12}>
 
 
                   <TextField required fullWidth id="outlined-basic" label="ORIGIN" variant="outlined" value={origin}
@@ -82,21 +91,35 @@ const Transport = () => {
 
 
                 </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField required fullWidth id="outlined-basic" label="DESTINATION" variant="outlined" value={dest} onChange={(e) => {
+                <Grid item xs={12}>
+                  <TextField style={{
+                    width: "100%"
+                  }} required id="outlined-basic" label="DESTINATION" variant="outlined" value={dest} onChange={(e) => {
                     setDest(e.target.value)
                   }} />
                 </Grid>
-                <Grid item xs={12}>
-                  <TextField id="outlined-basic" label="CARGO MASS" variant="outlined" value={mass} onChange={(e) => {
+
+                <Grid item xs={12} >
+                  <TextField style={{
+                    width: "100%"
+                  }} id="outlined-basic" label="CARGO MASS" variant="outlined" value={mass} onChange={(e) => {
                     setMass(e.target.value)
                   }} />
 
                 </Grid>
                 <Grid item xs={12}>
-                  <FormControl>
-                    <FormLabel id="demo-radio-buttons-group-label">Means</FormLabel>
+                  <FormControl style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "center"
+                  }}>
+                    <FormLabel id="demo-radio-buttons-group-label">Means &nbsp; &nbsp;</FormLabel>
                     <RadioGroup
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                      }}
                       aria-labelledby="demo-radio-buttons-group-label"
                       // defaultValue="female"
                       value={value}
@@ -111,11 +134,25 @@ const Transport = () => {
               </Grid>
 
 
+
             </Box>
+            <Button className="calculate-btn" style={{
+              width: "300px",
+              textAlign: "center"
+            }} variant="contained" onClick={calculate}>Calculate</Button>
+
+            <div className='results'>
+              <TextField style={{
+                margin: "20px",
+                width: "300px"
+              }} disabled={true} id="outlined-basic" label="YOUR RESULTS" variant="outlined" value={res}
+              />
+            </div>
           </Paper>
         </div>
-        <Button variant="contained" onClick={calculate}>Calculate</Button>
+
       </div>
+
     </>
   )
 }
