@@ -1,36 +1,64 @@
 import { AppBar, Checkbox, Grid, InputLabel, MenuItem, Paper, Select, Toolbar, Typography } from '@material-ui/core'
 import { TextField, Button, FormControlLabel, RadioGroup, FormLabel, FormControl, Radio, CssBaseline } from '@mui/material'
 import { Box } from '@mui/system'
+import MUIDataTable from "mui-datatables";
+
 import React, { useState } from 'react'
 import './equipment.css'
 import axios from 'axios'
 import materialDetails from '../data/material_estimator'
 const Material = () => {
     const [equip, setEquip] = React.useState('');
-    const [dest, setDest] = useState('')
-    const [mass, setMass] = useState('')
-    const [value, setValue] = React.useState('ROAD');
-    const [dist, setDist] = useState(0)
-    const [res, setRes] = useState(0)
+    const [weight, setWeight] = useState('')
+    
+
+    const [emission, setEmission] = useState(0)
+   
+
     var emissions_rate = 0
+    const columns = ["Division", "Material Name", "Weight", "Emissions(MT of CO2)"];
+    const [data, setData] = useState([])
+
+
+    const options = {
+        selectableRows: false
+    };
 
     const handleChange = (event) => {
-        // alert(event.target.value)
         setEquip(event.target.value);
     };
     const calculate = () => {
-        setDist(null)
+        setEmission(0)
+        
+        {
+            data.map((d) => {
+                setEmission(prev => d[3] + prev)
+                console.log(d[5])
+               // setGallons(prev => d[6] + prev)
+            })
+        }
 
 
 
 
 
     }
-    // if (!dist) {
-    //   return (
-    //     <p>Loading</p>
-    //   )
-    // }
+    const addNew = ({ id }) => {
+        setData(previous => [
+            ...previous, [
+                equip['Div ID'],
+                
+                equip['Material Description'],
+                weight,
+                (weight * equip['Published Factor']),
+
+
+            ]
+        ])
+
+
+    }
+
 
     return (
         <>
@@ -68,18 +96,20 @@ const Material = () => {
 
 
                                     <FormControl fullWidth>
-                                        <InputLabel id="demo-simple-select-label">Material</InputLabel>
+                                        <InputLabel id="demo-simple-select-label">Materials</InputLabel>
                                         <Select
-                                            labelId="Equipment"
+                                            labelId="Materials"
                                             id="demo-simple-select"
                                             value={equip}
-                                            label="Equipment"
+                                            label="Material"
                                             onChange={handleChange}
                                         >
                                             {materialDetails.map((item) => (
-                                                <MenuItem value={item['Material Description']}>{item['Material Description']}</MenuItem>
+                                                <MenuItem value={item}>{item['Material Description']}</MenuItem>
                                             ))}
-                               
+                                            {/* <MenuItem value={10}>Ten</MenuItem>
+                                            <MenuItem value={20}>Twenty</MenuItem>
+                                            <MenuItem value={30}>Thirty</MenuItem> */}
                                         </Select>
                                     </FormControl>
 
@@ -87,39 +117,47 @@ const Material = () => {
                                 <Grid item xs={12}>
                                     <TextField style={{
                                         width: "100%"
-                                    }} required id="outlined-basic" label="Quanity used" variant="outlined" value={dest} onChange={(e) => {
-                                        setDest(e.target.value)
+                                    }} required id="outlined-basic" label="Weight" variant="outlined" value={weight} onChange={(e) => {
+                                        setWeight(e.target.value)
                                     }} />
                                 </Grid>
 
-                                {/* <Grid item xs={12} >
-                                    <TextField style={{
-                                        width: "100%"
-                                    }} id="outlined-basic" label="Hours" variant="outlined" value={mass} onChange={(e) => {
-                                        setMass(e.target.value)
-                                    }} />
-
-                                </Grid> */}
+                                
 
                             </Grid>
 
 
 
                         </Box>
+
                         <Button className="calculate-btn" style={{
                             width: "300px",
                             textAlign: "center"
-                        }} variant="contained" onClick={calculate}>Calculate</Button>
+                        }} variant="contained" onClick={addNew}>ADD New Emission</Button>
 
-                        <div className='results'>
-                            <TextField style={{
-                                margin: "20px",
-                                width: "300px"
-                            }} disabled={true} id="outlined-basic" label="YOUR RESULTS" variant="outlined" value={res}
-                            />
-                        </div>
                     </Paper>
                 </div>
+
+            </div>
+
+
+            <MUIDataTable
+                title={"Emission List"}
+                data={data}
+                columns={columns}
+                options={options}
+            />
+            <div className='results'>
+                <Button className="calculate-btn" style={{
+                    width: "300px",
+                    textAlign: "center"
+                }} variant="contained" onClick={calculate}>Calculate</Button>
+
+                <TextField style={{
+                    margin: "20px",
+                    width: "300px"
+                }} disabled={true} id="outlined-basic" label="Emissions" variant="outlined" value={emission}
+                />
 
             </div>
 

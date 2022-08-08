@@ -151,7 +151,7 @@ const Equipment = () => {
 
 
             <MUIDataTable
-                title={"Employee List"}
+                title={"Emission List"}
                 data={data}
                 columns={columns}
                 options={options}
