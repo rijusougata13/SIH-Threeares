@@ -1,25 +1,20 @@
 Arguments: 
-  /usr/local/Cellar/node/18.6.0/bin/node /usr/local/Cellar/yarn/1.22.19/libexec/bin/yarn.js install
+  C:\Program Files\nodejs\node.exe C:\Users\sanch\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-scripts
 
 PATH: 
-  /Users/sougata/.rvm/gems/ruby-3.0.0/bin:/Users/sougata/.rvm/gems/ruby-3.0.0@global/bin:/Users/sougata/.rvm/rubies/ruby-3.0.0/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/sougata/.rvm/gems/ruby-3.0.0/bin:/Users/sougata/.rvm/gems/ruby-3.0.0@global/bin:/Users/sougata/.rvm/rubies/ruby-3.0.0/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Users/sougata/.rvm/bin:/Users/sougata/.rvm/bin
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32;C:\Program Files\Java\jdk-13\bin;C:\Users\sanch\Java\jdk-13\bin;C:\Program Files (x86)\dotnet\;C:\Users\sanch\OneDrive\Desktop\buildr;C:\Program Files\Git\bin\git.exe;C:\Program Files\Git\bin\;C:\Program Files\Git\cmd\;C:\Users\sanch\PycharmProjects\Botathon4.0\ffmpeg\bin\;C:\Program Files\nodejs\;C:\Users\sanch\AppData\Local\Microsoft\WindowsApps;C:\Users\sanch\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\sanch\AppData\Local\Programs\Python\Python38-32;C:\Users\sanch\AppData\Local\Programs\Python\Python38-32\Scripts;C:\Users\sanch\AppData\Local\GitHubDesktop\bin;C:\Users\sanch\OneDrive\Desktop\buildr;C:\Users\sanch\AppData\Roaming\npm
 
 Yarn version: 
   1.22.19
 
 Node version: 
-  18.6.0
+  16.15.0
 
 Platform: 
-  darwin x64
+  win32 x64
 
 Trace: 
-  SyntaxError: /Users/sougata/Desktop/SIH/frontend/package.json: Unexpected token } in JSON at position 1997
-      at JSON.parse (<anonymous>)
-      at /usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:1629:59
-      at Generator.next (<anonymous>)
-      at step (/usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:310:30)
-      at /usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:321:13
+  Error: EPERM: operation not permitted, open 'C:\Users\sanch\SIH\frontend\node_modules\postcss-browser-comments\node_modules\.bin\browserslist.cmd'
 
 npm manifest: 
   {
@@ -68,6 +63,7 @@ npm manifest:
       "@faker-js/faker": "^7.3.0",
       "@hookform/resolvers": "^2.9.3",
       "@iconify/react": "^3.2.2",
+      "@material-ui/core": "^4.12.4",
       "@mui/icons-material": "^5.8.4",
       "@mui/lab": "^5.0.0-alpha.88",
       "@mui/material": "^5.8.6",
@@ -76,6 +72,7 @@ npm manifest:
       "@testing-library/react": "^13.3.0",
       "@testing-library/user-event": "^13.5.0",
       "apexcharts": "^3.35.3",
+      "axios": "^0.27.2",
       "change-case": "^4.1.2",
       "date-fns": "^2.28.0",
       "firebase": "^9.9.1",
@@ -93,7 +90,7 @@ npm manifest:
       "simplebar": "^5.3.8",
       "simplebar-react": "^2.4.1",
       "styled-components": "^5.3.5",
-      "web-vitals": "^2.1.4",
+      "web-vitals": "^2.1.4"
     },
     "devDependencies": {
       "@babel/core": "^7.18.6",
