@@ -7,19 +7,23 @@ import lcaData from '../data/lca_data'
 
 
 const Lca = () => {
-    
+
     const [aadt, setAadt] = useState(0)
     const [miles, setMiles] = useState(0)
     const [lanes, setLanes] = useState(0)
-    const [type, setType] = React.useState('') 
-    const [activity, setActivity] = React.useState('')
-
+    const [type, setType] = React.useState('')
+    const [activity, setActivity] = React.useState([])
+    const [finalAct, setFinalAct] = useState('')
 
     const handleChange = (event) => {
         setType(event.target.value);
+        // console.log()
+        setActivity(event.target.value.Activity)
     };
 
-    
+    const handleActivity = (event) => {
+        setFinalAct(event.target.value)
+    }
 
     return (
         <>
@@ -45,7 +49,7 @@ const Lca = () => {
                     <Typography variant="h6" gutterBottom>
                         General Information
                     </Typography>
-                </div> 
+                </div>
 
                 <div className='main-content'>
                     <Paper elevation={3} >
@@ -71,91 +75,93 @@ const Lca = () => {
                                         >
                                             <FormControlLabel value="55mph" control={<Radio />} label="55mph" />
                                             <FormControlLabel value="70mph" control={<Radio />} label="70mph" />
-                        
+
                                         </RadioGroup>
                                     </FormControl>
                                 </Grid>
 
                                 <Grid item xs={12}>
-                                    
+
                                     <TextField required fullWidth id="outlined-basic" label="Average Daily Traffic (AADT)" variant="outlined" value={aadt}
-                                    onChange={(e) => {
-                                        setAadt(e.target.value)
-                                    }} />
+                                        onChange={(e) => {
+                                            setAadt(e.target.value)
+                                        }} />
 
                                 </Grid>
-                
 
-                           
+
+
                                 <Grid item xs={12}>
-                                    
+
                                     <TextField required fullWidth id="outlined-basic" label="Project Length (in miles)" variant="outlined" value={miles}
-                                    onChange={(e) => {
-                                        setMiles(e.target.value)
-                                    }} />
+                                        onChange={(e) => {
+                                            setMiles(e.target.value)
+                                        }} />
 
                                 </Grid>
 
                                 <Grid item xs={12}>
-                                    
+
                                     <TextField required fullWidth id="outlined-basic" label="Number of lanes" variant="outlined" value={lanes}
-                                    onChange={(e) => {
-                                        setLanes(e.target.value)
-                                    }} />
-    
+                                        onChange={(e) => {
+                                            setLanes(e.target.value)
+                                        }} />
+
                                 </Grid>
 
 
-                               <Grid item xs={12}>
+                                <Grid item xs={12}>
                                     <div className='title'>
                                         <Typography variant="h6" gutterBottom>
                                             Build Life Cycle
                                         </Typography>
-                                    </div> 
+                                    </div>
                                 </Grid>
-                                        
+
 
                                 <Grid item xs={12}>
-                                        <FormControl fullWidth>
-                                            <InputLabel id="demo-simple-select-label">Type</InputLabel>
-                                            <Select
-                                                labelId="Type"
-                                                id="demo-simple-select"
-                                                value={type}
-                                                label="Type"
-                                                onChange={handleChange}
-                                            >
-                            
-                                        {lcaData.map((item) => (
-                                                <MenuItem value={item['Type']}>{item['Type']}</MenuItem>
-                                            ))} 
-                                            </Select>
-                                        </FormControl>
-                                    </Grid>
+                                    <FormControl fullWidth>
+                                        <InputLabel id="demo-simple-select-label">Type</InputLabel>
+                                        <Select
+                                            labelId="Type"
+                                            id="demo-simple-select"
+                                            value={type}
+                                            label="Type"
+                                            onChange={handleChange}
+                                        >
+
+                                            {lcaData.map((item) => (
+                                                <MenuItem value={item}>{item['Type']}</MenuItem>
+                                            ))}
+                                        </Select>
+                                    </FormControl>
+                                </Grid>
 
 
-                                    <Grid item xs={12}>
-                                        <FormControl fullWidth>
-                                            <InputLabel id="demo-simple-select-label">Activity</InputLabel>
-                                            <Select
-                                                labelId="Activity"
-                                                id="demo-simple-select"
-                                                value={activity}
-                                                label="Activity"
-                                                onChange={handleChange}
-                                            >
-                            
-                                
-                                            </Select>
-                                        </FormControl>
-                                    </Grid>
+                                <Grid item xs={12}>
+                                    <FormControl fullWidth>
+                                        <InputLabel id="demo-simple-select-label">Activity</InputLabel>
+                                        <Select
+                                            labelId="Activity"
+                                            id="demo-simple-select"
+                                            value={finalAct}
+                                            label="Activity"
+                                            onChange={handleActivity}
+                                        >
+                                            {activity?.map((item) => (
+                                                <MenuItem value={item}>{item}</MenuItem>
+                                            ))}
+
+                                        </Select>
+                                    </FormControl>
+                                </Grid>
 
                             </Grid>
 
-    
+
 
                         </Box>
-                
+
                     </Paper>
                 </div>
 

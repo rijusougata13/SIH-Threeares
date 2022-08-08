@@ -109,9 +109,9 @@ const Slider = () => {
               <Title>{items.title}</Title>
               <Desc>{items.desc}</Desc>
               <Button
-                onClick={() => {
-                  navigate(items.link);
-                }}
+                // onClick={() => {
+                //   navigate(items.link);
+                // }}
               >
                 Calculate NOW
               </Button>
