@@ -41,7 +41,6 @@ const Material = () => {
                     {argument:d[1],value:d[3]}
                 ])
 
-               // setGallons(prev => d[6] + prev)
             })
         }
 
