@@ -3,6 +3,8 @@ import { TextField, Button, FormControlLabel, RadioGroup, FormLabel, FormControl
 import { Box } from '@mui/system'
 import MUIDataTable from "mui-datatables";
 
+import PieChart from 'src/components/PieChart';
+
 import React, { useState } from 'react'
 import './equipment.css'
 import axios from 'axios'
@@ -10,7 +12,7 @@ import materialDetails from '../data/material_estimator'
 const Material = () => {
     const [equip, setEquip] = React.useState('');
     const [weight, setWeight] = useState('')
-    
+    const [chartDataEmission,setChartDataEmission]=useState([])
 
     const [emission, setEmission] = useState(0)
    
@@ -29,11 +31,16 @@ const Material = () => {
     };
     const calculate = () => {
         setEmission(0)
-        
+        setChartDataEmission([]);
         {
             data.map((d) => {
                 setEmission(prev => d[3] + prev)
                 console.log(d[5])
+                setChartDataEmission(prev=>[
+                    ...prev,
+                    {argument:d[1],value:d[3]}
+                ])
+
                // setGallons(prev => d[6] + prev)
             })
         }
@@ -127,7 +134,6 @@ const Material = () => {
                             </Grid>
 
 
-
                         </Box>
 
                         <Button className="calculate-btn" style={{
@@ -147,6 +153,8 @@ const Material = () => {
                 columns={columns}
                 options={options}
             />
+                            {chartDataEmission.length>0 &&  <PieChart data={chartDataEmission} label="Emission Rate PieChart"/>}
+
             <div className='results'>
                 <Button className="calculate-btn" style={{
                     width: "300px",

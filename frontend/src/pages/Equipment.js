@@ -7,14 +7,20 @@ import React, { useState } from 'react'
 import './equipment.css'
 import axios from 'axios'
 import equipmentDetails from '../data/equiment_estimator'
+import PieChart from 'src/components/PieChart';
 const Equipment = () => {
     const [equip, setEquip] = React.useState('');
     const [no, setNo] = useState('')
     const [hours, setHours] = useState('')
     // const [value, setValue] = React.useState('ROAD');
     // const [dist, setDist] = useState(0)
+    
     const [emission, setEmission] = useState(0)
     const [gallons, setGallons] = useState(0)
+    const [chartDataEmission,setChartDataEmission]=useState([])
+    const [chartDataFuel,setChartDataFuel]=useState([])
+    
+
 
     var emissions_rate = 0
     const columns = ["Division", "Fuel Rate(Gal/hr)", "Equipment Name", "Numbers Used", "Hours", "Emissions(MT of CO2)", "Fuel Used(Gallons)"];
@@ -30,11 +36,24 @@ const Equipment = () => {
     };
     const calculate = () => {
         setEmission(0)
+        setChartDataEmission([]);
+        setChartDataFuel([]);
         setGallons(0)
         {
             data.map((d) => {
                 setEmission(prev => d[5] + prev)
-                setGallons(prev => d[6] + prev)
+
+                setChartDataEmission(prev=>[
+                    ...prev,
+                    {argument:d[2],value:d[5]}
+                ])
+
+                setChartDataFuel(prev=>[
+                    ...prev,
+                    {argument:d[2],value:d[6]}
+                ])
+
+                setGallons(prev => d[6] +prev)
             })
         }
 
@@ -156,6 +175,11 @@ const Equipment = () => {
                 columns={columns}
                 options={options}
             />
+            <div>
+          {chartDataEmission.length>0 &&  <PieChart data={chartDataEmission} label="Emission Rate PieChart"/>}
+         {chartDataFuel.length>0 &&   <PieChart data={chartDataFuel} label="Fuel Used PieChart"/>
+        }
+            </div>
             <div className='results'>
                 <Button className="calculate-btn" style={{
                     width: "300px",
