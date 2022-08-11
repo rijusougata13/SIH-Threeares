@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../data";
 import { useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
 
 
 const Container = styled.div`
@@ -70,21 +71,21 @@ const Desc = styled.p`
   letter-spacing: 3px;
 `;
 
-const Button = styled.button`
-  margin: 0px 20px;
-  padding: 10px;
-  font-size: 20px;
-  background-color: transparent;
-  cursor: pointer;
-  border: 2px solid black;
-  &:hover {
-    background-color: #000000;
-    border: 2px solid white;
-    color: white;
-    transform: scale(1.2);
-    transition: all 0.3s ease;
-  }
-`;
+// const Button = styled.button`
+//   margin: 0px 20px;
+//   padding: 10px;
+//   font-size: 20px;
+//   background-color: transparent;
+//   cursor: pointer;
+//   border: 2px solid black;
+//   &:hover {
+//     background-color: #000000;
+//     border: 2px solid white;
+//     color: white;
+//     transform: scale(1.2);
+//     transition: all 0.3s ease;
+//   }
+// `;
 
 const Image = styled.img``;
 
@@ -109,11 +110,13 @@ const Slider = () => {
               <Title>{items.title}</Title>
               <Desc>{items.desc}</Desc>
               <Button
+              variant = "contained"
+              style={{marginLeft: "20px"}}
                 // onClick={() => {
                 //   navigate(items.link);
                 // }}
               >
-                Calculate NOW
+                Calculate now
               </Button>
             </InfoContainer>
             <ImageContainer>
