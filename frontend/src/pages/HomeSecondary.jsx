@@ -7,6 +7,7 @@ import Slider from "../components/Slider";
 import SlickSlider from "../components/SlickSlider";
 import ResponsiveAppBar from "src/components/ResponsiveAppBar";
 import SplitSection from "src/components/SplitSection";
+import SplitSectionInverted from "src/components/SplitSectionInverted";
 import { Grid } from "@material-ui/core";
 import './HomeSecondary.css';
 
@@ -23,6 +24,15 @@ class HomeSecondary extends Component {
       
 
         <SplitSection 
+        heading="About us"
+        description="The main objectives of the THREEARES project are to achieve tangible, long‐term benefits for
+        the global environment and to contribute proactively to the shaping of dynamic sustainable
+        road development policies going forward."
+        image="https://images.pexels.com/photos/3357026/pexels-photo-3357026.jpeg"
+        height="400px"
+        />
+
+        <SplitSectionInverted
         heading="About us"
         description="The main objectives of the THREEARES project are to achieve tangible, long‐term benefits for
         the global environment and to contribute proactively to the shaping of dynamic sustainable
