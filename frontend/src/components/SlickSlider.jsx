@@ -9,7 +9,7 @@ function Item(props)
     return (
         <Paper style={{
             backgroundColor: "#f2f2f2",
-            padding: "30px"
+            // padding: "30px"
         }}>
             <SplitSection 
             heading={props.item.name}

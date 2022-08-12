@@ -17,9 +17,10 @@ export default function SplitSection(props) {
   return (
     <Box sx={{ 
         width: '100%',
-        marginTop: '40px'
+        height: '90vh'
+        // marginTop: '40px'
         }}>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 0, sm: 0, md: 0 }}>
+      <Grid style={{height: '100%'}} container rowSpacing={1} columnSpacing={{ xs: 0, sm: 0, md: 0 }}>
         <Grid item xs={12} sm={12} md={6} lg={6}>
           <Item style={{
             height: "300px", 
@@ -30,9 +31,10 @@ export default function SplitSection(props) {
             // alignItems: "center",
             justifyContent: "center",
             color: "black",
-            borderRadius: "0px"
+            borderRadius: "0px",
+            height: '100%'
             }}>
-            <h1>{props.heading}</h1>
+            <h1 style={{fontSize: "3.5rem"}}>{props.heading}</h1>
             <p>{props.description}</p>
             {props.routepath != null && <Button style={{
               width: "150px",
@@ -44,11 +46,12 @@ export default function SplitSection(props) {
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={6}>
           <Item style={{
-            height: "300px", 
+            height: "100%", 
             backgroundImage: `url("${props.image}")`,
-            backgroundSize: "300px 300px",
+            backgroundSize: "100% 100%",
             backgroundRepeat: "round",
-            borderRadius: "0px"
+            borderRadius: "0px",
+            padding: '40px'
             }}>
             {/* <img src={props.image} style={{height: "300px"}}></img> */}
           </Item>
