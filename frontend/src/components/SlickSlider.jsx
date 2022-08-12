@@ -16,6 +16,7 @@ function Item(props)
             description={props.item.description}
             image={props.item.source}
             routepath=""
+            height="90vh"
             />
 
         </Paper>

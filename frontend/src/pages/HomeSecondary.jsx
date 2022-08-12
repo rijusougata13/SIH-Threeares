@@ -28,6 +28,7 @@ class HomeSecondary extends Component {
         the global environment and to contribute proactively to the shaping of dynamic sustainable
         road development policies going forward."
         image="https://images.pexels.com/photos/3357026/pexels-photo-3357026.jpeg"
+        height="400px"
         />
         
         <NewsLetter />

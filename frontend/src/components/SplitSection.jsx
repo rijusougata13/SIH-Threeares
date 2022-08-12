@@ -17,7 +17,7 @@ export default function SplitSection(props) {
   return (
     <Box sx={{ 
         width: '100%',
-        height: '90vh'
+        height: props.height
         // marginTop: '40px'
         }}>
       <Grid style={{height: '100%'}} container rowSpacing={1} columnSpacing={{ xs: 0, sm: 0, md: 0 }}>
