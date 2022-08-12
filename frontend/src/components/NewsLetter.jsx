@@ -7,7 +7,8 @@ const NewsLetter = () => {
     <div style={{
       textAlign: "center",
       marginBottom: "30px",
-      padding: "30px"
+      padding: "30px",
+      marginTop: "40px"
     }}
     className="newsletter">
       <h1>Sign up for our Newsletter</h1>

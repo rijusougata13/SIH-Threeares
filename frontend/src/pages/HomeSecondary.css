@@ -2,3 +2,25 @@
     background-color: white;
     margin-bottom: 30px;
 }
+
+.about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.about-us > p {
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.about-us > ul  {
+    width: 800px;
+    max-width: 80%;
+    text-align: left;
+}
