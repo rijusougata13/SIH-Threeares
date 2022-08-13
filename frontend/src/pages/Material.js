@@ -152,7 +152,7 @@ const Material = () => {
                 columns={columns}
                 options={options}
             />
-                            {chartDataEmission.length>0 &&  <PieChart data={chartDataEmission} label="Emission Rate PieChart"/>}
+            {chartDataEmission.length>0 &&  <PieChart data={chartDataEmission} label="Emission Rate PieChart"/>}
 
             <div className='results'>
                 <Button className="calculate-btn" style={{
