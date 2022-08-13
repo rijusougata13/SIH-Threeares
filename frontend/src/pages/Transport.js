@@ -38,7 +38,7 @@ const Transport = () => {
 
     axios.get(`http://localhost:5000/distance?origin=${origin}&destination=${dest}`).then((response) => {
       // setDist(parseInt(response.data))
-      setRes(parseInt(parseInt(response.data) * emissions_rate * mass))
+      setRes((parseInt(response.data) * emissions_rate * mass))
     })
 
 
