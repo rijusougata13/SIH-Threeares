@@ -216,7 +216,7 @@ const Lca2 = () => {
                                     <Button className="calculate-btn" style={{
                                     width: "300px",
                                     textAlign: "center"
-                                    }} variant="contained" onClick={addNew}>Emissions</Button>
+                                    }} variant="contained" onClick={addConstruction()}>Emissions</Button>
 
                                     <TextField style={{
                                         margin: "20px",
@@ -263,7 +263,7 @@ const Lca2 = () => {
                                     <Button className="calculate-btn" style={{
                                     width: "300px",
                                     textAlign: "center"
-                                    }} variant="contained">Emissions</Button>
+                                    }} variant="contained" onClick={addConstruction()}>Emissions</Button> 
 
                                     <TextField style={{
                                         margin: "20px",
@@ -312,7 +312,7 @@ const Lca2 = () => {
                                     <Button className="calculate-btn" style={{
                                     width: "300px",
                                     textAlign: "center"
-                                    }} variant="contained">Emissions</Button>
+                                    }} variant="contained" onClick={addConstruction()}>Emissions</Button>
 
                                     <TextField style={{
                                         margin: "20px",
@@ -361,7 +361,7 @@ const Lca2 = () => {
                                     <Button className="calculate-btn" style={{
                                     width: "300px",
                                     textAlign: "center"
-                                    }} variant="contained">Emissions</Button>
+                                    }} variant="contained" onClick={addConstruction()}>Emissions</Button> 
 
                                     <TextField style={{
                                         margin: "20px",
