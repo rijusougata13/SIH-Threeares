@@ -24,3 +24,8 @@
     max-width: 80%;
     text-align: left;
 }
+
+
+.calculate-btn:hover {
+    color: white;
+}

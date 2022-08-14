@@ -71,14 +71,16 @@ const ResponsiveAppBar = () => {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              fontFamily: 'montserrat',
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'grey',
+              // letterSpacing: '.3rem',
+              color: '#008000',
               textDecoration: 'none',
             }}
           >
-            THREEARES
+            <img style={{
+              height: "20px"
+            }} src='https://threeares.netlify.app/images/logo4.png'></img>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -127,10 +129,10 @@ const ResponsiveAppBar = () => {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'black',
+              fontFamily: 'montserrat',
+              // fontWeight: 700,
+              // letterSpacing: '.3rem',
+              color: '#008000',
               textDecoration: 'none',
             }}
           >
@@ -141,7 +143,7 @@ const ResponsiveAppBar = () => {
               <Button
                 key={page.name}
                 onClick={() => handleLink(page)}
-                sx={{ my: 2, color: 'black', display: 'block' }}
+                sx={{ fontFamily: "montserrat", my: 2, color: '#008000', display: 'block' }}
               >
                 {page.name}
               </Button>

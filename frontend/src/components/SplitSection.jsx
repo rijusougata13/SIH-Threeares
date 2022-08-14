@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import { Button } from '@mui/material';
+import './SplitSection.css';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -30,18 +31,29 @@ export default function SplitSection(props) {
             flexDirection: "column",
             // alignItems: "center",
             justifyContent: "center",
-            color: "black",
             borderRadius: "0px",
             height: '100%'
             }}>
             <h1 style={{fontSize: "3.5rem"}}>{props.heading}</h1>
-            <p>{props.description}</p>
-            {props.routepath != null && <Button style={{
+            <p style={{
+              color: "#555555",
+              fontWeight: "bolder"
+            }}>{props.description}</p>
+            {props.routepath != null && <Button className="calculate-btn" style={{
+              fontFamily: "montserrat",
               width: "150px",
+              marginLeft: "0px",
               marginTop: "20px",
-              marginBottom: "20px"
+              marginBottom: "20px",
+              background: "white",
+              color: "#008000",
+              boxShadow: "none",
+              border: "1px solid #008000",
+              borderRadius: "0px",
+              // fontWeight: "normal"
             }}
-            variant="contained">Calculate now</Button>}
+            
+          >Calculate now</Button>}
           </Item>
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={6}>
