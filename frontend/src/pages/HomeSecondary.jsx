@@ -35,7 +35,7 @@ class HomeSecondary extends Component {
         <SplitSectionInverted
         heading="Objectives"
         description=""
-        image="https://images.pexels.com/photos/3357026/pexels-photo-3357026.jpeg"
+        image="https://www.uopeople.edu/wp-content/uploads/2020/03/person-holding-green-grains-1230157-1-scaled-e1585570094956.jpg"
         height="400px"
         />
         
