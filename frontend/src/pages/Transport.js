@@ -4,19 +4,40 @@ import { Box } from '@mui/system'
 import React, { useState } from 'react'
 import './transport.css'
 import axios from 'axios'
+import MUIDataTable from 'mui-datatables'
 const Transport = () => {
   const [origin, setOrigin] = useState('')
   const [dest, setDest] = useState('')
   const [mass, setMass] = useState('')
   const [value, setValue] = React.useState('ROAD');
   const [dist, setDist] = useState(0)
+  const [data, setData] = useState([])
+
   const [res, setRes] = useState(0)
   var emissions_rate = 0
-
+  const columns = ["Origin", "Destination", "Mass", "Means", "Distance", "Emission"];
+  const options = {
+    selectableRows: false
+  };
   const handleChange = (event) => {
 
     setValue(event.target.value);
   };
+  const addNew = (d) => {
+    // console.log(res)
+    setData(previous => [
+      ...previous, [
+        origin,
+        dest,
+        mass,
+        value,
+        d,
+        d * mass * emissions_rate,
+
+      ]
+    ])
+  };
+
   const calculate = async () => {
     setDist(null)
     const request = {
@@ -36,9 +57,12 @@ const Transport = () => {
     else if (value === 'AIR')
       emissions_rate = 1.404
 
-    axios.get(`http://localhost:5000/distance?origin=${origin}&destination=${dest}`).then((response) => {
+    await axios.get(`http://localhost:5000/distance?origin=${origin}&destination=${dest}`).then((response) => {
       // setDist(parseInt(response.data))
-      setRes((parseInt(response.data) * emissions_rate * mass))
+      // 
+      // console.log('axios', response.data)
+      // setRes((parseInt(response.data) * emissions_rate * mass))
+      addNew((response.data))
     })
 
 
@@ -136,21 +160,31 @@ const Transport = () => {
 
 
             </Box>
+
             <Button className="calculate-btn" style={{
               width: "300px",
               textAlign: "center"
-            }} variant="contained" onClick={calculate}>Calculate</Button>
+            }} variant="contained" onClick={calculate}>ADD New Emission</Button>
 
-            <div className='results'>
+            {/* <div className='results'>
               <TextField style={{
                 margin: "20px",
                 width: "300px"
               }} disabled={true} id="outlined-basic" label="YOUR RESULTS" variant="outlined" value={res}
               />
-            </div>
+            </div> */}
           </Paper>
         </div>
-
+        <MUIDataTable
+          title={"Transport Emission List"}
+          data={data}
+          columns={columns}
+          options={options}
+        />
+        {/* <Button className="calculate-btn" style={{
+          width: "300px",
+          textAlign: "center"
+        }} variant="contained" >Calculate</Button> */}
       </div>
 
     </>
