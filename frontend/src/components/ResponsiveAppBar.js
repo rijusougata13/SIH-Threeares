@@ -26,6 +26,10 @@ const pages = [
   {
     name: 'Transportation GHG Estimator',
     linkTo: '/transport'
+  },
+  {
+    name: 'LCA Estimator',
+    linkTo: '/lca3',
   },];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
