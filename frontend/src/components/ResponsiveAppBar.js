@@ -31,7 +31,9 @@ const pages = [
     name: 'Inventory',
     linkTo: '/inventory'
   }
-];
+  ,{   name: 'LCA Estimator',
+    linkTo: '/lca3',
+  },];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {

@@ -28,15 +28,13 @@ class HomeSecondary extends Component {
         description="The main objectives of the THREEARES project are to achieve tangible, long‐term benefits for
         the global environment and to contribute proactively to the shaping of dynamic sustainable
         road development policies going forward."
-        image="https://images.pexels.com/photos/3357026/pexels-photo-3357026.jpeg"
+        image="https://wecareonline.lk/img/counseling.jpg"
         height="400px"
         />
 
         <SplitSectionInverted
-        heading="About us"
-        description="The main objectives of the THREEARES project are to achieve tangible, long‐term benefits for
-        the global environment and to contribute proactively to the shaping of dynamic sustainable
-        road development policies going forward."
+        heading="Objectives"
+        description=""
         image="https://images.pexels.com/photos/3357026/pexels-photo-3357026.jpeg"
         height="400px"
         />
