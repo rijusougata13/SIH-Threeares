@@ -8,6 +8,7 @@ import Equipment from './pages/Equipment';
 import Material from './pages/Material';
 import Lca2 from './pages/Lca2';
 import Lca3 from './pages/Lca3';
+import Inventory from './pages/Inventory';
 
 // ----------------------------------------------------------------------
 
@@ -41,6 +42,11 @@ export default function Router() {
     {
       path: "/lca3",
       element: <Lca3 />
+    },
+    {
+      path: "/inventory",
+      element: <Inventory />
+
     }
 
   ]);

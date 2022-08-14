@@ -26,7 +26,12 @@ const pages = [
   {
     name: 'Transportation GHG Estimator',
     linkTo: '/transport'
-  },];
+  },
+  {
+    name: 'Inventory',
+    linkTo: '/inventory'
+  }
+];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
