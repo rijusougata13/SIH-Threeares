@@ -50,6 +50,15 @@ export default function SplitSectionInverted(props) {
             }}>
             <h1 style={{fontSize: "3.5rem"}}>{props.heading}</h1>
             <p>{props.description}</p>
+            <ul>
+              <li>Facilitating a detailed environmental analysis of road projects</li>
+              <li>Providing an authoritative basis for comparative analysis of various road‐building
+techniques and materials</li>
+              <li>Optimising road construction site supply schemes with respect to raw material
+providers, choice of suppliers, delivery locations and material transport modes</li>
+              <li>Enabling detailed estimation of GHG emissions specifically attributable to the road
+construction industry</li>
+            </ul>
             {props.routepath != null && <Button style={{
               width: "150px",
               marginTop: "20px",

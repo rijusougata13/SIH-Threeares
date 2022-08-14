@@ -50,6 +50,7 @@ export default function SplitSection(props) {
             backgroundImage: `url("${props.image}")`,
             backgroundSize: "100% 100%",
             backgroundRepeat: "round",
+            border: props.border,
             borderRadius: "0px",
             padding: '40px'
             }}>
