@@ -29,3 +29,11 @@
 .calculate-btn:hover {
     color: white;
 }
+
+.textfield {
+    color: #008000;
+}
+
+.textfield:focus {
+    color: #008000;
+}

@@ -47,7 +47,21 @@ const SlickSlider = () => {
 
     
     return ( 
-        <Carousel>
+        <Carousel
+        indicatorIconButtonProps={{
+            style: {
+                marginBottom: '50px', 
+                marginTop: '-10px'   // 1      // 3
+            }
+        }}
+
+        activeIndicatorIconButtonProps={{
+            style: {
+                backgroundColor: "#008000"
+            }
+        }}
+
+        >
             {
                 items.map( (item, i) => <Item key={i} item={item} /> )
             }

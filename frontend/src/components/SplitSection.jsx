@@ -37,7 +37,9 @@ export default function SplitSection(props) {
             <h1 style={{fontSize: "3.5rem"}}>{props.heading}</h1>
             <p style={{
               color: "#555555",
-              fontWeight: "bolder"
+              fontWeight: "bolder",
+              fontFamily: "Montserrat"
+              
             }}>{props.description}</p>
             {props.routepath != null && <Button className="calculate-btn" style={{
               fontFamily: "montserrat",

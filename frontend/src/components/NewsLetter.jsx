@@ -1,8 +1,10 @@
 import React from 'react';
 import { TextField } from '@material-ui/core';
 import { Button } from '@mui/material';
+import { makeStyles } from "@material-ui/core/styles";
 
 const NewsLetter = () => {
+
   return ( 
     <div style={{
       textAlign: "center",
@@ -18,19 +20,31 @@ const NewsLetter = () => {
         paddingTop: "20px",
         paddingBottom: "20px",
         color: "#555555",
-        fontWeight: "bolder"
+        fontWeight: "bolder",
+        fontFamily: "Montserrat"
       }}>Sign up for our newsletter to receive the latest news and updates about our ongoing and upcoming featuers, and become a part of the Threeares family. Enter your email below and click on send to get added to our mailing list now!</p>
     
     <div style={{display: "flex", justifyContent: "center"}}>
-    <TextField id="outlined-basic" label="Email" variant="outlined" 
+    <TextField className="textfield" id="outlined-basic" label="Email" variant="outlined" 
     style = {{
       width: "600px",
-      margin: "20px"
+      margin: "20px",
+      color: "#008000"
     }}
+
     />
     <Button variant="contained" style={{
-      width: "150px",
-      margin: "20px",
+        fontFamily: "montserrat",
+        width: "150px",
+        marginLeft: "0px",
+        marginTop: "20px",
+        marginBottom: "20px",
+        background: "white",
+        color: "#008000",
+        boxShadow: "none",
+        border: "1px solid #008000",
+        borderRadius: "0px",
+        // fontWeight: "normal"
       }}>Send</Button>
     </div>
     </div>

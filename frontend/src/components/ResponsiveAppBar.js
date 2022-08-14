@@ -71,7 +71,7 @@ const ResponsiveAppBar = () => {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'montserrat',
+              fontFamily: 'rakkas',
               fontWeight: 700,
               // letterSpacing: '.3rem',
               color: '#008000',
@@ -129,7 +129,7 @@ const ResponsiveAppBar = () => {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'montserrat',
+              fontFamily: 'rakkas',
               // fontWeight: 700,
               // letterSpacing: '.3rem',
               color: '#008000',
