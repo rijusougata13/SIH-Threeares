@@ -6,7 +6,8 @@ import HomeSecondary from './pages/HomeSecondary';
 import Transport from './pages/Transport';
 import Equipment from './pages/Equipment';
 import Material from './pages/Material';
-// import Lca from './pages/Lca';
+import Lca2 from './pages/Lca2';
+import Lca3 from './pages/Lca3';
 
 // ----------------------------------------------------------------------
 
@@ -33,11 +34,14 @@ export default function Router() {
       path: "/material",
       element: <Material />
     },
-    // {
-    //   path: "/lca",
-    //   element: <Lca />
-    // }
-
+    {
+      path: "/lca2",
+      element: <Lca2 />
+    },
+    {
+      path: "/lca3",
+      element: <Lca3 />
+    }
 
   ]);
 }
