@@ -1,3 +1,4 @@
-.calculate-btn:hover {
-    color: white;
+#calculate-btn:hover {
+    background-color: #008000 !important;
+    color: white !important;
 }

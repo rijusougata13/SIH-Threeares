@@ -18,7 +18,7 @@ export default function SplitSection(props) {
   return (
     <Box sx={{ 
         width: '100%',
-        height: props.height
+        height: props.height,
         // marginTop: '40px'
         }}>
       <Grid style={{height: '100%'}} container rowSpacing={1} columnSpacing={{ xs: 0, sm: 0, md: 0 }}>
@@ -41,7 +41,7 @@ export default function SplitSection(props) {
               fontFamily: "Montserrat"
               
             }}>{props.description}</p>
-            {props.routepath != null && <Button className="calculate-btn" style={{
+            {props.routepath != null && <Button id="calculate-btn" style={{
               fontFamily: "montserrat",
               width: "150px",
               marginLeft: "0px",
@@ -52,7 +52,7 @@ export default function SplitSection(props) {
               boxShadow: "none",
               border: "1px solid #008000",
               borderRadius: "0px",
-              // fontWeight: "normal"
+              transition: "0.4s ease"
             }}
             
           >Calculate now</Button>}
