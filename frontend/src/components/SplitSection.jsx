@@ -58,7 +58,9 @@ export default function SplitSection(props) {
           >Calculate now</Button>}
           </Item>
         </Grid>
-        <Grid item xs={12} sm={12} md={6} lg={6}>
+        <Grid item 
+        sx={{ display: { xs: 'none', lg: 'block', xl: 'none' } }}
+        xs={0} sm={0} md={6} lg={6}>
           <Item style={{
             height: "100%", 
             backgroundImage: `url("${props.image}")`,

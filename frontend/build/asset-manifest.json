@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.26193814.css",
+    "main.js": "/static/js/main.aca8c546.js",
+    "static/js/787.1199a6d1.chunk.js": "/static/js/787.1199a6d1.chunk.js",
+    "static/media/rakkas-all-400-normal.woff": "/static/media/rakkas-all-400-normal.716f166d2604d402c096.woff",
+    "static/media/rakkas-arabic-400-normal.woff2": "/static/media/rakkas-arabic-400-normal.afb6b56c0f5bdbe68136.woff2",
+    "static/media/rakkas-latin-400-normal.woff2": "/static/media/rakkas-latin-400-normal.367ab8e3d15e1a692d79.woff2",
+    "static/media/rakkas-latin-ext-400-normal.woff2": "/static/media/rakkas-latin-ext-400-normal.8f075d5baa62eca20d50.woff2",
+    "index.html": "/index.html",
+    "main.26193814.css.map": "/static/css/main.26193814.css.map",
+    "main.aca8c546.js.map": "/static/js/main.aca8c546.js.map",
+    "787.1199a6d1.chunk.js.map": "/static/js/787.1199a6d1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.26193814.css",
+    "static/js/main.aca8c546.js"
+  ]
+}

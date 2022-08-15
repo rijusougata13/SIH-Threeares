@@ -26,7 +26,7 @@ class HomeSecondary extends Component {
         // image="https://www.uopeople.edu/wp-content/uploads/2020/03/person-holding-green-grains-1230157-1-scaled-e1585570094956.jpg"
         height="400px"
         description="The aim of this research is to calculate the carbon footprint for different HMA and PCC pavement sections and develop recommendations on how the established footprints can be used for the development of green construction standards. Life-cycle assessment methodologies will be used in this research."
-        videourl="https://www.youtube.com/embed/FPPP0HhE8bE?autoplay=1&mute=1"
+        videourl="https://www.youtube.com/embed/FPPP0HhE8bE?playlist=FPPP0HhE8bE&autoplay=1&mute=1&loop=1"
         />
 
         <SplitSection 

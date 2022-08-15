@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat&display=swap');
-@import url('@fontsource/rakkas'); 
 * {
-    font-family: 'rakkas', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #008000;
+}
+
+.App {
+    max-width: 100vw;
 }

@@ -22,7 +22,9 @@ export default function SplitSectionInverted(props) {
         }}>
       <Grid style={{height: '100%'}} container rowSpacing={1} columnSpacing={{ xs: 0, sm: 0, md: 0 }}>
 
-      <Grid item xs={12} sm={12} md={6} lg={6}>
+      <Grid item xs={12} sm={12} md={6} lg={6}
+      sx={{ display: { xs: 'none', lg: 'block', xl: 'none' } }}
+      >
           <Item style={{
             height: "100%", 
             backgroundImage: `url("${props.image}")`,
