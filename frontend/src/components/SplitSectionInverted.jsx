@@ -32,12 +32,13 @@ export default function SplitSectionInverted(props) {
             border: "none",
             padding: '0px'
             }}>
-               {props.videourl && <video style={{
+               {/* {props.videourl && <video style={{
                  objectFit: "cover",
                  height: "100%",
                  width: "100%",
                  margin: "0px",
-               }}muted autoPlay controls src = {props.videourl}></video>}
+               }}muted autoPlay controls src = {props.videourl}></video>} */
+               <iframe width="100%" height="100%" src={props.videourl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}
                {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/FPPP0HhE8bE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
             {/* <img src={props.image} style={{height: "300px"}}></img> */}
           </Item>
