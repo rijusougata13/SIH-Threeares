@@ -26,6 +26,7 @@ import PieChart from "src/components/PieChart";
 
 import React, { useState } from "react";
 import "./equipment.css";
+import "./Material.css";
 import axios from "axios";
 import ResponsiveAppBar from "src/components/ResponsiveAppBar";
 import SplitSection from "src/components/SplitSection";
@@ -145,6 +146,7 @@ const Material = () => {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
+                    className="textfield"
                     style={{
                       width: "100%",
                     }}
@@ -227,6 +229,7 @@ const Material = () => {
                 
                 >
                 <TextField
+                className="textfield"
               style={{
                 margin: "20px",
                 width: "300px",
