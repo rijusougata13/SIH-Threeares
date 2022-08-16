@@ -31,8 +31,9 @@ const pages = [
     name: 'Inventory',
     linkTo: '/inventory'
   }
-  ,{   name: 'LCA Estimator',
-    linkTo: '/lca3',
+  , {
+    name: 'LCA Estimator',
+    linkTo: '/lca2',
   },];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 

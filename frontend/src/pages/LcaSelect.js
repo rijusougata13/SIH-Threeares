@@ -4,7 +4,7 @@ import lcaData2 from 'src/data/lca2_data'
 
 const LcaSelect = ({ label, emission, setEmission }) => {
     const [material, setMaterial] = useState('')
-    const [weight, setWeight] = useState(0)
+    const [weight, setWeight] = useState()
     const handleChange = (e) => {
         setMaterial(e.target.value)
     }
