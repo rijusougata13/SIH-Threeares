@@ -18,12 +18,19 @@ const PieChart = ({ data, label }) => {
 
 
   return (
-    <Paper>
+    <Paper elevation={0}
+    >
       <Chart
+        style={{
+          height: "400px",
+          padding: "40px",
+          
+        }}
         data={data}
       >
-        <PieSeries valueField="value" argumentField="argument" />
         <Title text={label} />
+        <PieSeries valueField="value" argumentField="argument" />
+       
 
         <Legend
         // position="bottom"
