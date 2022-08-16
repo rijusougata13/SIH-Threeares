@@ -32,12 +32,15 @@ import ResponsiveAppBar from "src/components/ResponsiveAppBar";
 import SplitSection from "src/components/SplitSection";
 
 import materialDetails from "../data/material_estimator";
+
 const Material = () => {
   const [equip, setEquip] = React.useState("");
   const [weight, setWeight] = useState("");
   const [chartDataEmission, setChartDataEmission] = useState([]);
 
   const [emission, setEmission] = useState(0);
+
+
 
   var emissions_rate = 0;
   const columns = [
@@ -263,6 +266,7 @@ const Material = () => {
         <div style={{
             border: "1px solid #008000"
         }}>
+      
       <MUIDataTable
 
         title={"Emission List"}
@@ -276,8 +280,13 @@ const Material = () => {
             marginTop: "10px"
         }}
       />
+
       </div>
       </div>
+
+      <div className="whitespace" style={{
+        height: "20px"
+      }}></div>
 
     {chartDataEmission.length > 0 && (
         <div style={{
