@@ -289,6 +289,7 @@ const Material = () => {
       }}></div>
 
     {chartDataEmission.length > 0 && (
+      <>
         <div style={{
             margin: "20px",
         }}>
@@ -303,6 +304,12 @@ const Material = () => {
         />
         </div>
         </div>
+        
+        <div className="whitespace" style={{
+        height: "20px"
+      }}></div>
+        </>
+        
     )}
     </>
   );
