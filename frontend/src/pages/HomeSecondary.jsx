@@ -9,7 +9,7 @@ import ResponsiveAppBar from "src/components/ResponsiveAppBar";
 import SplitSection from "src/components/SplitSection";
 import SplitSectionInverted from "src/components/SplitSectionInverted";
 import { Grid } from "@material-ui/core";
-import './HomeSecondary.css';
+// import './HomeSecondary.css';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 class HomeSecondary extends Component {
@@ -21,9 +21,9 @@ class HomeSecondary extends Component {
         <ResponsiveAppBar/>
         {/* <Slider /> */}
 
-        <SlickSlider  />
+        {/* <SlickSlider  /> */}
         
-        <AnimationOnScroll animateIn="animate__fadeInLeft" delay={300} animateOnce={true}>
+        {/* <AnimationOnScroll animateIn="animate__fadeInLeft" delay={300} animateOnce={true}>
         <SplitSectionInverted
         heading="Meet Threeares"
         // image="https://www.uopeople.edu/wp-content/uploads/2020/03/person-holding-green-grains-1230157-1-scaled-e1585570094956.jpg"
@@ -42,7 +42,7 @@ class HomeSecondary extends Component {
         image="https://wecareonline.lk/img/counseling.jpg"
         height="400px"
         />
-        </AnimationOnScroll>
+        </AnimationOnScroll> */}
 
         <AnimationOnScroll animateIn="animate__fadeInLeft" delay={100} animateOnce={true}>
         <SplitSectionInverted

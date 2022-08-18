@@ -15,26 +15,27 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { useNavigate } from 'react-router-dom';
 
 const pages = [
-  {
-    name: 'Material Estimator',
-    linkTo: '/material',
-  },
-  {
-    name: 'Equipments Estimator',
-    linkTo: '/equipment',
-  },
-  {
-    name: 'Transportation GHG Estimator',
-    linkTo: '/transport'
-  },
-  {
-    name: 'Inventory',
-    linkTo: '/inventory'
-  }
-  , {
-    name: 'LCA Estimator',
-    linkTo: '/lca2',
-  },];
+  // {
+  //   name: 'Material Estimator',
+  //   linkTo: '/material',
+  // },
+  // {
+  //   name: 'Equipments Estimator',
+  //   linkTo: '/equipment',
+  // },
+  // {
+  //   name: 'Transportation GHG Estimator',
+  //   linkTo: '/transport'
+  // },
+  // {
+  //   name: 'Inventory',
+  //   linkTo: '/inventory'
+  // }
+  // , {
+  //   name: 'LCA Estimator',
+  //   linkTo: '/lca2',
+  // }
+  ];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
