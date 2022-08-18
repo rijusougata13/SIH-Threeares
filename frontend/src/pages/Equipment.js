@@ -158,7 +158,7 @@ const Equipment = () => {
                                         </Select>
                                     </FormControl>
                                 </Grid>
-                                <Grid item xs={12}>
+                                {/* <Grid item xs={12}>
                                     <TextField
                                         className="textfield"
                                         style={{
@@ -190,9 +190,9 @@ const Equipment = () => {
                                             setHours(e.target.value);
                                         }}
                                     />
-                                </Grid>
+                                </Grid> */}
 
-                                <div
+                                {/* <div
                                     style={{
                                         display: "flex",
                                         flexDirection: "column",
@@ -241,11 +241,11 @@ const Equipment = () => {
                                     >
                                         Calculate
                                     </Button>
-                                </div>
+                                </div> */}
                             </Grid>
 
                             {/* test */}
-                            <Grid
+                            {/* <Grid
                                 container
                                 className="form-grid"
                                 xs={12}
@@ -283,7 +283,7 @@ const Equipment = () => {
                                         value={gallons}
                                     />
                                 </Grid>
-                            </Grid>
+                            </Grid> */}
                         </Box>
                     </Paper>
 
@@ -299,7 +299,7 @@ const Equipment = () => {
                 </div>
             </div>
 
-            <div style={{
+            {/* <div style={{
                 margin: "20px"
             }}>
                 <div style={{
@@ -349,7 +349,7 @@ const Equipment = () => {
                     }}></div>
                 </>
 
-            )}
+            )} */}
         </>
     );
 };

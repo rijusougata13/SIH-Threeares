@@ -218,7 +218,7 @@ const Material = () => {
               </Grid>
 
               {/* test */}
-              <Grid
+              {/* <Grid
                 container
                 className="form-grid"
                 xs={12}
@@ -244,7 +244,7 @@ const Material = () => {
               value={emission}
             />
                 </Grid>
-              </Grid>
+              </Grid> */}
             </Box>
           </Paper>
 
@@ -267,7 +267,7 @@ const Material = () => {
             border: "1px solid #008000"
         }}>
       
-      <MUIDataTable
+      {/* <MUIDataTable
 
         title={"Emission List"}
         
@@ -279,7 +279,7 @@ const Material = () => {
             fontFamily: "Montserrat !important",
             marginTop: "10px"
         }}
-      />
+      /> */}
 
       </div>
       </div>

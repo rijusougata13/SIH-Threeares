@@ -21,7 +21,7 @@ class HomeSecondary extends Component {
         <ResponsiveAppBar/>
         {/* <Slider /> */}
 
-        <SlickSlider  />
+        {/* <SlickSlider  /> */}
         
         <AnimationOnScroll animateIn="animate__fadeInLeft" delay={300} animateOnce={true}>
         <SplitSectionInverted

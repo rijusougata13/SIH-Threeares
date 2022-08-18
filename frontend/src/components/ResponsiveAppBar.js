@@ -23,18 +23,19 @@ const pages = [
     name: 'Equipments Estimator',
     linkTo: '/equipment',
   },
-  {
-    name: 'Transportation GHG Estimator',
-    linkTo: '/transport'
-  },
-  {
-    name: 'Inventory',
-    linkTo: '/inventory'
-  }
-  , {
-    name: 'LCA Estimator',
-    linkTo: '/lca2',
-  },];
+  // {
+  //   name: 'Transportation GHG Estimator',
+  //   linkTo: '/transport'
+  // },
+  // {
+  //   name: 'Inventory',
+  //   linkTo: '/inventory'
+  // }
+  // , {
+  //   name: 'LCA Estimator',
+  //   linkTo: '/lca2',
+  // }
+];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
