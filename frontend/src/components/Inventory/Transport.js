@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
     },
     header: {
-        padding:'50px'
+        // padding:'50px'
     },
     paper: {
         height:"100vh",
@@ -37,8 +37,8 @@ const TransportInventory = () => {
     const classes = useStyles();
 
     return (<>
-        <div className='appbar'>
-           <Typography variant="h4" color="inherit" className={classes.header}>
+        <div>
+           <Typography variant="h3" color="inherit">
             Transport GHG Estimator
             </Typography>
 
