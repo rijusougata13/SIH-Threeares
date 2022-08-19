@@ -2,6 +2,7 @@ import { AppBar, Checkbox, Grid, InputLabel, MenuItem, Paper, Select, Tab, Tabs,
 import { TextField, Button, FormControlLabel, RadioGroup, FormLabel, FormControl, Radio, CssBaseline } from '@mui/material'
 import { Box } from '@mui/system'
 import MUIDataTable from "mui-datatables";
+import ResponsiveAppBar from 'src/components/ResponsiveAppBar';
 
 import React, { useState } from 'react'
 import './equipment.css'
@@ -70,22 +71,15 @@ const Lca2 = () => {
 
     return (
         <>
-            <div className='appbar'>
-                <CssBaseline />
-                <AppBar position="relative" color="default" >
-                    <Toolbar>
-                        <Typography variant="h6" color="inherit" noWrap>
-                            THREEARES
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
-            </div>
+     
+                <ResponsiveAppBar />
+
             <div className='main-container'>
-                <div className='title'>
+                {/* <div className='title'>
                     <Typography variant="h5" gutterBottom>
                         Life Cycle Assessment
                     </Typography>
-                </div>
+                </div> */}
                 <div className='main-content'>
 
 
@@ -96,22 +90,30 @@ const Lca2 = () => {
                         direction={"column"} spacing={5}
                         justifyContent="center"
                     > */}
-                    <Typography align="center" variant="h4" gutterBottom>
-                        Construction Phase
-                    </Typography>
+                    
+                        <h1 style={{
+                            margin: "10px"
+                        }}>Construction Phase</h1>
+                    
 
 
-                    <div style={{
-                        display: 'flex',
-                        // height: '100vh'
-                    }}>
-                        <div>
+                    
+                        <div style={{
+                            border: "1px solid #008000",
+                            margin: "20px",
+                            padding: "20px",
+                            textAlign: "center"
+                        }}>
 
 
-                            <Grid item xs={6}>
-                                <Typography align="center" variant="h6" gutterBottom>
-                                    On-Site Electricity and Fuel Usage
-                                </Typography>
+                            <Grid item xs={6} lg={12} style={{
+                                textAlign: "center"
+                            }}>
+                                
+                                    <h3 style={{
+                                        width: "100%",
+                                    }}>On-Site Electricity and Fuel Usage</h3>
+                                
 
                             </Grid>
                             <Tabs
@@ -122,6 +124,7 @@ const Lca2 = () => {
                                 indicatorColor="primary"
                                 textColor="primary"
                                 centered
+                                
                             >
                                 <Tab value={0} label="Electricity purchased from grid" />
                                 <Tab value={1} label="Diesel used in generators" />
@@ -130,9 +133,11 @@ const Lca2 = () => {
                             </Tabs>
 
                             {activeGasTabId === 0 && (
-                                <React.Fragment> <Grid item xs={6}>
+                                <React.Fragment> 
+                                    <Grid item xs={6} lg={12}>
                                     <TextField style={{
-                                        width: "100%"
+                                        margin: "20px",
+                                        width: "300px"
                                     }} required id="outlined-basic" label="Units of electricity purchased from grid (in kWH)" variant="outlined"
                                         onChange={(e) => {
                                             setElectricty(e.target.value)
@@ -146,16 +151,28 @@ const Lca2 = () => {
                                 </Grid>
                                     <Button className="calculate-btn" style={{
                                         width: "300px",
-                                        textAlign: "center"
+                                        textAlign: "center",
+                                        fontFamily: "montserrat",
+                                        width: "250px",
+                                        marginLeft: "0px",
+                                        marginTop: "20px",
+                                        marginBottom: "20px",
+                                        background: "white",
+                                        color: "#008000",
+                                        boxShadow: "none",
+                                        border: "1px solid #008000",
+                                        borderRadius: "0px",
+                                        transition: "0.4s ease",
                                     }} variant="contained" onClick={() => setActiveGasTabId(prev => prev + 1)}>Next</Button>
 
                                 </React.Fragment>
                             )}
 
                             {activeGasTabId === 1 && (
-                                <React.Fragment><Grid item xs={6}>
+                                <React.Fragment><Grid item xs={6} lg={12}>
                                     <TextField style={{
-                                        width: "100%"
+                                        margin: "20px",
+                                        width: "300px"
                                     }} required id="outlined-basic" label="Diesel used in generators (in litres)" variant="outlined"
                                         onChange={(e) => {
                                             setGeneratorDiesel(e.target.value)
@@ -169,14 +186,26 @@ const Lca2 = () => {
                                 </Grid>
                                     <Button className="calculate-btn" style={{
                                         width: "300px",
-                                        textAlign: "center"
+                                        textAlign: "center",
+                                        fontFamily: "montserrat",
+                                        width: "250px",
+                                        marginLeft: "0px",
+                                        marginTop: "20px",
+                                        marginBottom: "20px",
+                                        background: "white",
+                                        color: "#008000",
+                                        boxShadow: "none",
+                                        border: "1px solid #008000",
+                                        borderRadius: "0px",
+                                        transition: "0.4s ease",
                                     }} variant="contained" onClick={() => setActiveGasTabId(prev => prev + 1)}>Next</Button>
                                 </React.Fragment>)}
 
                             {activeGasTabId === 2 && (
-                                <React.Fragment> <Grid item xs={6}>
+                                <React.Fragment> <Grid item xs={6} lg={12}>
                                     <TextField style={{
-                                        width: "100%"
+                                        margin: "20px",
+                                        width: "300px"
                                     }} required id="outlined-basic" label="Petrol used (in litres)" variant="outlined"
                                         onChange={(e) => {
                                             setPetrol(e.target.value)
@@ -190,7 +219,18 @@ const Lca2 = () => {
                                 </Grid>
                                     <Button className="calculate-btn" style={{
                                         width: "300px",
-                                        textAlign: "center"
+                                        textAlign: "center",
+                                        fontFamily: "montserrat",
+                                        width: "250px",
+                                        marginLeft: "0px",
+                                        marginTop: "20px",
+                                        marginBottom: "20px",
+                                        background: "white",
+                                        color: "#008000",
+                                        boxShadow: "none",
+                                        border: "1px solid #008000",
+                                        borderRadius: "0px",
+                                        transition: "0.4s ease",
                                     }} variant="contained" onClick={() => {
                                         setActiveGasTabId(prev => -1)
                                         setGas(generatorDiesel * 2.6391 + electricity * 0.92 + petrol * 2.3035)
@@ -314,7 +354,6 @@ const Lca2 = () => {
 
 
                         </div>
-                    </div>
 
 
 
