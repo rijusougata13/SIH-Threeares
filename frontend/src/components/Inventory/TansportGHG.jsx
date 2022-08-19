@@ -58,10 +58,10 @@ export default function MaterialGHG(props) {
 Actual Emissions (tpy) = Emission Rate [lb/hr] x Actual Operating Hours [hr] x 0.005 [ton/lb] x ((100 – Control Efficiency)/100)
             
             <p style={{marginTop: "10px"}}>Resesarch References</p>
-            <a style={{marginRight: "10px"}} href="#">Link 1</a>
-            <a style={{marginRight: "10px"}} href="#">Link 2</a>
-            <a style={{marginRight: "10px"}} href="#">Link 3</a>
-            <a style={{marginRight: "10px"}} href="#">Link 4</a>
+            <a style={{marginRight: "10px"}} href="http://wgbis.ces.iisc.ernet.in/energy/paper/IISc_Emissions_from_Indias_Transport_sector/">Link 1</a>
+            <a style={{marginRight: "10px"}} href="https://www.researchgate.net/figure/Carbon-emissions-in-material-transportation_tbl2_322538087">Link 2</a>
+            <a style={{marginRight: "10px"}} href="https://www.unep.org/explore-topics/energy/what-we-do/transport">Link 3</a>
+            {/* <a style={{marginRight: "10px"}} href="#">Link 4</a> */}
 
             {/* <p style={{marginTop: "10px"}}>Datasets</p> */}
         {/* <a href="https://docs.google.com/spreadsheets/d/1XDfnp0NjRDuVJ7zlAun5KXuws6Cp9z0yBE0Rwqo7DBA/edit#gid=0" target="_blank"> Dataset Link </a> */}
