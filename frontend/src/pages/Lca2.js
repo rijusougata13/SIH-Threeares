@@ -1,4 +1,4 @@
-import { AppBar, Checkbox, Grid, InputLabel, MenuItem, Paper, Select, Tab, Tabs, Toolbar, Typography } from '@material-ui/core'
+import { AppBar, Checkbox, Grid, InputLabel, MenuItem, Paper, Select, Tab, Tabs, Toolbar, Typography } from '@mui/material'
 import { TextField, Button, FormControlLabel, RadioGroup, FormLabel, FormControl, Radio, CssBaseline } from '@mui/material'
 import { Box } from '@mui/system'
 import MUIDataTable from "mui-datatables";
@@ -71,8 +71,8 @@ const Lca2 = () => {
 
     return (
         <>
-     
-                <ResponsiveAppBar />
+
+            <ResponsiveAppBar />
 
             <div className='main-container'>
                 {/* <div className='title'>
@@ -90,51 +90,51 @@ const Lca2 = () => {
                         direction={"column"} spacing={5}
                         justifyContent="center"
                     > */}
-                    
-                        <h1 style={{
-                            margin: "10px"
-                        }}>Construction Phase</h1>
-                    
+
+                    <h1 style={{
+                        margin: "10px"
+                    }}>Construction Phase</h1>
 
 
-                    
-                        <div style={{
-                            border: "1px solid #008000",
-                            margin: "20px",
-                            padding: "20px",
+
+
+                    <div style={{
+                        border: "1px solid #008000",
+                        margin: "20px",
+                        padding: "20px",
+                        textAlign: "center"
+                    }}>
+
+
+                        <Grid item xs={6} lg={12} style={{
                             textAlign: "center"
                         }}>
 
+                            <h3 style={{
+                                width: "100%",
+                            }}>On-Site Electricity and Fuel Usage</h3>
 
-                            <Grid item xs={6} lg={12} style={{
-                                textAlign: "center"
-                            }}>
-                                
-                                    <h3 style={{
-                                        width: "100%",
-                                    }}>On-Site Electricity and Fuel Usage</h3>
-                                
 
-                            </Grid>
-                            <Tabs
-                                value={activeGasTabId}
-                                onChange={(e, id) => {
-                                    setActiveGasTabId(id)
-                                }}
-                                indicatorColor="primary"
-                                textColor="primary"
-                                centered
-                                
-                            >
-                                <Tab value={0} label="Electricity purchased from grid" />
-                                <Tab value={1} label="Diesel used in generators" />
-                                <Tab value={2} label="Petrol used" />
+                        </Grid>
+                        <Tabs
+                            value={activeGasTabId}
+                            onChange={(e, id) => {
+                                setActiveGasTabId(id)
+                            }}
+                            // indicatorColor="primary"
+                            // textColor="primary"
+                            centered
 
-                            </Tabs>
+                        >
+                            <Tab value={0} label="Electricity purchased from grid" />
+                            <Tab value={1} label="Diesel used in generators" />
+                            <Tab value={2} label="Petrol used" />
 
-                            {activeGasTabId === 0 && (
-                                <React.Fragment> 
-                                    <Grid item xs={6} lg={12}>
+                        </Tabs>
+
+                        {activeGasTabId === 0 && (
+                            <React.Fragment>
+                                <Grid item xs={6} lg={12}>
                                     <TextField style={{
                                         margin: "20px",
                                         width: "300px"
@@ -149,106 +149,106 @@ const Lca2 = () => {
                                     }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={electricity * 0.92}
                                     />
                                 </Grid>
-                                    <Button className="calculate-btn" style={{
-                                        width: "300px",
-                                        textAlign: "center",
-                                        fontFamily: "montserrat",
-                                        width: "250px",
-                                        marginLeft: "0px",
-                                        marginTop: "20px",
-                                        marginBottom: "20px",
-                                        background: "white",
-                                        color: "#008000",
-                                        boxShadow: "none",
-                                        border: "1px solid #008000",
-                                        borderRadius: "0px",
-                                        transition: "0.4s ease",
-                                    }} variant="contained" onClick={() => setActiveGasTabId(prev => prev + 1)}>Next</Button>
+                                <Button className="calculate-btn" style={{
+                                    width: "300px",
+                                    textAlign: "center",
+                                    fontFamily: "montserrat",
+                                    width: "250px",
+                                    marginLeft: "0px",
+                                    marginTop: "20px",
+                                    marginBottom: "20px",
+                                    background: "white",
+                                    color: "#008000",
+                                    boxShadow: "none",
+                                    border: "1px solid #008000",
+                                    borderRadius: "0px",
+                                    transition: "0.4s ease",
+                                }} variant="contained" onClick={() => setActiveGasTabId(prev => prev + 1)}>Next</Button>
 
-                                </React.Fragment>
-                            )}
+                            </React.Fragment>
+                        )}
 
-                            {activeGasTabId === 1 && (
-                                <React.Fragment><Grid item xs={6} lg={12}>
-                                    <TextField style={{
-                                        margin: "20px",
-                                        width: "300px"
-                                    }} required id="outlined-basic" label="Diesel used in generators (in litres)" variant="outlined"
-                                        onChange={(e) => {
-                                            setGeneratorDiesel(e.target.value)
-                                        }} />
+                        {activeGasTabId === 1 && (
+                            <React.Fragment><Grid item xs={6} lg={12}>
+                                <TextField style={{
+                                    margin: "20px",
+                                    width: "300px"
+                                }} required id="outlined-basic" label="Diesel used in generators (in litres)" variant="outlined"
+                                    onChange={(e) => {
+                                        setGeneratorDiesel(e.target.value)
+                                    }} />
 
-                                    <TextField style={{
-                                        margin: "20px",
-                                        width: "300px"
-                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={generatorDiesel * 2.6391}
-                                    />
-                                </Grid>
-                                    <Button className="calculate-btn" style={{
-                                        width: "300px",
-                                        textAlign: "center",
-                                        fontFamily: "montserrat",
-                                        width: "250px",
-                                        marginLeft: "0px",
-                                        marginTop: "20px",
-                                        marginBottom: "20px",
-                                        background: "white",
-                                        color: "#008000",
-                                        boxShadow: "none",
-                                        border: "1px solid #008000",
-                                        borderRadius: "0px",
-                                        transition: "0.4s ease",
-                                    }} variant="contained" onClick={() => setActiveGasTabId(prev => prev + 1)}>Next</Button>
-                                </React.Fragment>)}
+                                <TextField style={{
+                                    margin: "20px",
+                                    width: "300px"
+                                }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={generatorDiesel * 2.6391}
+                                />
+                            </Grid>
+                                <Button className="calculate-btn" style={{
+                                    width: "300px",
+                                    textAlign: "center",
+                                    fontFamily: "montserrat",
+                                    width: "250px",
+                                    marginLeft: "0px",
+                                    marginTop: "20px",
+                                    marginBottom: "20px",
+                                    background: "white",
+                                    color: "#008000",
+                                    boxShadow: "none",
+                                    border: "1px solid #008000",
+                                    borderRadius: "0px",
+                                    transition: "0.4s ease",
+                                }} variant="contained" onClick={() => setActiveGasTabId(prev => prev + 1)}>Next</Button>
+                            </React.Fragment>)}
 
-                            {activeGasTabId === 2 && (
-                                <React.Fragment> <Grid item xs={6} lg={12}>
-                                    <TextField style={{
-                                        margin: "20px",
-                                        width: "300px"
-                                    }} required id="outlined-basic" label="Petrol used (in litres)" variant="outlined"
-                                        onChange={(e) => {
-                                            setPetrol(e.target.value)
-                                        }} />
+                        {activeGasTabId === 2 && (
+                            <React.Fragment> <Grid item xs={6} lg={12}>
+                                <TextField style={{
+                                    margin: "20px",
+                                    width: "300px"
+                                }} required id="outlined-basic" label="Petrol used (in litres)" variant="outlined"
+                                    onChange={(e) => {
+                                        setPetrol(e.target.value)
+                                    }} />
 
-                                    <TextField style={{
-                                        margin: "20px",
-                                        width: "300px"
-                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={petrol * 2.3035}
-                                    />
-                                </Grid>
-                                    <Button className="calculate-btn" style={{
-                                        width: "300px",
-                                        textAlign: "center",
-                                        fontFamily: "montserrat",
-                                        width: "250px",
-                                        marginLeft: "0px",
-                                        marginTop: "20px",
-                                        marginBottom: "20px",
-                                        background: "white",
-                                        color: "#008000",
-                                        boxShadow: "none",
-                                        border: "1px solid #008000",
-                                        borderRadius: "0px",
-                                        transition: "0.4s ease",
-                                    }} variant="contained" onClick={() => {
-                                        setActiveGasTabId(prev => -1)
-                                        setGas(generatorDiesel * 2.6391 + electricity * 0.92 + petrol * 2.3035)
-                                    }}>Calculate</Button>
-                                </React.Fragment>)}
+                                <TextField style={{
+                                    margin: "20px",
+                                    width: "300px"
+                                }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={petrol * 2.3035}
+                                />
+                            </Grid>
+                                <Button className="calculate-btn" style={{
+                                    width: "300px",
+                                    textAlign: "center",
+                                    fontFamily: "montserrat",
+                                    width: "250px",
+                                    marginLeft: "0px",
+                                    marginTop: "20px",
+                                    marginBottom: "20px",
+                                    background: "white",
+                                    color: "#008000",
+                                    boxShadow: "none",
+                                    border: "1px solid #008000",
+                                    borderRadius: "0px",
+                                    transition: "0.4s ease",
+                                }} variant="contained" onClick={() => {
+                                    setActiveGasTabId(prev => -1)
+                                    setGas(generatorDiesel * 2.6391 + electricity * 0.92 + petrol * 2.3035)
+                                }}>Calculate</Button>
+                            </React.Fragment>)}
 
-                            {activeGasTabId === -1 && (
-                                <React.Fragment>
-                                    <TextField style={{
-                                        margin: "20px",
-                                        width: "200px"
-                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={gas}
-                                    />
-                                </React.Fragment>
-                            )}
+                        {activeGasTabId === -1 && (
+                            <React.Fragment>
+                                <TextField style={{
+                                    margin: "20px",
+                                    width: "200px"
+                                }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={gas}
+                                />
+                            </React.Fragment>
+                        )}
 
 
-                            {/* <Grid item xs={6}>
+                        {/* <Grid item xs={6}>
                                 <Button className="calculate-btn" style={{
                                     width: "300px",
                                     textAlign: "center"
@@ -406,7 +406,7 @@ const Lca2 = () => {
 
 
 
-                        </div>
+                    </div>
 
 
 
