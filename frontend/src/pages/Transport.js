@@ -1,11 +1,39 @@
-import { AppBar, Checkbox, Grid, Paper, Toolbar, Typography } from '@material-ui/core'
-import { TextField, Button, FormControlLabel, RadioGroup, FormLabel, FormControl, Radio, CssBaseline } from '@mui/material'
-import { Box } from '@mui/system'
-import React, { useState } from 'react'
+import {
+  AppBar,
+  Checkbox,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Paper,
+  Select,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+import {
+  TextField,
+  Button,
+  FormControlLabel,
+  RadioGroup,
+  FormLabel,
+  FormControl,
+  Radio,
+  CssBaseline,
+} from "@mui/material";
+import { Box } from "@mui/material";
+import MUIDataTable from "mui-datatables";
 import './transport.css'
 import axios from 'axios'
-import MUIDataTable from 'mui-datatables'
-const Transport = () => {
+import PieChart from "src/components/PieChart";
+
+import React, { useState } from "react";
+import "./equipment.css";
+import "./Material.css";
+import ResponsiveAppBar from "src/components/ResponsiveAppBar";
+import SplitSection from "src/components/SplitSection";
+
+import materialDetails from "../data/material_estimator";
+
+const Material = () => {
   const [origin, setOrigin] = useState('')
   const [dest, setDest] = useState('')
   const [mass, setMass] = useState('')
@@ -67,71 +95,87 @@ const Transport = () => {
 
 
   }
-  // if (!dist) {
-  //   return (
-  //     <p>Loading</p>
-  //   )
-  // }
 
   return (
     <>
-      <div className='appbar'>
+      <div className="appbar">
         <CssBaseline />
-        <AppBar position="relative" color="default" >
-          <Toolbar>
-            <Typography variant="h6" color="inherit" noWrap>
-              THREEARES
-            </Typography>
-          </Toolbar>
-        </AppBar>
+        <ResponsiveAppBar />
       </div>
-      <div className='main-container'>
-        <div className='title'>
-          <Typography variant="h6" gutterBottom>
-            Transportation GHG Estimator
-          </Typography>
-        </div>
-        <div className='main-content'>
-          <Paper elevation={3} >
+      <div className="main-container">
+        <SplitSection
+          heading="Transportation Estimator Calculator"
+          description="The ThreeAres Material Estimator allows the user to generate emission reports that estimate the carbon dioxide emissions associated with materials used in highway constructions projects. Materials are classified according to MDOT's Standard Specifications for Construction's Division 9  material classifications. The tool estimates cradle to gate emissions and can be used to differentiate impacts of using composite materials that make up the roadway."
+          image="https://img.freepik.com/free-vector/calculator-concept-illustration_114360-1239.jpg"
+          routepath=""
+          height="90vh"
+          border="30px solid white"
+        />
+        <div className="main-content"
+          style={{
+            margin: "20px",
+            border: "1px solid #008000"
+          }}
+        >
+          <Paper elevation={0}
+          >
             <Box
               display="flex"
               justifyContent="center"
               alignItems="center"
             // minHeight="100vh"
             >
-
-              <Grid container
+              <Grid
+                container
                 className="form-grid"
-                xs={12} lg={6}
-                direction={"column"} spacing={5}
-                justifyContent="center">
+                xs={12}
+                lg={6}
+                direction={"column"}
+                spacing={5}
+                justifyContent="center"
+              >
+
                 <Grid item xs={12}>
-
-
-                  <TextField required fullWidth id="outlined-basic" label="ORIGIN" variant="outlined" value={origin}
+                  <TextField
+                    className="textfield"
+                    style={{
+                      width: "100%",
+                      paddingBottom: '10px'
+                    }}
+                    size="normal"
+                    required
+                    id="outlined-basic"
+                    label="Origin" variant="outlined" value={origin}
                     onChange={(e) => {
                       setOrigin(e.target.value)
-                    }} />
-
-
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField style={{
-                    width: "100%"
-                  }} required id="outlined-basic" label="DESTINATION" variant="outlined" value={dest} onChange={(e) => {
-                    setDest(e.target.value)
-                  }} />
-                </Grid>
-
-                <Grid item xs={12} >
-                  <TextField style={{
-                    width: "100%"
-                  }} id="outlined-basic" label="CARGO MASS" variant="outlined" value={mass} onChange={(e) => {
-                    setMass(e.target.value)
-                  }} />
-
-                </Grid>
-                <Grid item xs={12}>
+                    }}
+                  />
+                  <TextField
+                    className="textfield"
+                    style={{
+                      width: "100%",
+                      paddingBottom: '10px'
+                    }}
+                    size="normal"
+                    required
+                    id="outlined-basic"
+                    label="Destination" variant="outlined" value={dest} onChange={(e) => {
+                      setDest(e.target.value)
+                    }}
+                  />
+                  <TextField
+                    className="textfield"
+                    style={{
+                      width: "100%",
+                      paddingBottom: '10px'
+                    }}
+                    size="normal"
+                    required
+                    id="outlined-basic"
+                    label="Cargo Mass" variant="outlined" value={mass} onChange={(e) => {
+                      setMass(e.target.value)
+                    }}
+                  />
                   <FormControl style={{
                     display: "flex",
                     flexDirection: "row",
@@ -156,39 +200,150 @@ const Transport = () => {
                   </FormControl>
                 </Grid>
               </Grid>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  width: "100%",
+                  textAlign: "center",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Button
+                  id="calculate-btn"
+                  style={{
+                    fontFamily: "montserrat",
+                    width: "250px",
+                    marginLeft: "0px",
+                    marginTop: "20px",
+                    marginBottom: "20px",
+                    background: "white",
+                    color: "#008000",
+                    boxShadow: "none",
+                    border: "1px solid #008000",
+                    borderRadius: "0px",
+                    transition: "0.4s ease",
+                  }}
+                  onClick={calculate}>ADD New Emission</Button>
+
+                {/* <Button
+                  id="calculate-btn"
+                  style={{
+                    fontFamily: "montserrat",
+                    width: "250px",
+                    marginLeft: "0px",
+                    marginTop: "20px",
+                    marginBottom: "20px",
+                    background: "white",
+                    color: "#008000",
+                    boxShadow: "none",
+                    border: "1px solid #008000",
+                    borderRadius: "0px",
+                    transition: "0.4s ease",
+                  }}
+                  onClick={calculate}
+                >
+                  Calculate
+                </Button> */}
+              </div>
 
 
+              {/* test */}
+              {/* <Grid
+                container
+                className="form-grid"
+                xs={12}
+                lg={6}
+                direction={"column"}
+                spacing={5}
+                justifyContent="center"
 
+              >
+                <Grid item xs={12}
+
+                >
+                  <TextField
+                    className="textfield"
+                    style={{
+                      margin: "20px",
+                      width: "300px",
+                    }}
+
+                    id="outlined-basic"
+                    label="Emissions"
+                    variant="outlined"
+                    value={emission}
+                  />
+                </Grid>
+              </Grid> */}
             </Box>
-
-            <Button className="calculate-btn" style={{
-              width: "300px",
-              textAlign: "center"
-            }} variant="contained" onClick={calculate}>ADD New Emission</Button>
-
-            {/* <div className='results'>
-              <TextField style={{
-                margin: "20px",
-                width: "300px"
-              }} disabled={true} id="outlined-basic" label="YOUR RESULTS" variant="outlined" value={res}
-              />
-            </div> */}
           </Paper>
+
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+              background: "white",
+            }}
+          >
+
+          </div>
         </div>
-        <MUIDataTable
-          title={"Transport Emission List"}
-          data={data}
-          columns={columns}
-          options={options}
-        />
-        {/* <Button className="calculate-btn" style={{
-          width: "300px",
-          textAlign: "center"
-        }} variant="contained" >Calculate</Button> */}
       </div>
 
-    </>
-  )
-}
+      <div style={{
+        margin: "20px"
+      }}>
+        <div style={{
+          border: "1px solid #008000"
+        }}>
 
-export default Transport
+          <MUIDataTable
+
+            title={"Transport Emission List"}
+            data={data}
+            columns={columns}
+            options={options}
+
+            style={{
+              fontFamily: "Montserrat !important",
+              marginTop: "10px"
+            }}
+          />
+
+        </div>
+      </div>
+
+      <div className="whitespace" style={{
+        height: "20px"
+      }}></div>
+
+      {/* {chartDataEmission.length > 0 && (
+        <>
+          <div style={{
+            margin: "20px",
+          }}>
+            <div style={{
+              // background: "blue",
+              padding: "10px",
+              border: "1px solid #008000",
+            }}>
+              <PieChart
+                data={chartDataEmission}
+                label="Emission Rate PieChart"
+              />
+            </div>
+          </div>
+
+          <div className="whitespace" style={{
+            height: "20px"
+          }}></div>
+        </>
+
+      )} */}
+    </>
+  );
+};
+
+export default Material;
