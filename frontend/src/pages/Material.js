@@ -8,7 +8,7 @@ import {
   Select,
   Toolbar,
   Typography,
-} from "@material-ui/core";
+} from "@mui/material";
 import {
   TextField,
   Button,
@@ -102,10 +102,10 @@ const Material = () => {
           border="30px solid white"
         />
         <div className="main-content"
-        style={{
+          style={{
             margin: "20px",
             border: "1px solid #008000"
-        }}
+          }}
         >
           <Paper elevation={0}
           >
@@ -113,7 +113,7 @@ const Material = () => {
               display="flex"
               justifyContent="center"
               alignItems="center"
-              // minHeight="100vh"
+            // minHeight="100vh"
             >
               <Grid
                 container
@@ -226,23 +226,23 @@ const Material = () => {
                 direction={"column"}
                 spacing={5}
                 justifyContent="center"
-              
+
               >
                 <Grid item xs={12}
-                
+
                 >
-                <TextField
-                className="textfield"
-              style={{
-                margin: "20px",
-                width: "300px",
-              }}
-          
-              id="outlined-basic"
-              label="Emissions"
-              variant="outlined"
-              value={emission}
-            />
+                  <TextField
+                    className="textfield"
+                    style={{
+                      margin: "20px",
+                      width: "300px",
+                    }}
+
+                    id="outlined-basic"
+                    label="Emissions"
+                    variant="outlined"
+                    value={emission}
+                  />
                 </Grid>
               </Grid>
             </Box>
@@ -255,62 +255,62 @@ const Material = () => {
               background: "white",
             }}
           >
-            
+
           </div>
         </div>
       </div>
-    
+
+      <div style={{
+        margin: "20px"
+      }}>
         <div style={{
-            margin: "20px"
+          border: "1px solid #008000"
         }}>
-        <div style={{
-            border: "1px solid #008000"
-        }}>
-      
-      <MUIDataTable
 
-        title={"Emission List"}
-        
-        data={data}
-        columns={columns}
-        options={options}
+          <MUIDataTable
 
-        style={{
-            fontFamily: "Montserrat !important",
-            marginTop: "10px"
-        }}
-      />
+            title={"Emission List"}
 
-      </div>
+            data={data}
+            columns={columns}
+            options={options}
+
+            style={{
+              fontFamily: "Montserrat !important",
+              marginTop: "10px"
+            }}
+          />
+
+        </div>
       </div>
 
       <div className="whitespace" style={{
         height: "20px"
       }}></div>
 
-    {chartDataEmission.length > 0 && (
-      <>
-        <div style={{
+      {chartDataEmission.length > 0 && (
+        <>
+          <div style={{
             margin: "20px",
-        }}>
+          }}>
             <div style={{
-                // background: "blue",
-                padding: "10px",
-                border: "1px solid #008000",
+              // background: "blue",
+              padding: "10px",
+              border: "1px solid #008000",
             }}>
-        <PieChart
-       data={chartDataEmission}
-            label="Emission Rate PieChart"
-        />
-        </div>
-        </div>
-        
-        <div className="whitespace" style={{
-        height: "20px"
-      }}></div>
+              <PieChart
+                data={chartDataEmission}
+                label="Emission Rate PieChart"
+              />
+            </div>
+          </div>
+
+          <div className="whitespace" style={{
+            height: "20px"
+          }}></div>
         </>
-        
-    )}
+
+      )}
     </>
   );
 };
