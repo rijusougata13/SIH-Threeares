@@ -44,7 +44,7 @@ const EquipmentInventory = () => {
 
         </div>
         <div className={classes.paper}>
-        <img src="https://www.construction.mtu.edu/cass_reports/webpage/image/method.png" className={classes.img}/>
+        <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0048969720338602-ga1.jpg" className={classes.img}/>
         <p className={classes.text}>
         The ERA Equipment CO2 Calculator is a tool to estimate the carbon footprint of construction equipment over its entire life cycle. It is applicable to all types of construction equipment, from mini excavators to wheel loaders and from generators to boom lifts (only hand tools are excluded).
  
