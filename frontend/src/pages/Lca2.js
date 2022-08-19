@@ -9,6 +9,7 @@ import './equipment.css'
 import axios from 'axios'
 // import lcaData2 from '../data/lca2_data'
 import LcaSelect from './LcaSelect';
+import SplitSection from 'src/components/SplitSection';
 
 const Lca2 = () => {
 
@@ -72,183 +73,198 @@ const Lca2 = () => {
     return (
         <>
 
-            <ResponsiveAppBar />
+            <div className="appbar">
+                <CssBaseline />
+                <ResponsiveAppBar />
+            </div>
+            <div className="main-container">
+                <SplitSection
+                    heading="LCA Estimator Calculator"
+                    description="The ThreeAres Material Estimator allows the user to generate emission reports that estimate the carbon dioxide emissions associated with materials used in highway constructions projects. Materials are classified according to MDOT's Standard Specifications for Construction's Division 9  material classifications. The tool estimates cradle to gate emissions and can be used to differentiate impacts of using composite materials that make up the roadway."
+                    image="https://img.freepik.com/free-vector/calculator-concept-illustration_114360-1239.jpg"
+                    routepath=""
+                    height="90vh"
+                    border="30px solid white"
+                />
+                <div className="main-content"
+                    style={{
+                        margin: "20px",
+                        // border: "1px solid #008000"
+                    }}
+                >
+                    <Paper elevation={0}
+                    >
 
-            <div className='main-container'>
-                {/* <div className='title'>
-                    <Typography variant="h5" gutterBottom>
-                        Life Cycle Assessment
-                    </Typography>
-                </div> */}
-                <div className='main-content'>
 
 
 
-                    {/* <Grid container
+
+
+                        {/* <Grid container
                         className="form-grid"
                         xs={12} lg={6}
                         direction={"column"} spacing={5}
                         justifyContent="center"
                     > */}
 
-                    <h1 style={{
-                        margin: "10px"
-                    }}>Construction Phase</h1>
+                        <h1 style={{
+                            margin: "10px"
+                        }}>Construction Phase</h1>
 
 
 
 
-                    <div style={{
-                        border: "1px solid #008000",
-                        margin: "20px",
-                        padding: "20px",
-                        textAlign: "center"
-                    }}>
-
-
-                        <Grid item xs={6} lg={12} style={{
+                        <div style={{
+                            border: "1px solid #008000",
+                            margin: "20px",
+                            padding: "20px",
                             textAlign: "center"
                         }}>
 
-                            <h3 style={{
-                                width: "100%",
-                            }}>On-Site Electricity and Fuel Usage</h3>
+
+                            <Grid item xs={6} lg={12} style={{
+                                textAlign: "center"
+                            }}>
+
+                                <h3 style={{
+                                    width: "100%",
+                                }}>On-Site Electricity and Fuel Usage</h3>
 
 
-                        </Grid>
-                        <Tabs
-                            value={activeGasTabId}
-                            onChange={(e, id) => {
-                                setActiveGasTabId(id)
-                            }}
-                            // indicatorColor="primary"
-                            // textColor="primary"
-                            centered
+                            </Grid>
+                            <Tabs
+                                value={activeGasTabId}
+                                onChange={(e, id) => {
+                                    setActiveGasTabId(id)
+                                }}
+                                // indicatorColor="primary"
+                                // textColor="primary"
+                                centered
 
-                        >
-                            <Tab value={0} label="Electricity purchased from grid" />
-                            <Tab value={1} label="Diesel used in generators" />
-                            <Tab value={2} label="Petrol used" />
+                            >
+                                <Tab value={0} label="Electricity purchased from grid" />
+                                <Tab value={1} label="Diesel used in generators" />
+                                <Tab value={2} label="Petrol used" />
 
-                        </Tabs>
+                            </Tabs>
 
-                        {activeGasTabId === 0 && (
-                            <React.Fragment>
-                                <Grid item xs={6} lg={12}>
+                            {activeGasTabId === 0 && (
+                                <React.Fragment>
+                                    <Grid item xs={6} lg={12}>
+                                        <TextField style={{
+                                            margin: "20px",
+                                            width: "300px"
+                                        }} required id="outlined-basic" label="Units of electricity purchased from grid (in kWH)" variant="outlined"
+                                            onChange={(e) => {
+                                                setElectricty(e.target.value)
+                                            }} />
+
+                                        <TextField style={{
+                                            margin: "20px",
+                                            width: "300px"
+                                        }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={electricity * 0.92}
+                                        />
+                                    </Grid>
+                                    <Button className="calculate-btn" style={{
+                                        width: "300px",
+                                        textAlign: "center",
+                                        fontFamily: "montserrat",
+                                        width: "250px",
+                                        marginLeft: "0px",
+                                        marginTop: "20px",
+                                        marginBottom: "20px",
+                                        background: "white",
+                                        color: "#008000",
+                                        boxShadow: "none",
+                                        border: "1px solid #008000",
+                                        borderRadius: "0px",
+                                        transition: "0.4s ease",
+                                    }} variant="contained" onClick={() => setActiveGasTabId(prev => prev + 1)}>Next</Button>
+
+                                </React.Fragment>
+                            )}
+
+                            {activeGasTabId === 1 && (
+                                <React.Fragment><Grid item xs={6} lg={12}>
                                     <TextField style={{
                                         margin: "20px",
                                         width: "300px"
-                                    }} required id="outlined-basic" label="Units of electricity purchased from grid (in kWH)" variant="outlined"
+                                    }} required id="outlined-basic" label="Diesel used in generators (in litres)" variant="outlined"
                                         onChange={(e) => {
-                                            setElectricty(e.target.value)
+                                            setGeneratorDiesel(e.target.value)
                                         }} />
 
                                     <TextField style={{
                                         margin: "20px",
                                         width: "300px"
-                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={electricity * 0.92}
+                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={generatorDiesel * 2.6391}
                                     />
                                 </Grid>
-                                <Button className="calculate-btn" style={{
-                                    width: "300px",
-                                    textAlign: "center",
-                                    fontFamily: "montserrat",
-                                    width: "250px",
-                                    marginLeft: "0px",
-                                    marginTop: "20px",
-                                    marginBottom: "20px",
-                                    background: "white",
-                                    color: "#008000",
-                                    boxShadow: "none",
-                                    border: "1px solid #008000",
-                                    borderRadius: "0px",
-                                    transition: "0.4s ease",
-                                }} variant="contained" onClick={() => setActiveGasTabId(prev => prev + 1)}>Next</Button>
+                                    <Button className="calculate-btn" style={{
+                                        width: "300px",
+                                        textAlign: "center",
+                                        fontFamily: "montserrat",
+                                        width: "250px",
+                                        marginLeft: "0px",
+                                        marginTop: "20px",
+                                        marginBottom: "20px",
+                                        background: "white",
+                                        color: "#008000",
+                                        boxShadow: "none",
+                                        border: "1px solid #008000",
+                                        borderRadius: "0px",
+                                        transition: "0.4s ease",
+                                    }} variant="contained" onClick={() => setActiveGasTabId(prev => prev + 1)}>Next</Button>
+                                </React.Fragment>)}
 
-                            </React.Fragment>
-                        )}
+                            {activeGasTabId === 2 && (
+                                <React.Fragment> <Grid item xs={6} lg={12}>
+                                    <TextField style={{
+                                        margin: "20px",
+                                        width: "300px"
+                                    }} required id="outlined-basic" label="Petrol used (in litres)" variant="outlined"
+                                        onChange={(e) => {
+                                            setPetrol(e.target.value)
+                                        }} />
 
-                        {activeGasTabId === 1 && (
-                            <React.Fragment><Grid item xs={6} lg={12}>
-                                <TextField style={{
-                                    margin: "20px",
-                                    width: "300px"
-                                }} required id="outlined-basic" label="Diesel used in generators (in litres)" variant="outlined"
-                                    onChange={(e) => {
-                                        setGeneratorDiesel(e.target.value)
-                                    }} />
+                                    <TextField style={{
+                                        margin: "20px",
+                                        width: "300px"
+                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={petrol * 2.3035}
+                                    />
+                                </Grid>
+                                    <Button className="calculate-btn" style={{
+                                        width: "300px",
+                                        textAlign: "center",
+                                        fontFamily: "montserrat",
+                                        width: "250px",
+                                        marginLeft: "0px",
+                                        marginTop: "20px",
+                                        marginBottom: "20px",
+                                        background: "white",
+                                        color: "#008000",
+                                        boxShadow: "none",
+                                        border: "1px solid #008000",
+                                        borderRadius: "0px",
+                                        transition: "0.4s ease",
+                                    }} variant="contained" onClick={() => {
+                                        setActiveGasTabId(prev => -1)
+                                        setGas(generatorDiesel * 2.6391 + electricity * 0.92 + petrol * 2.3035)
+                                    }}>Calculate</Button>
+                                </React.Fragment>)}
 
-                                <TextField style={{
-                                    margin: "20px",
-                                    width: "300px"
-                                }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={generatorDiesel * 2.6391}
-                                />
-                            </Grid>
-                                <Button className="calculate-btn" style={{
-                                    width: "300px",
-                                    textAlign: "center",
-                                    fontFamily: "montserrat",
-                                    width: "250px",
-                                    marginLeft: "0px",
-                                    marginTop: "20px",
-                                    marginBottom: "20px",
-                                    background: "white",
-                                    color: "#008000",
-                                    boxShadow: "none",
-                                    border: "1px solid #008000",
-                                    borderRadius: "0px",
-                                    transition: "0.4s ease",
-                                }} variant="contained" onClick={() => setActiveGasTabId(prev => prev + 1)}>Next</Button>
-                            </React.Fragment>)}
-
-                        {activeGasTabId === 2 && (
-                            <React.Fragment> <Grid item xs={6} lg={12}>
-                                <TextField style={{
-                                    margin: "20px",
-                                    width: "300px"
-                                }} required id="outlined-basic" label="Petrol used (in litres)" variant="outlined"
-                                    onChange={(e) => {
-                                        setPetrol(e.target.value)
-                                    }} />
-
-                                <TextField style={{
-                                    margin: "20px",
-                                    width: "300px"
-                                }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={petrol * 2.3035}
-                                />
-                            </Grid>
-                                <Button className="calculate-btn" style={{
-                                    width: "300px",
-                                    textAlign: "center",
-                                    fontFamily: "montserrat",
-                                    width: "250px",
-                                    marginLeft: "0px",
-                                    marginTop: "20px",
-                                    marginBottom: "20px",
-                                    background: "white",
-                                    color: "#008000",
-                                    boxShadow: "none",
-                                    border: "1px solid #008000",
-                                    borderRadius: "0px",
-                                    transition: "0.4s ease",
-                                }} variant="contained" onClick={() => {
-                                    setActiveGasTabId(prev => -1)
-                                    setGas(generatorDiesel * 2.6391 + electricity * 0.92 + petrol * 2.3035)
-                                }}>Calculate</Button>
-                            </React.Fragment>)}
-
-                        {activeGasTabId === -1 && (
-                            <React.Fragment>
-                                <TextField style={{
-                                    margin: "20px",
-                                    width: "200px"
-                                }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={gas}
-                                />
-                            </React.Fragment>
-                        )}
+                            {activeGasTabId === -1 && (
+                                <React.Fragment>
+                                    <TextField style={{
+                                        margin: "20px",
+                                        width: "200px"
+                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={gas}
+                                    />
+                                </React.Fragment>
+                            )}
 
 
-                        {/* <Grid item xs={6}>
+                            {/* <Grid item xs={6}>
                                 <Button className="calculate-btn" style={{
                                     width: "300px",
                                     textAlign: "center"
@@ -268,10 +284,10 @@ const Lca2 = () => {
                             <Grid item xs={12} style={{
                                 textAlign: "center"
                             }}>
-                                
+
                                 <h3 style={{
-                            margin: "10px"
-                        }}> Embodied Carbon in Construction Materials</h3>
+                                    margin: "10px"
+                                }}> Embodied Carbon in Construction Materials</h3>
 
                             </Grid>
                             <Tabs
@@ -396,7 +412,7 @@ const Lca2 = () => {
                                     <TextField style={{
                                         margin: "20px",
                                         width: "300px",
-                                        
+
                                     }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={materialEmission}
                                     />
                                 </React.Fragment>
@@ -406,211 +422,214 @@ const Lca2 = () => {
 
 
 
-                    </div>
+                        </div>
 
 
 
 
 
-                    <div style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignContent: 'center',
-                        alignItems: 'center',
-                        border: "1px solid #008000",
-                        margin: "20px",
-                        padding: "20px",
-                        textAlign: "center"
-                    }}>
                         <div style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignContent: 'center',
+                            alignItems: 'center',
+                            border: "1px solid #008000",
+                            margin: "20px",
+                            padding: "20px",
                             textAlign: "center"
-                        }}><Grid item xs={12}>
-                            
-                                <h3 style={{
-                            margin: "10px"
-                        }}>Vegetation Removed</h3>
-
-                        </Grid>
-
-                            <Grid item xs={12} style={{
+                        }}>
+                            <div style={{
                                 textAlign: "center"
-                            }}>
-                                <TextField style={{
+                            }}><Grid item xs={12}>
+
+                                    <h3 style={{
+                                        margin: "10px"
+                                    }}>Vegetation Removed</h3>
+
+                                </Grid>
+
+                                <Grid item xs={12} style={{
+                                    textAlign: "center"
+                                }}>
+                                    <TextField style={{
+                                        width: "100%",
+
+                                    }} required id="outlined-basic" label="Biomass used as fuel wood" variant="outlined" value={biomass}
+                                        onChange={(e) => {
+                                            setBiomass(e.target.value)
+                                        }} />
+                                </Grid>
+
+                                <Grid item xs={12} style={{
                                     width: "100%",
-                           
-                                }} required id="outlined-basic" label="Biomass used as fuel wood" variant="outlined" value={biomass}
-                                    onChange={(e) => {
-                                        setBiomass(e.target.value)
-                                    }} />
+                                    textAlign: "center"
+                                }}>
+                                    <Button className="calculate-btn" style={{
+                                        width: "300px",
+                                        textAlign: "center",
+                                        fontFamily: "montserrat",
+                                        width: "300px",
+                                        marginLeft: "0px",
+                                        marginTop: "20px",
+                                        marginBottom: "20px",
+                                        background: "white",
+                                        color: "#008000",
+                                        boxShadow: "none",
+                                        border: "1px solid #008000",
+                                        borderRadius: "0px",
+                                        transition: "0.4s ease",
+                                        height: "50px"
+                                    }} variant="contained" onClick={() => setBiomassEmission(biomass * 1.8)}>Emissions</Button>
+
+                                    <TextField style={{
+                                        margin: "20px",
+                                        width: "300px"
+                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={biomassEmission}
+                                    />
+                                </Grid>
+
+                                <Grid item xs={12}>
+                                    <Button className="calculate-btn" style={{
+                                        width: "300px",
+                                        textAlign: "center",
+                                        fontFamily: "montserrat",
+                                        width: "300px",
+                                        marginLeft: "0px",
+                                        marginTop: "20px",
+                                        marginBottom: "20px",
+                                        background: "white",
+                                        color: "#008000",
+                                        boxShadow: "none",
+                                        border: "1px solid #008000",
+                                        borderRadius: "0px",
+                                        transition: "0.4s ease",
+                                        height: "55px"
+                                    }} variant="contained" onClick={() => setTotalCPE(biomassEmission + materialEmission + gas)}>Total Emissions in Construction Phase</Button>
+
+                                    <TextField style={{
+                                        margin: "20px",
+                                        width: "300px"
+                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={totalCPE}
+                                    />
+                                </Grid></div>
+
+
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        {/* </div> */}
+                        <div className='main-content' style={{
+                            justifyContent: 'center',
+                            alignContent: 'center',
+                            alignItems: 'center',
+
+                        }}
+                        >
+                            <Grid item xs={12} lg={12}>
+
+                                <h1 style={{
+                                    marginTop: "30px"
+                                }}>Operation Phase</h1>
+
+
                             </Grid>
 
-                            <Grid item xs={12} style={{
-                                width: "100%",
-                                textAlign: "center"
-                            }}>
-                                <Button className="calculate-btn" style={{
-                                    width: "300px",
-                                    textAlign: "center",
-                                    fontFamily: "montserrat",
-                                    width: "300px",
-                                    marginLeft: "0px",
-                                    marginTop: "20px",
-                                    marginBottom: "20px",
-                                    background: "white",
-                                    color: "#008000",
-                                    boxShadow: "none",
-                                    border: "1px solid #008000",
-                                    borderRadius: "0px",
-                                    transition: "0.4s ease",
-                                    height: "50px"
-                                }} variant="contained" onClick={() => setBiomassEmission(biomass * 1.8)}>Emissions</Button>
-
-                                <TextField style={{
-                                    margin: "20px",
-                                    width: "300px"
-                                }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={biomassEmission}
-                                />
-                            </Grid>
-
-                            <Grid item xs={12}>
-                                <Button className="calculate-btn" style={{
-                                    width: "300px",
-                                    textAlign: "center",
-                                    fontFamily: "montserrat",
-                                    width: "300px",
-                                    marginLeft: "0px",
-                                    marginTop: "20px",
-                                    marginBottom: "20px",
-                                    background: "white",
-                                    color: "#008000",
-                                    boxShadow: "none",
-                                    border: "1px solid #008000",
-                                    borderRadius: "0px",
-                                    transition: "0.4s ease",
-                                    height: "55px"
-                                }} variant="contained" onClick={() => setTotalCPE(biomassEmission + materialEmission + gas)}>Total Emissions in Construction Phase</Button>
-
-                                <TextField style={{
-                                    margin: "20px",
-                                    width: "300px"
-                                }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={totalCPE}
-                                />
-                            </Grid></div>
-
-
-
-                    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </div>
-                <div className='main-content' style={{
-                    justifyContent: 'center',
-                    alignContent: 'center',
-                    alignItems: 'center',
-                    
-                }}
-                > 
-                <Grid item xs={12} lg={12}>
-                            
-                            <h1 style={{
-                                marginTop: "30px"
-                            }}>Operation Phase</h1>
-
-
-                    </Grid>
-
-                    <div style={{
-                        border: "1px solid #008000",
-                        margin: "20px",
-                        padding: "20px",
-                        textAlign: "center",
-
-                    }}>
-                <Grid container
-                    className="form-grid"
-                    xs={12}
-                    direction={"column"} spacing={5}
-                    justifyContent="center"
-                    
-                    
-                    >
-
-
-
-
-                        <Grid item xs={12}>
-                            <TextField style={{
-                                width: "500px"
-                            }} required id="outlined-basic" label="Length of road (in miles)" variant="outlined" value={distance}
-                                onChange={(e) => {
-                                    setDistance(e.target.value)
-                                }} />
-                        </Grid>
-
-                        <Grid item xs={12}>
-                            <TextField style={{
-                                width: "500px"
-                            }} required id="outlined-basic" label="Average Daily Traffic" variant="outlined" value={adt}
-                                onChange={(e) => {
-                                    setAdt(e.target.value)
-                                }} />
-                        </Grid>
-
-                        <Grid item xs={12}>
-                            <TextField style={{
-                                width: "500px"
-                            }} required id="outlined-basic" label="Days" variant="outlined" value={days}
-                                onChange={(e) => {
-                                    setDays(e.target.value)
-                                }} />
-                        </Grid>
-
-                        <Grid item xs={12}>
-                            <Button className="calculate-btn" style={{
-                                width: "300px",
-                                textAlign: "center",
-                                fontFamily: "montserrat",
-                                width: "300px",
-                                marginLeft: "0px",
-                                marginTop: "20px",
-                                marginBottom: "20px",
-                                background: "white",
-                                color: "#008000",
-                                boxShadow: "none",
+                            <div style={{
                                 border: "1px solid #008000",
-                                borderRadius: "0px",
-                                transition: "0.4s ease",
-                                height: "55px"
-                            }} variant="contained" onClick={() => setOperation(176.45 * distance * adt / 1000)}>Total Emissions in Operation Phase</Button>
-
-                            <TextField style={{
                                 margin: "20px",
-                                width: "300px"
-                            }} disabled={true} id="outlined-basic" label="Emissions (MT CO2 emissions/year)" variant="outlined" value={operation}
-                            />
-                        </Grid>
+                                padding: "20px",
+                                textAlign: "center",
 
-                    </Grid>
-                    </div>
-                    </div>
+                            }}>
+                                <Grid container
+                                    className="form-grid"
+                                    xs={12}
+                                    direction={"column"} spacing={5}
+                                    justifyContent="center"
+
+
+                                >
+
+
+
+
+                                    <Grid item xs={12}>
+                                        <TextField style={{
+                                            width: "500px"
+                                        }} required id="outlined-basic" label="Length of road (in miles)" variant="outlined" value={distance}
+                                            onChange={(e) => {
+                                                setDistance(e.target.value)
+                                            }} />
+                                    </Grid>
+
+                                    <Grid item xs={12}>
+                                        <TextField style={{
+                                            width: "500px"
+                                        }} required id="outlined-basic" label="Average Daily Traffic" variant="outlined" value={adt}
+                                            onChange={(e) => {
+                                                setAdt(e.target.value)
+                                            }} />
+                                    </Grid>
+
+                                    <Grid item xs={12}>
+                                        <TextField style={{
+                                            width: "500px"
+                                        }} required id="outlined-basic" label="Days" variant="outlined" value={days}
+                                            onChange={(e) => {
+                                                setDays(e.target.value)
+                                            }} />
+                                    </Grid>
+
+                                    <Grid item xs={12}>
+                                        <Button className="calculate-btn" style={{
+                                            width: "300px",
+                                            textAlign: "center",
+                                            fontFamily: "montserrat",
+                                            width: "300px",
+                                            marginLeft: "0px",
+                                            marginTop: "20px",
+                                            marginBottom: "20px",
+                                            background: "white",
+                                            color: "#008000",
+                                            boxShadow: "none",
+                                            border: "1px solid #008000",
+                                            borderRadius: "0px",
+                                            transition: "0.4s ease",
+                                            height: "55px"
+                                        }} variant="contained" onClick={() => setOperation(176.45 * distance * adt / 1000)}>Total Emissions in Operation Phase</Button>
+
+                                        <TextField style={{
+                                            margin: "20px",
+                                            width: "300px"
+                                        }} disabled={true} id="outlined-basic" label="Emissions (MT CO2 emissions/year)" variant="outlined" value={operation}
+                                        />
+                                    </Grid>
+
+                                </Grid>
+                            </div>
+                        </div>
+                    </Paper>
+                </div>
+
 
             </div>
-
+            {/* </div > */}
         </>
     )
 }
