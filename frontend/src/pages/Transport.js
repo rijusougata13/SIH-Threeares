@@ -57,7 +57,7 @@ const Transport = () => {
     else if (value === 'AIR')
       emissions_rate = 1.404
 
-    await axios.get(`http://localhost:5000/distance?origin=${origin}&destination=${dest}`).then((response) => {
+    await axios.get(`https://distanceto.herokuapp.com/distance?pin1=${origin}&pin2=${dest}`).then((response) => {
       // setDist(parseInt(response.data))
       // 
       // console.log('axios', response.data)
