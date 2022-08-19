@@ -259,11 +259,19 @@ const Lca2 = () => {
 
 
                         </div>
-                        <div>
-                            <Grid item xs={12}>
-                                <Typography align="center" variant="h6" gutterBottom>
-                                    Embodied Carbon in Construction Materials
-                                </Typography>
+                        <div style={{
+                            border: "1px solid #008000",
+                            margin: "20px",
+                            padding: "20px",
+                            textAlign: "center"
+                        }}>
+                            <Grid item xs={12} style={{
+                                textAlign: "center"
+                            }}>
+                                
+                                <h3 style={{
+                            margin: "10px"
+                        }}> Embodied Carbon in Construction Materials</h3>
 
                             </Grid>
                             <Tabs
@@ -287,9 +295,20 @@ const Lca2 = () => {
                                         emission={emission1}
                                         setEmission={setEmission1}
                                     />
-                                    <Button className="next-btn" style={{
+                                    <Button className="next-btn calculate-btn" style={{
                                         width: "300px",
-                                        textAlign: "center"
+                                        textAlign: "center",
+                                        fontFamily: "montserrat",
+                                        width: "150px",
+                                        marginLeft: "0px",
+                                        marginTop: "20px",
+                                        marginBottom: "20px",
+                                        background: "white",
+                                        color: "#008000",
+                                        boxShadow: "none",
+                                        border: "1px solid #008000",
+                                        borderRadius: "0px",
+                                        transition: "0.4s ease"
                                     }} variant="contained"
                                         onClick={() => setActiveTabId(prev => prev + 1)}> Next</Button>
                                 </React.Fragment>
@@ -301,9 +320,20 @@ const Lca2 = () => {
                                         emission={emission2}
                                         setEmission={setEmission2}
                                     />
-                                    <Button className="next-btn" style={{
+                                    <Button className="calculate-btn next-btn" style={{
                                         width: "300px",
-                                        textAlign: "center"
+                                        textAlign: "center",
+                                        fontFamily: "montserrat",
+                                        width: "150px",
+                                        marginLeft: "0px",
+                                        marginTop: "20px",
+                                        marginBottom: "20px",
+                                        background: "white",
+                                        color: "#008000",
+                                        boxShadow: "none",
+                                        border: "1px solid #008000",
+                                        borderRadius: "0px",
+                                        transition: "0.4s ease"
                                     }} variant="contained"
                                         onClick={() => setActiveTabId(prev => prev + 1)}> Next</Button>
                                 </React.Fragment>
@@ -315,9 +345,20 @@ const Lca2 = () => {
                                         emission={emission3}
                                         setEmission={setEmission3}
                                     />
-                                    <Button className="next-btn" style={{
+                                    <Button className="calculate-btn next-btn" style={{
                                         width: "300px",
-                                        textAlign: "center"
+                                        textAlign: "center",
+                                        fontFamily: "montserrat",
+                                        width: "150px",
+                                        marginLeft: "0px",
+                                        marginTop: "20px",
+                                        marginBottom: "20px",
+                                        background: "white",
+                                        color: "#008000",
+                                        boxShadow: "none",
+                                        border: "1px solid #008000",
+                                        borderRadius: "0px",
+                                        transition: "0.4s ease"
                                     }} variant="contained"
                                         onClick={() => setActiveTabId(prev => prev + 1)}> Next</Button>
                                 </React.Fragment>
@@ -329,9 +370,20 @@ const Lca2 = () => {
                                         emission={emission4}
                                         setEmission={setEmission4}
                                     />
-                                    <Button className="next-btn" style={{
+                                    <Button className="next-btn calculate-btn" style={{
                                         width: "300px",
-                                        textAlign: "center"
+                                        textAlign: "center",
+                                        fontFamily: "montserrat",
+                                        width: "150px",
+                                        marginLeft: "0px",
+                                        marginTop: "20px",
+                                        marginBottom: "20px",
+                                        background: "white",
+                                        color: "#008000",
+                                        boxShadow: "none",
+                                        border: "1px solid #008000",
+                                        borderRadius: "0px",
+                                        transition: "0.4s ease"
                                     }} variant="contained"
                                         onClick={() => {
                                             setActiveTabId(prev => -1)
@@ -343,7 +395,8 @@ const Lca2 = () => {
                                 <React.Fragment>
                                     <TextField style={{
                                         margin: "20px",
-                                        width: "300px"
+                                        width: "300px",
+                                        
                                     }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={materialEmission}
                                     />
                                 </React.Fragment>
@@ -363,27 +416,53 @@ const Lca2 = () => {
                         display: 'flex',
                         justifyContent: 'center',
                         alignContent: 'center',
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        border: "1px solid #008000",
+                        margin: "20px",
+                        padding: "20px",
+                        textAlign: "center"
                     }}>
-                        <div><Grid item xs={12}>
-                            <Typography align="center" variant="h6" gutterBottom>
-                                Vegetation Removed
-                            </Typography>
+                        <div style={{
+                            textAlign: "center"
+                        }}><Grid item xs={12}>
+                            
+                                <h3 style={{
+                            margin: "10px"
+                        }}>Vegetation Removed</h3>
+
                         </Grid>
 
-                            <Grid item xs={12}>
+                            <Grid item xs={12} style={{
+                                textAlign: "center"
+                            }}>
                                 <TextField style={{
-                                    width: "100%"
+                                    width: "100%",
+                           
                                 }} required id="outlined-basic" label="Biomass used as fuel wood" variant="outlined" value={biomass}
                                     onChange={(e) => {
                                         setBiomass(e.target.value)
                                     }} />
                             </Grid>
 
-                            <Grid item xs={12}>
+                            <Grid item xs={12} style={{
+                                width: "100%",
+                                textAlign: "center"
+                            }}>
                                 <Button className="calculate-btn" style={{
                                     width: "300px",
-                                    textAlign: "center"
+                                    textAlign: "center",
+                                    fontFamily: "montserrat",
+                                    width: "300px",
+                                    marginLeft: "0px",
+                                    marginTop: "20px",
+                                    marginBottom: "20px",
+                                    background: "white",
+                                    color: "#008000",
+                                    boxShadow: "none",
+                                    border: "1px solid #008000",
+                                    borderRadius: "0px",
+                                    transition: "0.4s ease",
+                                    height: "50px"
                                 }} variant="contained" onClick={() => setBiomassEmission(biomass * 1.8)}>Emissions</Button>
 
                                 <TextField style={{
@@ -396,7 +475,19 @@ const Lca2 = () => {
                             <Grid item xs={12}>
                                 <Button className="calculate-btn" style={{
                                     width: "300px",
-                                    textAlign: "center"
+                                    textAlign: "center",
+                                    fontFamily: "montserrat",
+                                    width: "300px",
+                                    marginLeft: "0px",
+                                    marginTop: "20px",
+                                    marginBottom: "20px",
+                                    background: "white",
+                                    color: "#008000",
+                                    boxShadow: "none",
+                                    border: "1px solid #008000",
+                                    borderRadius: "0px",
+                                    transition: "0.4s ease",
+                                    height: "55px"
                                 }} variant="contained" onClick={() => setTotalCPE(biomassEmission + materialEmission + gas)}>Total Emissions in Construction Phase</Button>
 
                                 <TextField style={{
@@ -430,25 +521,41 @@ const Lca2 = () => {
                 <div className='main-content' style={{
                     justifyContent: 'center',
                     alignContent: 'center',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    
                 }}
-                > <Grid container
+                > 
+                <Grid item xs={12} lg={12}>
+                            
+                            <h1 style={{
+                                marginTop: "30px"
+                            }}>Operation Phase</h1>
+
+
+                    </Grid>
+
+                    <div style={{
+                        border: "1px solid #008000",
+                        margin: "20px",
+                        padding: "20px",
+                        textAlign: "center",
+
+                    }}>
+                <Grid container
                     className="form-grid"
-                    xs={12} lg={6}
+                    xs={12}
                     direction={"column"} spacing={5}
-                    justifyContent="center">
+                    justifyContent="center"
+                    
+                    
+                    >
 
 
-                        <Grid item xs={12}>
-                            <Typography align="left" variant="h4" gutterBottom>
-                                Operation Phase
-                            </Typography>
 
-                        </Grid>
 
                         <Grid item xs={12}>
                             <TextField style={{
-                                width: "100%"
+                                width: "500px"
                             }} required id="outlined-basic" label="Length of road (in miles)" variant="outlined" value={distance}
                                 onChange={(e) => {
                                     setDistance(e.target.value)
@@ -457,7 +564,7 @@ const Lca2 = () => {
 
                         <Grid item xs={12}>
                             <TextField style={{
-                                width: "100%"
+                                width: "500px"
                             }} required id="outlined-basic" label="Average Daily Traffic" variant="outlined" value={adt}
                                 onChange={(e) => {
                                     setAdt(e.target.value)
@@ -466,7 +573,7 @@ const Lca2 = () => {
 
                         <Grid item xs={12}>
                             <TextField style={{
-                                width: "100%"
+                                width: "500px"
                             }} required id="outlined-basic" label="Days" variant="outlined" value={days}
                                 onChange={(e) => {
                                     setDays(e.target.value)
@@ -476,7 +583,19 @@ const Lca2 = () => {
                         <Grid item xs={12}>
                             <Button className="calculate-btn" style={{
                                 width: "300px",
-                                textAlign: "center"
+                                textAlign: "center",
+                                fontFamily: "montserrat",
+                                width: "300px",
+                                marginLeft: "0px",
+                                marginTop: "20px",
+                                marginBottom: "20px",
+                                background: "white",
+                                color: "#008000",
+                                boxShadow: "none",
+                                border: "1px solid #008000",
+                                borderRadius: "0px",
+                                transition: "0.4s ease",
+                                height: "55px"
                             }} variant="contained" onClick={() => setOperation(176.45 * distance * adt / 1000)}>Total Emissions in Operation Phase</Button>
 
                             <TextField style={{
@@ -486,7 +605,9 @@ const Lca2 = () => {
                             />
                         </Grid>
 
-                    </Grid></div>
+                    </Grid>
+                    </div>
+                    </div>
 
             </div>
 
