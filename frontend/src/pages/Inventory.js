@@ -1,9 +1,6 @@
 import React from 'react';
 import { AppBar, Checkbox, Grid, InputLabel, MenuItem, Paper, Select, Toolbar, Typography } from '@mui/material'
 import { TextField, Button, FormControlLabel, RadioGroup, FormLabel, FormControl, Radio, CssBaseline } from '@mui/material'
-import InventoryTransport from 'src/components/Inventory/Transport';
-import MaterialInventory from 'src/components/Inventory/Material';
-import EquipmentInventory from 'src/components/Inventory/Equipment';
 import ResponsiveAppBar from 'src/components/ResponsiveAppBar';
 
 import TransportGHG from 'src/components/Inventory/TansportGHG';
