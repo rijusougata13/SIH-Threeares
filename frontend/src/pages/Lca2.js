@@ -79,7 +79,7 @@ const Lca2 = () => {
             </div>
             <div className="main-container">
                 <SplitSection
-                    heading="LCA Estimator Calculator"
+                    heading="LCA Estimator"
                     description="The ThreeAres Material Estimator allows the user to generate emission reports that estimate the carbon dioxide emissions associated with materials used in highway constructions projects. Materials are classified according to MDOT's Standard Specifications for Construction's Division 9  material classifications. The tool estimates cradle to gate emissions and can be used to differentiate impacts of using composite materials that make up the roadway."
                     image="https://img.freepik.com/free-vector/calculator-concept-illustration_114360-1239.jpg"
                     routepath=""
