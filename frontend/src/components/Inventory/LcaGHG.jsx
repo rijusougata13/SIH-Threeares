@@ -52,20 +52,24 @@ export default function MaterialGHG(props) {
               fontFamily: "Montserrat",
               marginTop: "20px"
               
-            }}><p>Formula</p> 
-            If the emission factor is in units of pounds per hp-hr power output or pounds per MMBtu heat input: Actual Emissions (tpy) = Emission Rate [lb/hr] x Actual Operating Hours [hr] x 0.005 [ton/lb] x ((100 – Control Efficiency)/100)
+            }}><p>Formulae</p> 
+            <p style={{color: "#555555"}}>1. On-Site Electricity and Fuel Usage: 
+                Emissions(kg CO2) = [Units of electricity purchased from grid (in kWH) * 0.92] + [Diesel used in generators (in litres) * 2.6391] + [Petrol used (in litres) * 2.3035]</p>
+            <p style={{color: "#555555"}}>2. Embodied Carbon in Construction Materials: Emissions from materials such as asphalt, concrete, etc. used in 4 layers of road - subgrade/road bed, sub-base course, base course and surface course.</p> 
+            <p style={{color: "#555555"}}>3. Vegetation removed: Emissions(kg CO2) = Biomass(kg) * 1.8 </p>
+            <p style={{color: "#555555"}}>4. Emissions in Operation Phase(MT CO2) per year = 176.45 * Length of road(in miles) * Average Daily Traffic/1000</p>
             {/* <p style={{marginTop: "10px"}}>References</p>
             IPCC Climate Change, 2007
         IPCC. Climate Change 2007: Mitigation of Climate Change. Contribution of Working Group III to the Fourth Assessment Report of the Intergovernmental Panel on Climate Change B. Metz, O.R. Davidson, P.R. Bosch, R. Dave, L.A. Meyer (eds). Cambridge University Press, Cambridge, United Kingdom and New York, NY, USA. 2007.
         Google Scholar */}
             <p style={{marginTop: "10px"}}>Research References</p>
-            <a style={{marginRight: "10px"}} href="https://equipmentcalculator.org/en/era-equipment-co2-calculator">Link 1</a>
-            <a style={{marginRight: "10px"}} href="https://www.researchgate.net/figure/Equipment-used-for-constructing-the-road-cases-1_tbl4_332543214">Link 2</a>
-            <a style={{marginRight: "10px"}} href="https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references">Link 3</a>
+            <a style={{marginRight: "10px"}} href="https://www.adb.org/sites/default/files/publication/28555/estimating-carbon-footprints-road-projects.pdf">Link 1</a>
+            <a style={{marginRight: "10px"}} href="https://doi.org/10.3141/2366-01">Link 2</a>
+            <a style={{marginRight: "10px"}} href="https://www.mdpi.com/2071-1050/7/12/15838">Link 3</a>
             {/* <a style={{marginRight: "10px"}} href="#">Link 4</a> */}
 
             <p style={{marginTop: "10px"}}>Datasets</p>
-        <a href="https://docs.google.com/spreadsheets/d/1E0OOOqrq5UKpSEDr-VVEOAd_9Jqxhuhs3VHd3JV-U_M/edit#gid=0" target="_blank"> Dataset Link </a>
+        <a href="https://docs.google.com/spreadsheets/d/1XDfnp0NjRDuVJ7zlAun5KXuws6Cp9z0yBE0Rwqo7DBA/edit#gid=0" target="_blank"> Dataset Link </a>
             </p>
             
             {props.routepath != null && <Button id="calculate-btn" style={{

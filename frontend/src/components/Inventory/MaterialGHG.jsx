@@ -58,7 +58,7 @@ export default function MaterialGHG(props) {
             IPCC Climate Change, 2007
         IPCC. Climate Change 2007: Mitigation of Climate Change. Contribution of Working Group III to the Fourth Assessment Report of the Intergovernmental Panel on Climate Change B. Metz, O.R. Davidson, P.R. Bosch, R. Dave, L.A. Meyer (eds). Cambridge University Press, Cambridge, United Kingdom and New York, NY, USA. 2007.
         Google Scholar
-            <p style={{marginTop: "10px"}}>Resesarch References</p>
+            <p style={{marginTop: "10px"}}>Research References</p>
             
             <a style={{marginRight: "10px"}} href="https://wsdot.wa.gov/publications/manuals/fulltext/M41-10/Division9.pdf">Link 1</a>
             <a style={{marginRight: "10px"}} href="https://www.sciencedirect.com/science/article/pii/S2352146516307104">Link 2</a>

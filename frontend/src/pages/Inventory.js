@@ -10,6 +10,7 @@ import TransportGHG from 'src/components/Inventory/TansportGHG';
 import MaterialGHG from 'src/components/Inventory/MaterialGHG';
 import EquipmentGHG from 'src/components/Inventory/EquipmentGHG';
 import SplitSection from 'src/components/SplitSection';
+import LcaGHG from 'src/components/Inventory/LcaGHG';
 
 const Inventory = () => {
     return (
@@ -36,6 +37,12 @@ const Inventory = () => {
                 <EquipmentGHG
                     heading="Equipment GHG Estimator"
                     description="The ERA Equipment CO2 Calculator is a tool to estimate the carbon footprint of construction equipment over its entire life cycle. It is applicable to all types of construction equipment, from mini excavators to wheel loaders and from generators to boom lifts (only hand tools are excluded). The calculator estimates the carbon footprint of a piece of equipment per hour of use. Expressing the results per hour of (active) use enables comparisons across different types of equipment and over a wide range of ownership scenarios. The ERA Equipment CO2 Calculator can be used to evaluate a single ownership period of a piece of equipment. The calculator’s results can for instance be used to: Investigate which part of the life cycle has the largest contribution to the carbon footprint of equipment; Compare different equipment use scenarios; Study the effects of changes to a baseline use scenario, such as measures to reduce the footprint; Evaluate the effects of alternative fuel consumption."
+                    image="https://www.construction.mtu.edu/cass_reports/webpage/image/method.png"
+                />
+
+                <LcaGHG
+                    heading="LCA Estimator"
+                    description="The LCA Estimator is a carbon footprint framework, to estimate total CO2 emissions during the full life cycle of any road in India. As a first step toward developing this framework, it was recognized that understanding all possible sources of direct and indirect CO2 emissions during the full life period of any road is vital. The possible sources of CO2 emissions (direct and indirect) during any road cycle are taken into consideration here. Two phases of any road are taken here: Road Construction Phase and Operation Phase. In Road Construction Phase, there are mainly 3 sources of CO2 emission - On-Site Electricity and Fuel Usage, Embodied Carbon in Construction Materials, and Carbon Loss from Vegetation Removed. GHG emissions can be calculated from the units of electricity purchased from grid during the construction, and from litres of petrol and diesel used in generators during the construction. These fossil fuels used during construction have life cycle CO2 emissions or embodied CO2 emissions released during the production and distribution of these fossil fuels, whose production also involves raw fuel extraction, transportation, processing, and distribution stages, all of which emit CO2. Further, any road consists of 4 layers - subgrade/road bed, sub-base course, base course and surface course. Different materials such as asphalt, concrete,etc. are used in the construction of these 4 layers. Hence, the respective emissions from different materials used during construction can be calculated using this tool. Lastly, in this phase, amount of vegetation removed is taken as the amount of biomass removed which is used as fuel wood, from which the GHG emissions can be calculated. All these emissions are added up to get the total emissions released during the Construction Phase. Next up is the Operation Phase, which mainly involves the GHG emissions released after the road is already built. Thus, the paramters taken here are the length of the road, the daily average traffic on the road, and the number of days the road is under operation. From these parameters, the total emissions are calculated in the operation phase per year."
                     image="https://www.construction.mtu.edu/cass_reports/webpage/image/method.png"
                 />
 
