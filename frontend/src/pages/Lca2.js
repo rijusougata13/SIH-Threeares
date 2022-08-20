@@ -12,8 +12,6 @@ import LcaSelect from './LcaSelect';
 import SplitSection from 'src/components/SplitSection';
 
 const Lca2 = () => {
-
-
     const [electricity, setElectricty] = useState(0)
     const [emission1, setEmission1] = useState()
     const [emission2, setEmission2] = useState()
