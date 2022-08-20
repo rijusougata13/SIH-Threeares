@@ -222,13 +222,14 @@ const Material = () => {
                 container
                 className="form-grid"
                 xs={12}
+                sm={12}
                 lg={6}
-                direction={"column"}
-                spacing={5}
+                // direction={"column"}
+                // spacing={5}
                 justifyContent="center"
 
               >
-                <Grid item xs={12}
+                <Grid item xs={12} sm={12} lg={6}
 
                 >
                   <TextField

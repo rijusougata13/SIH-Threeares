@@ -15,7 +15,7 @@ function Item(props)
             heading={props.item.name}
             description={props.item.description}
             image={props.item.source}
-            routepath=""
+   
             height="90vh"
             border="30px solid white"
             />
