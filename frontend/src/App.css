@@ -4,6 +4,7 @@
     font-family: 'Montserrat', sans-serif;
     color: #008000;
     /* added new font */
+    scroll-behavior: smooth;
 }
 
 .App {
