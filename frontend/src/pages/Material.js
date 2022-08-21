@@ -305,12 +305,10 @@ const Material = () => {
       {chartDataEmission.length > 0 && (
         <>
           <div style={{
-
             margin: "20px",
           }}>
             <div style={{
-              // display: 'flex',
-              // flexDirection: `${matches ? 'row' : 'column'}`,
+
 
               padding: "10px",
               border: "1px solid #008000",
