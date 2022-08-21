@@ -77,7 +77,7 @@ const Lca2 = () => {
             </div>
             <div className="main-container">
                 <SplitSection
-                    heading="LCA Estimator Calculator"
+                    heading="LCA Estimator"
                     description="The ThreeAres Material Estimator allows the user to generate emission reports that estimate the carbon dioxide emissions associated with materials used in highway constructions projects. Materials are classified according to MDOT's Standard Specifications for Construction's Division 9  material classifications. The tool estimates cradle to gate emissions and can be used to differentiate impacts of using composite materials that make up the roadway."
                     image="https://img.freepik.com/free-vector/calculator-concept-illustration_114360-1239.jpg"
                     routepath=""
@@ -152,7 +152,7 @@ const Lca2 = () => {
                                         <TextField style={{
                                             margin: "20px",
                                             width: "300px"
-                                        }} required id="outlined-basic" label="Units of electricity purchased from grid (in kWH)" variant="outlined"
+                                        }} required id="outlined-basic" label="Units of electricity purchased from grid (in kWH)" variant="standard"
                                             onChange={(e) => {
                                                 setElectricty(e.target.value)
                                             }} />
@@ -160,7 +160,7 @@ const Lca2 = () => {
                                         <TextField style={{
                                             margin: "20px",
                                             width: "300px"
-                                        }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={electricity * 0.92}
+                                        }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="standard" value={electricity * 0.92}
                                         />
                                     </Grid>
                                     <Button className="calculate-btn" style={{
@@ -187,7 +187,7 @@ const Lca2 = () => {
                                     <TextField style={{
                                         margin: "20px",
                                         width: "300px"
-                                    }} required id="outlined-basic" label="Diesel used in generators (in litres)" variant="outlined"
+                                    }} required id="outlined-basic" label="Diesel used in generators (in litres)" variant="standard"
                                         onChange={(e) => {
                                             setGeneratorDiesel(e.target.value)
                                         }} />
@@ -195,7 +195,7 @@ const Lca2 = () => {
                                     <TextField style={{
                                         margin: "20px",
                                         width: "300px"
-                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={generatorDiesel * 2.6391}
+                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="standard" value={generatorDiesel * 2.6391}
                                     />
                                 </Grid>
                                     <Button className="calculate-btn" style={{
@@ -220,7 +220,7 @@ const Lca2 = () => {
                                     <TextField style={{
                                         margin: "20px",
                                         width: "300px"
-                                    }} required id="outlined-basic" label="Petrol used (in litres)" variant="outlined"
+                                    }} required id="outlined-basic" label="Petrol used (in litres)" variant="standard"
                                         onChange={(e) => {
                                             setPetrol(e.target.value)
                                         }} />
@@ -228,7 +228,7 @@ const Lca2 = () => {
                                     <TextField style={{
                                         margin: "20px",
                                         width: "300px"
-                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={petrol * 2.3035}
+                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="standard" value={petrol * 2.3035}
                                     />
                                 </Grid>
                                     <Button className="calculate-btn" style={{
@@ -256,7 +256,7 @@ const Lca2 = () => {
                                     <TextField style={{
                                         margin: "20px",
                                         width: "200px"
-                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={gas}
+                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="standard" value={gas}
                                     />
                                 </React.Fragment>
                             )}
@@ -411,7 +411,7 @@ const Lca2 = () => {
                                         margin: "20px",
                                         width: "300px",
 
-                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={materialEmission}
+                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="standard" value={materialEmission}
                                     />
                                 </React.Fragment>
                             )}
@@ -452,7 +452,7 @@ const Lca2 = () => {
                                     <TextField style={{
                                         width: "100%",
 
-                                    }} required id="outlined-basic" label="Biomass used as fuel wood" variant="outlined" value={biomass}
+                                    }} required id="outlined-basic" label="Biomass used as fuel wood" variant="standard" value={biomass}
                                         onChange={(e) => {
                                             setBiomass(e.target.value)
                                         }} />
@@ -482,7 +482,7 @@ const Lca2 = () => {
                                     <TextField style={{
                                         margin: "20px",
                                         width: "300px"
-                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={biomassEmission}
+                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="standard" value={biomassEmission}
                                     />
                                 </Grid>
 
@@ -507,7 +507,7 @@ const Lca2 = () => {
                                     <TextField style={{
                                         margin: "20px",
                                         width: "300px"
-                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={totalCPE}
+                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="standard" value={totalCPE}
                                     />
                                 </Grid></div>
 
@@ -570,7 +570,7 @@ const Lca2 = () => {
                                     <Grid item xs={12}>
                                         <TextField style={{
                                             width: "500px"
-                                        }} required id="outlined-basic" label="Length of road (in miles)" variant="outlined" value={distance}
+                                        }} required id="outlined-basic" label="Length of road (in miles)" variant="standard" value={distance}
                                             onChange={(e) => {
                                                 setDistance(e.target.value)
                                             }} />
@@ -579,7 +579,7 @@ const Lca2 = () => {
                                     <Grid item xs={12}>
                                         <TextField style={{
                                             width: "500px"
-                                        }} required id="outlined-basic" label="Average Daily Traffic" variant="outlined" value={adt}
+                                        }} required id="outlined-basic" label="Average Daily Traffic" variant="standard" value={adt}
                                             onChange={(e) => {
                                                 setAdt(e.target.value)
                                             }} />
@@ -588,7 +588,7 @@ const Lca2 = () => {
                                     <Grid item xs={12}>
                                         <TextField style={{
                                             width: "500px"
-                                        }} required id="outlined-basic" label="Days" variant="outlined" value={days}
+                                        }} required id="outlined-basic" label="Days" variant="standard" value={days}
                                             onChange={(e) => {
                                                 setDays(e.target.value)
                                             }} />
@@ -615,7 +615,7 @@ const Lca2 = () => {
                                         <TextField style={{
                                             margin: "20px",
                                             width: "300px"
-                                        }} disabled={true} id="outlined-basic" label="Emissions (MT CO2 emissions/year)" variant="outlined" value={operation}
+                                        }} disabled={true} id="outlined-basic" label="Emissions (MT CO2 emissions/year)" variant="standard" value={operation}
                                         />
                                     </Grid>
 

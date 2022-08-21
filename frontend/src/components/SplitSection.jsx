@@ -41,7 +41,7 @@ export default function SplitSection(props) {
               fontFamily: "Montserrat"
               
             }}>{props.description}</p>
-            {props.routepath != null && <Button id="calculate-btn" style={{
+            {props.routepath != null && <Button href="#calculate-btn" id="calculate-btn" style={{
               fontFamily: "montserrat",
               width: "150px",
               marginLeft: "0px",
