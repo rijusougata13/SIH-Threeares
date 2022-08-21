@@ -16,8 +16,11 @@ function Item(props)
             description={props.item.description}
             image={props.item.source}
    
-            height="90vh"
+            height="500px"
             border="30px solid white"
+            imageHeight="400px"
+            imageWidth="400px"
+            imagePadding="40px"
             />
 
         </Paper>

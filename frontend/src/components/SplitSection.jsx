@@ -18,10 +18,12 @@ export default function SplitSection(props) {
   return (
     <Box sx={{ 
         width: '100%',
-        height: props.height,
+        minHeight: props.height,
+        // maxHeight: '100vh'
+
         // marginTop: '40px'
         }}>
-      <Grid style={{height: '100%'}} container rowSpacing={1} columnSpacing={{ xs: 0, sm: 0, md: 0 }}>
+      <Grid style={{height: 'auto'}} container rowSpacing={1} columnSpacing={{ xs: 0, sm: 0, md: 0 }}>
         <Grid item xs={12} sm={12} md={6} lg={6}>
           <Item style={{
             height: "300px", 
@@ -59,18 +61,29 @@ export default function SplitSection(props) {
           </Item>
         </Grid>
         <Grid item 
-        sx={{ display: { xs: 'none', lg: 'block', xl: 'block', md: 'block' } }}
-        xs={0} sm={0} md={6} lg={6}>
+        sx={{ display: { xs: 'block', lg: 'block', xl: 'block', md: 'block' } }}
+        xs={12} sm={12} md={6} lg={6}>
           <Item style={{
-            height: "100%", 
-            backgroundImage: `url("${props.image}")`,
-            backgroundSize: "100% 100%",
-            backgroundRepeat: "round",
-            border: props.border,
+            height: props.height, 
+            // maxHeight: props.height,
+            // backgroundImage: `url("${props.image}")`,
+            // backgroundSize: "100% 100%",
+            // backgroundRepeat: "round",
+            // border: props.border,
+            border: "0px",
+            margin: "0px",
             borderRadius: "0px",
-            padding: '40px'
+            padding: props.imagePadding,
+
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center"
             }}>
-            {/* <img src={props.image} style={{height: "300px"}}></img> */}
+            <img src={props.image} style={{
+              height: props.imageHeight, 
+              width: props.imageWidth,
+              margin: "0px"
+            }}></img>
           </Item>
         </Grid>
       </Grid>
