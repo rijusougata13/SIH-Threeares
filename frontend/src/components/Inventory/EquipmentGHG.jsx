@@ -53,7 +53,8 @@ export default function MaterialGHG(props) {
               marginTop: "20px"
               
             }}><p>Formula</p> 
-            If the emission factor is in units of pounds per hp-hr power output or pounds per MMBtu heat input: Actual Emissions (tpy) = Emission Rate [lb/hr] x Actual Operating Hours [hr] x 0.005 [ton/lb] x ((100 – Control Efficiency)/100)
+            Emission (MT of CO2) = Σ (Emission Rate [Emission/hr] x Actual Operating Hours [hr] x Number Of Units
+            <p style={{color: "#555555"}}>Fuels (Gallon) = Σ (Fuel Rate [Gal/hr] x Actual Operating Hours [hr] x Number Of Units</p>
             {/* <p style={{marginTop: "10px"}}>References</p>
             IPCC Climate Change, 2007
         IPCC. Climate Change 2007: Mitigation of Climate Change. Contribution of Working Group III to the Fourth Assessment Report of the Intergovernmental Panel on Climate Change B. Metz, O.R. Davidson, P.R. Bosch, R. Dave, L.A. Meyer (eds). Cambridge University Press, Cambridge, United Kingdom and New York, NY, USA. 2007.

@@ -53,7 +53,7 @@ export default function MaterialGHG(props) {
               marginTop: "20px"
               
             }}><p>Formula</p> 
-            Equipment Estimator Emissions (tpy) = Emission Rate [lb/hr] x Actual Operating Hours [hr] x 0.005 [ton/lb] x ((100 – Control Efficiency)/100)
+            Emission (MT of CO2) = Σ (published emission factor[MT/Unit] * quantity of aggregates [Unit])
             <p style={{marginTop: "10px"}}>References</p>
             IPCC Climate Change, 2007
         IPCC. Climate Change 2007: Mitigation of Climate Change. Contribution of Working Group III to the Fourth Assessment Report of the Intergovernmental Panel on Climate Change B. Metz, O.R. Davidson, P.R. Bosch, R. Dave, L.A. Meyer (eds). Cambridge University Press, Cambridge, United Kingdom and New York, NY, USA. 2007.
