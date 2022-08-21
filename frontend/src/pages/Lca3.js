@@ -5,6 +5,7 @@ import MUIDataTable from "mui-datatables";
 
 import React, { useState } from 'react'
 import './equipment.css'
+import './lca2.css';
 import axios from 'axios'
 // import lcaData2 from '../data/lca2_data'
 import LcaSelect from './LcaSelect';

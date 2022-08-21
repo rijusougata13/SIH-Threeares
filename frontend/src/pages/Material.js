@@ -8,7 +8,7 @@ import {
   Select,
   Toolbar,
   Typography,
-} from "@material-ui/core";
+} from "@mui/material";
 import {
   TextField,
   Button,
@@ -94,18 +94,18 @@ const Material = () => {
       </div>
       <div className="main-container">
         <SplitSection
-          heading="Material Estimator Calculator"
+          heading="Material GHG Estimator"
           description="The ThreeAres Material Estimator allows the user to generate emission reports that estimate the carbon dioxide emissions associated with materials used in highway constructions projects. Materials are classified according to MDOT's Standard Specifications for Construction's Division 9  material classifications. The tool estimates cradle to gate emissions and can be used to differentiate impacts of using composite materials that make up the roadway."
           image="https://img.freepik.com/free-vector/calculator-concept-illustration_114360-1239.jpg"
-          routepath=""
+          routepath="#calculator-div"
           height="90vh"
           border="30px solid white"
         />
-        <div className="main-content"
-        style={{
+        <div className="main-content" id="calculator-div"
+          style={{
             margin: "20px",
             border: "1px solid #008000"
-        }}
+          }}
         >
           <Paper elevation={0}
           >
@@ -113,7 +113,7 @@ const Material = () => {
               display="flex"
               justifyContent="center"
               alignItems="center"
-              // minHeight="100vh"
+            // minHeight="100vh"
             >
               <Grid
                 container
@@ -222,27 +222,28 @@ const Material = () => {
                 container
                 className="form-grid"
                 xs={12}
+                sm={12}
                 lg={6}
-                direction={"column"}
-                spacing={5}
+                // direction={"column"}
+                // spacing={5}
                 justifyContent="center"
-              
+
               >
-                <Grid item xs={12}
-                
+                <Grid item xs={12} sm={12} lg={6}
+
                 >
-                <TextField
-                className="textfield"
-              style={{
-                margin: "20px",
-                width: "300px",
-              }}
-          
-              id="outlined-basic"
-              label="Emissions"
-              variant="outlined"
-              value={emission}
-            />
+                  <TextField
+                    className="textfield"
+                    style={{
+                      margin: "20px",
+                      width: "300px",
+                    }}
+
+                    id="outlined-basic"
+                    label="Emissions"
+                    variant="outlined"
+                    value={emission}
+                  />
                 </Grid>
               </Grid>
             </Box>
@@ -255,62 +256,62 @@ const Material = () => {
               background: "white",
             }}
           >
-            
+
           </div>
         </div>
       </div>
-    
+
+      <div style={{
+        margin: "20px"
+      }}>
         <div style={{
-            margin: "20px"
+          border: "1px solid #008000"
         }}>
-        <div style={{
-            border: "1px solid #008000"
-        }}>
-      
-      <MUIDataTable
 
-        title={"Emission List"}
-        
-        data={data}
-        columns={columns}
-        options={options}
+          <MUIDataTable
 
-        style={{
-            fontFamily: "Montserrat !important",
-            marginTop: "10px"
-        }}
-      />
+            title={"Emission List"}
 
-      </div>
+            data={data}
+            columns={columns}
+            options={options}
+
+            style={{
+              fontFamily: "Montserrat !important",
+              marginTop: "10px"
+            }}
+          />
+
+        </div>
       </div>
 
       <div className="whitespace" style={{
         height: "20px"
       }}></div>
 
-    {chartDataEmission.length > 0 && (
-      <>
-        <div style={{
+      {chartDataEmission.length > 0 && (
+        <>
+          <div style={{
             margin: "20px",
-        }}>
+          }}>
             <div style={{
-                // background: "blue",
-                padding: "10px",
-                border: "1px solid #008000",
+              // background: "blue",
+              padding: "10px",
+              border: "1px solid #008000",
             }}>
-        <PieChart
-       data={chartDataEmission}
-            label="Emission Rate PieChart"
-        />
-        </div>
-        </div>
-        
-        <div className="whitespace" style={{
-        height: "20px"
-      }}></div>
+              <PieChart
+                data={chartDataEmission}
+                label="Emission Rate PieChart"
+              />
+            </div>
+          </div>
+
+          <div className="whitespace" style={{
+            height: "20px"
+          }}></div>
         </>
-        
-    )}
+
+      )}
     </>
   );
 };

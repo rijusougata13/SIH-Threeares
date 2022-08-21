@@ -1,6 +1,9 @@
-import { Button, FormControl, Grid, InputLabel, MenuItem, Select, TextField, Typography } from '@material-ui/core'
+import { FormControl, Button, Grid, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material'
+// import { Button } from '@mui/material'
+
 import React, { useState } from 'react'
 import lcaData2 from 'src/data/lca2_data'
+import "./lca2.css";
 
 const LcaSelect = ({ label, emission, setEmission }) => {
     const [material, setMaterial] = useState('')
@@ -22,8 +25,8 @@ const LcaSelect = ({ label, emission, setEmission }) => {
             </Grid>
 
 
-            <Grid item xs={12}>
-                <FormControl fullWidth>
+            <Grid item xs={12} lg={12}>
+                <FormControl style={{ width: "300px", margin: "20px" }}>
                     <InputLabel id="demo-simple-select-label">Material Used</InputLabel>
                     <Select
                         labelId="Materials"
@@ -39,25 +42,38 @@ const LcaSelect = ({ label, emission, setEmission }) => {
                 </FormControl>
 
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} lg={12}>
                 <TextField style={{
-                    width: "100%"
-                }} required id="outlined-basic" label="Weight" variant="outlined" value={weight}
+                    margin: "20px",
+                    width: "300px"
+                }} required id="outlined-basic" label="Weight" variant="standard" value={weight}
                     onChange={(e) => {
                         setWeight(e.target.value)
                     }} />
             </Grid>
 
-            <Grid item xs={12}>
-                <Button className="calculate-btn" style={{
+            <Grid item xs={12} lg={12}>
+                <Button className="next-btn calculate-btn" style={{
                     width: "300px",
-                    textAlign: "center"
+                    textAlign: "center",
+                    fontFamily: "montserrat",
+                    width: "300px",
+                    padding: "15px",
+                    marginLeft: "0px",
+                    marginTop: "20px",
+                    marginBottom: "20px",
+                    background: "white",
+                    color: "#008000",
+                    boxShadow: "none",
+                    border: "1px solid #008000",
+                    borderRadius: "0px",
+                    transition: "0.4s ease"
                 }} variant="contained" onClick={calcEmission} >Get Emissions</Button>
 
                 <TextField style={{
                     margin: "20px",
-                    width: "200px"
-                }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={emission}
+                    width: "300px"
+                }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="standard" value={emission}
                 />
             </Grid>
         </div>

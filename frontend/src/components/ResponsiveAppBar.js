@@ -24,17 +24,18 @@ const pages = [
     linkTo: '/equipment',
   },
   {
-    name: 'Transportation GHG Estimator',
+    name: 'Transportation Estimator',
     linkTo: '/transport'
+  },
+
+  {
+    name: 'LCA Estimator',
+    linkTo: '/lca2',
   },
   {
     name: 'Inventory',
     linkTo: '/inventory'
-  }
-  , {
-    name: 'LCA Estimator',
-    linkTo: '/lca2',
-  },];
+  }];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
