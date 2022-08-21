@@ -26,7 +26,7 @@ const LcaSelect = ({ label, emission, setEmission }) => {
 
 
             <Grid item xs={12} lg={12}>
-                <FormControl style={{width: "300px", margin: "20px"}}>
+                <FormControl style={{ width: "300px", margin: "20px" }}>
                     <InputLabel id="demo-simple-select-label">Material Used</InputLabel>
                     <Select
                         labelId="Materials"
@@ -46,7 +46,7 @@ const LcaSelect = ({ label, emission, setEmission }) => {
                 <TextField style={{
                     margin: "20px",
                     width: "300px"
-                }} required id="outlined-basic" label="Weight" variant="outlined" value={weight}
+                }} required id="outlined-basic" label="Weight" variant="standard" value={weight}
                     onChange={(e) => {
                         setWeight(e.target.value)
                     }} />
@@ -73,7 +73,7 @@ const LcaSelect = ({ label, emission, setEmission }) => {
                 <TextField style={{
                     margin: "20px",
                     width: "300px"
-                }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="outlined" value={emission}
+                }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="standard" value={emission}
                 />
             </Grid>
         </div>
