@@ -138,6 +138,11 @@ const Material = () => {
                       value={equip}
                       label="Material"
                       onChange={handleChange}
+
+                      sx= {{
+                        maxWidth: "60vw",
+                        overflow: "hidden"
+                      }}
                     >
                       {materialDetails.map((item) => (
                         <MenuItem value={item}>
@@ -155,7 +160,10 @@ const Material = () => {
                     className="textfield"
                     style={{
                       width: "100%",
+                    
                     }}
+
+                    
                     size="normal"
                     required
                     id="outlined-basic"
@@ -176,6 +184,7 @@ const Material = () => {
                     textAlign: "center",
                     alignItems: "center",
                     justifyContent: "center",
+                    margin: "0px"
                   }}
                 >
                   <Button
@@ -192,6 +201,7 @@ const Material = () => {
                       border: "1px solid #008000",
                       borderRadius: "0px",
                       transition: "0.4s ease",
+
                     }}
                     onClick={addNew}
                   >
