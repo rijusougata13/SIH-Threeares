@@ -59,7 +59,7 @@ export default function SplitSection(props) {
           </Item>
         </Grid>
         <Grid item 
-        sx={{ display: { xs: 'none', lg: 'block', xl: 'block' } }}
+        sx={{ display: { xs: 'none', lg: 'block', xl: 'block', md: 'block' } }}
         xs={0} sm={0} md={6} lg={6}>
           <Item style={{
             height: "100%", 
