@@ -15,21 +15,21 @@ const Lca2 = () => {
 
 
     const [electricity, setElectricty] = useState(0)
-    const [emission1, setEmission1] = useState()
-    const [emission2, setEmission2] = useState()
-    const [emission3, setEmission3] = useState()
-    const [emission4, setEmission4] = useState()
-    const [materialEmission, setMaterialEmission] = useState()
-    const [generatorDiesel, setGeneratorDiesel] = useState()
-    const [petrol, setPetrol] = useState()
-    const [biomass, setBiomass] = useState()
-    const [distance, setDistance] = useState()
-    const [adt, setAdt] = useState()
-    const [days, setDays] = useState()
-    const [gas, setGas] = useState()
-    const [biomassEmission, setBiomassEmission] = useState()
-    const [totalCPE, setTotalCPE] = useState()
-    const [operation, setOperation] = useState()
+    const [emission1, setEmission1] = useState(0)
+    const [emission2, setEmission2] = useState(0)
+    const [emission3, setEmission3] = useState(0)
+    const [emission4, setEmission4] = useState(0)
+    const [materialEmission, setMaterialEmission] = useState(0)
+    const [generatorDiesel, setGeneratorDiesel] = useState(0)
+    const [petrol, setPetrol] = useState(0)
+    const [biomass, setBiomass] = useState(0)
+    const [distance, setDistance] = useState(0)
+    const [adt, setAdt] = useState(0)
+    const [days, setDays] = useState(0)
+    const [gas, setGas] = useState(0)
+    const [biomassEmission, setBiomassEmission] = useState(0)
+    const [totalCPE, setTotalCPE] = useState(0)
+    const [operation, setOperation] = useState(0)
     var [activeGasTabId, setActiveGasTabId] = useState(0);
 
     var [activeTabId, setActiveTabId] = useState(0);
@@ -484,7 +484,7 @@ const Lca2 = () => {
                                     <TextField style={{
                                         margin: "20px",
                                         width: "300px"
-                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="standard" value={biomassEmission}
+                                    }} disabled={false} id="outlined-basic" label="Emissions (kg CO2)" variant="standard" value={biomassEmission}
                                     />
                                 </Grid>
 
@@ -509,7 +509,7 @@ const Lca2 = () => {
                                     <TextField style={{
                                         margin: "20px",
                                         width: "300px"
-                                    }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="standard" value={totalCPE}
+                                    }} id="outlined-basic" label="Emissions (kg CO2)" variant="standard" value={totalCPE}
                                     />
                                 </Grid></div>
 

@@ -23,7 +23,8 @@ import { Box } from "@mui/system";
 import MUIDataTable from "mui-datatables";
 
 import PieChart from "src/components/PieChart";
-
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import React, { useState } from "react";
 import "./equipment.css";
 import "./Material.css";
@@ -37,7 +38,8 @@ const Material = () => {
   const [equip, setEquip] = React.useState("");
   const [weight, setWeight] = useState("");
   const [chartDataEmission, setChartDataEmission] = useState([]);
-
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('sm'));
   const [emission, setEmission] = useState(0);
 
 
@@ -111,6 +113,7 @@ const Material = () => {
           >
             <Box
               display="flex"
+              flexDirection={matches ? 'row' : 'column'}
               justifyContent="center"
               alignItems="center"
             // minHeight="100vh"
@@ -292,10 +295,13 @@ const Material = () => {
       {chartDataEmission.length > 0 && (
         <>
           <div style={{
+
             margin: "20px",
           }}>
             <div style={{
-              // background: "blue",
+              // display: 'flex',
+              // flexDirection: `${matches ? 'row' : 'column'}`,
+
               padding: "10px",
               border: "1px solid #008000",
             }}>
