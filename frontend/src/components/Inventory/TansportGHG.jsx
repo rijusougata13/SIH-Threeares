@@ -85,7 +85,7 @@ Actual Emissions (tpy) = Emission Rate [lb/hr] x Actual Operating Hours [hr] x 0
           </Item>
         </Grid>
         <Grid item 
-        sx={{ display: { xs: 'none', lg: 'block', xl: 'block' } }}
+        sx={{ display: { xs: 'none', lg: 'block', xl: 'block', md: 'block' } }}
         xs={0} sm={0} md={4} lg={4}>
           <Item style={{
             height: "100%", 
