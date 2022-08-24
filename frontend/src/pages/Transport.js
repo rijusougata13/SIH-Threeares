@@ -33,6 +33,8 @@ import SplitSection from "src/components/SplitSection";
 
 import materialDetails from "../data/material_estimator";
 
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
+
 const Material = () => {
   const [origin, setOrigin] = useState('')
   const [dest, setDest] = useState('')
@@ -40,8 +42,11 @@ const Material = () => {
   const [value, setValue] = React.useState('ROAD');
   const [dist, setDist] = useState(0)
   const [data, setData] = useState([])
-
-  const [res, setRes] = useState(0)
+  const [latLong, setLatLong] = useState({
+    latitude: 22.7196,
+    longitude: 75.8577
+  })
+ 
   var emissions_rate = 0
   const columns = ["Origin", "Destination", "Mass", "Means", "Distance", "Emission"];
   const options = {
@@ -95,6 +100,24 @@ const Material = () => {
 
 
   }
+
+  const MyMapComponent = withScriptjs(withGoogleMap((props) =>
+  <GoogleMap
+    defaultZoom={8}
+    defaultCenter={{ lat: 22.7196, lng: 75.8577 }}
+    onClick={(e) => {
+      e.preventDefault();
+      console.log(e);
+      setLatLong({
+        latitude: e.latLng.lat(),
+        longitude: e.latLng.lng()
+      })
+      console.log("done")
+    }}
+  >
+   
+  </GoogleMap>
+  ))
 
   return (
     <>
@@ -342,6 +365,15 @@ const Material = () => {
         </>
 
       )} */}
+
+      {/* <iframe src="https://maps.google.com/maps?&hl=en&q=dermatologist&t=&z=13&ie=UTF8"></iframe> */}
+      <MyMapComponent
+        isMarkerShown
+        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+        loadingElement={<div style={{ height: `100%` }} />}
+        containerElement={<div style={{ height: `400px` }} />}
+        mapElement={<div style={{ height: `100%` }} />}
+      />
     </>
   );
 };
