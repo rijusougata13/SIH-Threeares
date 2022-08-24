@@ -8,6 +8,7 @@ import {
   Select,
   Toolbar,
   Typography,
+  Modal
 } from "@mui/material";
 import {
   TextField,
@@ -24,7 +25,7 @@ import MUIDataTable from "mui-datatables";
 import './transport.css'
 import axios from 'axios'
 import PieChart from "src/components/PieChart";
-
+import LocModal from './LocModal'
 import React, { useEffect, useState } from "react";
 import "./equipment.css";
 import "./Material.css";
@@ -33,7 +34,10 @@ import SplitSection from "src/components/SplitSection";
 
 import materialDetails from "../data/material_estimator";
 
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
+import MapPicker from 'react-google-map-picker';
+
+const DefaultLocation = { lat: 22.7196, lng: 75.8577};
+const DefaultZoom = 10;
 
 const Material = () => {
   const [origin, setOrigin] = useState('')
@@ -42,10 +46,13 @@ const Material = () => {
   const [value, setValue] = React.useState('ROAD');
   const [dist, setDist] = useState(0)
   const [data, setData] = useState([])
-  const [latLong, setLatLong] = useState({
-    latitude: 22.7196,
-    longitude: 75.8577
+  const [O,setO]= useState({
+    lat:'',long:''
   })
+  const [D,setD]=useState({
+    lat:'',long:''
+  })
+  const [st,setSt]=useState(null)
 
   var emissions_rate = 0
   const columns = ["Origin", "Destination", "Mass", "Means", "Distance", "Emission"];
@@ -53,11 +60,35 @@ const Material = () => {
     selectableRows: false
   };
 
-  useEffect(() => {
-    // console.log("dsa", document.getElementsByClassName("dismissButton"));
-    // document.getElementsByClassName("dismissButton") && document.getElementsByClassName("dismissButton")[0].click();
 
-  }, [document])
+  const [defaultLocation, setDefaultLocation] = useState(DefaultLocation);
+  const [location, setLocation] = useState({
+    lat: '',
+    lng: '',
+  });
+  const [zoom, setZoom] = useState(DefaultZoom);
+
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    height:'400px', 
+    width: '500px',
+    maxWidth: '80vw',
+    bgcolor: 'background.paper',
+    borderRadius: '20px',
+    boxShadow: 24,
+    p: 4,
+    
+  };
+  
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+
   const handleChange = (event) => {
 
 
@@ -77,21 +108,7 @@ const Material = () => {
       ]
     ])
   };
-  const LatLong = (e) => {
-    // e.preventPropagation
-    // document.getElementsByClassName("dismissButton").addEventListener('click');
-
-    console.log(e);
-    document.getElementsByClassName("dismissButton").addEventListener('click', function () {
-      setLatLong({
-        latitude: e.latLng.lat(),
-        longitude: e.latLng.lng()
-      })
-    });
-
-    console.log("done")
-
-  }
+  
   const calculate = async () => {
     setDist(null)
     const request = {
@@ -122,26 +139,35 @@ const Material = () => {
 
   }
 
-  const MyMapComponent = withScriptjs(withGoogleMap((props) =>
-    <GoogleMap
-      defaultZoom={8}
-      defaultCenter={{ lat: 22.7196, lng: 75.8577 }}
-      onClick={(e) => LatLong(e)}
-    //   e.preventDefault();
-    //   console.log(e);
-    //   setLatLong({
-    //     latitude: e.latLng.lat(),
-    //     longitude: e.latLng.lng()
-    //   })
-    //   console.log("done")
-    // }}
-    >
+  //  function handleChangeLocation (lat, lng, state){
+  //   if (state === "origin")
+  //   setOrigin({lat:lat, lng:lng})
 
-    </GoogleMap>
-  ))
+  //   else
+  //   setDest({lat:lat, lng:lng})
+  // }
+  
+  // function handleChangeZoom (newZoom){
+  //   setZoom(newZoom);
+  // }
+
+  function handleResetLocation(){
+    setDefaultLocation({ ... DefaultLocation});
+    setZoom(DefaultZoom);
+  }
 
   return (
     <>
+     <LocModal
+      open={open}
+      setOpen={setOpen}
+      st={st}
+      // lat={lat}
+      // lng={lng}
+      setO={setO}
+      setD={setD}
+      
+      />
       <div className="appbar">
         <CssBaseline />
         <ResponsiveAppBar />
@@ -180,6 +206,22 @@ const Material = () => {
               >
 
                 <Grid item xs={12}>
+                {/* <Button
+                  id="calculate-btn"
+                  style={{
+                    fontFamily: "montserrat",
+                    width: "250px",
+                    marginLeft: "0px",
+                    marginTop: "20px",
+                    marginBottom: "20px",
+                    background: "white",
+                    color: "#008000",
+                    boxShadow: "none",
+                    border: "1px solid #008000",
+                    borderRadius: "0px",
+                    transition: "0.4s ease",
+                  }}
+                  onClick={handleOpen}>Choose Origin</Button> */}
                   <TextField
                     className="textfield"
                     style={{
@@ -189,10 +231,13 @@ const Material = () => {
                     size="normal"
                     required
                     id="outlined-basic"
-                    label="Origin" variant="outlined" value={origin}
-                    onChange={(e) => {
-                      setOrigin(e.target.value)
-                    }}
+                    // disabled={true}
+                    label="Origin" variant="outlined" value={O.lat+" "+O.long}
+                    onClick={()=>{setSt('O')
+                     handleOpen()}}
+                    // onChange={(e) => {
+                    //   setOrigin(e.target.value)
+                    // }}
                   />
                   <TextField
                     className="textfield"
@@ -203,10 +248,8 @@ const Material = () => {
                     size="normal"
                     required
                     id="outlined-basic"
-                    label="Destination" variant="outlined" value={dest} onChange={(e) => {
-                      setDest(e.target.value)
-                    }}
-                  />
+                    label="Destination" variant="outlined" value={D.lat+" "+D.long}  onClick={()=>{setSt('D')
+                    handleOpen()}}/>
                   <TextField
                     className="textfield"
                     style={{
@@ -388,13 +431,38 @@ const Material = () => {
       )} */}
 
       {/* <iframe src="https://maps.google.com/maps?&hl=en&q=dermatologist&t=&z=13&ie=UTF8"></iframe> */}
-      <MyMapComponent
-        isMarkerShown
-        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `400px` }} />}
-        mapElement={<div style={{ height: `100%` }} />}
-      />
+     
+      {/* <Button onClick={handleOpen}>Open modal</Button> */}
+      {/* <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        
+          
+            <MapPicker id="modal-modal-description" defaultLocation={defaultLocation}
+            zoom={zoom}
+            mapTypeId="roadmap"
+            style={style}
+            onChangeLocation={() => {
+              
+              handleChangeLocation()
+            }} 
+            onChangeZoom={handleChangeZoom}
+            apiKey=''/>
+
+      </Modal> */}
+      
+      
+      <div>
+        {/* <button onClick={handleResetLocation}>Reset Location</button>
+    <label>Latitute:</label><input type='text' value={location.lat} disabled/>
+    <label>Longitute:</label><input type='text' value={location.lng} disabled/>
+    <label>Zoom:</label><input type='text' value={zoom} disabled/> */}
+    
+    
+      </div>
     </>
   );
 };
