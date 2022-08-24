@@ -43,6 +43,13 @@ const Equipment = () => {
     const [chartDataEmission, setChartDataEmission] = useState([]);
     const [chartDataFuel, setChartDataFuel] = useState([]);
     const [data, setData] = useState([]);
+    // const [bestPackage,setBestPackage]=useState(null);
+    var bestPackage = null;
+    var minCostEmission= 1000000000000;
+    var compareList = [[]];
+
+    compareList=JSON.parse(localStorage.getItem('compareList'));
+
     var emissions_rate = 0;
     const columns = [
         "Division",
@@ -81,6 +88,8 @@ const Equipment = () => {
                 setGallons((prev) => d[6] + prev);
             });
         }
+        compareList=JSON.parse(localStorage.getItem('compareList'));
+
     };
     const addNew = ({ id }) => {
         setData((previous) => [
@@ -96,6 +105,45 @@ const Equipment = () => {
             ],
         ]);
     };
+
+    const addToCompareList = () =>{
+
+        console.log("StringValue",data);
+        
+        var currentVal=[];
+        
+        {
+            data.map((d) => {
+
+                currentVal.push(                    {
+                    argument: d[2],value: d[5]
+                }
+                )
+               
+            });
+        }
+
+        if(!compareList)compareList=[[]]
+        console.log("PREvious Value",compareList);
+        compareList.push(currentVal);
+        
+        console.log("CurrentValue",currentVal);
+
+        localStorage.setItem('compareList', JSON.stringify(compareList));
+
+        window.location.reload();
+        // setTimeout(()=>{
+        // compareList=JSON.parse(localStorage.getItem('compareList'));
+
+        // },1000);
+
+    }
+
+
+    const clearCompareList = ()=>{
+        localStorage.clear();
+        window.location.reload();
+    }
 
 
     return (
@@ -241,6 +289,36 @@ const Equipment = () => {
                                     >
                                         Calculate
                                     </Button>
+                                    <Button  style={{
+                                            fontFamily: "montserrat",
+                                            width: "250px",
+                                            marginLeft: "0px",
+                                            marginTop: "20px",
+                                            marginBottom: "20px",
+                                            background: "white",
+                                            color: "#008000",
+                                            boxShadow: "none",
+                                            border: "1px solid #008000",
+                                            borderRadius: "0px",
+                                            transition: "0.4s ease",
+                                        }}
+                                        onClick={addToCompareList}
+                                        >Add To Compare List</Button>
+                                    <Button style={{
+                                            fontFamily: "montserrat",
+                                            width: "250px",
+                                            marginLeft: "0px",
+                                            marginTop: "20px",
+                                            marginBottom: "20px",
+                                            background: "white",
+                                            color: "#008000",
+                                            boxShadow: "none",
+                                            border: "1px solid #008000",
+                                            borderRadius: "0px",
+                                            transition: "0.4s ease",
+                                        }}
+                                        onClick={clearCompareList}
+                                        > Clear Comparison</Button>
                                 </div>
                             </Grid>
 
@@ -350,6 +428,44 @@ const Equipment = () => {
                 </>
 
             )}
+
+          {
+            compareList?.length > 0 && (  <div style={{}}>
+                <h3>Compare List</h3>
+                <div id="compareList"
+                //  style={{display: 'flex',flexDirection:'row',justifyContent:"space-between"}}
+                  >
+                    {
+                        compareList?.map((data,id)=> {
+                            var tot=0;
+                            data.map(val=>{
+                                tot+=val.value;
+                            })
+                            if(  data.length>0 && tot<minCostEmission){
+                                minCostEmission=tot;
+                                bestPackage=(id+1);
+                            }
+                            return data.length>0 &&  <div style={{
+                                // background: "blue",
+                                padding: "10px",
+                                border: "1px solid #008000",
+                            }}>
+                                <PieChart
+                                    data={data}
+                                    label={`Package ${id+1}`}
+                                />
+                                {
+
+                                    <p>{tot}</p>
+                                }
+                            </div>
+                        })
+                    }
+                </div>
+               {bestPackage && ( <p>Best Package to use is :  Package {bestPackage}</p>)}
+            </div>
+            )
+        }   
         </>
     );
 };

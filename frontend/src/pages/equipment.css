@@ -18,3 +18,35 @@
 .calculate-btn {
     margin: 20px;
 }
+
+.textfield input {
+    padding: 15px !important;
+}
+#center-container{
+    /* background: black; */
+    display: flex !important;
+    flex-direction: column !important ;
+
+    
+
+}
+
+#compareList{
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-around  ;
+}
+
+@media only screen and (max-width: 600px) {
+    #center-container{
+
+
+    /* background:red; */
+    flex-direction: row !important ;
+
+}
+    #compareList{
+        flex-direction: column !important ;
+        padding: 20px;
+    }
+}
