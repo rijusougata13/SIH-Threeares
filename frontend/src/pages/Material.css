@@ -15,4 +15,10 @@
     flex-direction: column !important ;
 
 }
+.css-f0xsrb-MuiGrid-root{
+    max-width: 1;
+}
+.css-gkopid-MuiGrid-root{
+margin-left: 0 !important;
+}
 }

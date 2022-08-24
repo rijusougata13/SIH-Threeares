@@ -25,7 +25,7 @@ import './transport.css'
 import axios from 'axios'
 import PieChart from "src/components/PieChart";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./equipment.css";
 import "./Material.css";
 import ResponsiveAppBar from "src/components/ResponsiveAppBar";
@@ -46,13 +46,20 @@ const Material = () => {
     latitude: 22.7196,
     longitude: 75.8577
   })
- 
+
   var emissions_rate = 0
   const columns = ["Origin", "Destination", "Mass", "Means", "Distance", "Emission"];
   const options = {
     selectableRows: false
   };
+
+  useEffect(() => {
+    // console.log("dsa", document.getElementsByClassName("dismissButton"));
+    // document.getElementsByClassName("dismissButton") && document.getElementsByClassName("dismissButton")[0].click();
+
+  }, [document])
   const handleChange = (event) => {
+
 
     setValue(event.target.value);
   };
@@ -70,7 +77,21 @@ const Material = () => {
       ]
     ])
   };
+  const LatLong = (e) => {
+    // e.preventPropagation
+    // document.getElementsByClassName("dismissButton").addEventListener('click');
 
+    console.log(e);
+    document.getElementsByClassName("dismissButton").addEventListener('click', function () {
+      setLatLong({
+        latitude: e.latLng.lat(),
+        longitude: e.latLng.lng()
+      })
+    });
+
+    console.log("done")
+
+  }
   const calculate = async () => {
     setDist(null)
     const request = {
@@ -102,21 +123,21 @@ const Material = () => {
   }
 
   const MyMapComponent = withScriptjs(withGoogleMap((props) =>
-  <GoogleMap
-    defaultZoom={8}
-    defaultCenter={{ lat: 22.7196, lng: 75.8577 }}
-    onClick={(e) => {
-      e.preventDefault();
-      console.log(e);
-      setLatLong({
-        latitude: e.latLng.lat(),
-        longitude: e.latLng.lng()
-      })
-      console.log("done")
-    }}
-  >
-   
-  </GoogleMap>
+    <GoogleMap
+      defaultZoom={8}
+      defaultCenter={{ lat: 22.7196, lng: 75.8577 }}
+      onClick={(e) => LatLong(e)}
+    //   e.preventDefault();
+    //   console.log(e);
+    //   setLatLong({
+    //     latitude: e.latLng.lat(),
+    //     longitude: e.latLng.lng()
+    //   })
+    //   console.log("done")
+    // }}
+    >
+
+    </GoogleMap>
   ))
 
   return (

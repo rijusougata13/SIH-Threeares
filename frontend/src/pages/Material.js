@@ -139,7 +139,7 @@ const Material = () => {
                       label="Material"
                       onChange={handleChange}
 
-                      sx= {{
+                      sx={{
                         maxWidth: "60vw",
                         overflow: "hidden"
                       }}
@@ -160,10 +160,10 @@ const Material = () => {
                     className="textfield"
                     style={{
                       width: "100%",
-                    
+
                     }}
 
-                    
+
                     size="normal"
                     required
                     id="outlined-basic"
