@@ -7,7 +7,7 @@ const LocModal = ({ st, setO, setD, open, setOpen }) => {
   // const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const DefaultLocation = { lat: 22.7196, lng: 75.8577 };
-  const DefaultZoom = 10;
+  const DefaultZoom = 20;
   const [zoom, setZoom] = useState(DefaultZoom);
   const [defaultLocation, setDefaultLocation] = useState(DefaultLocation);
   const style = {
@@ -56,7 +56,7 @@ const LocModal = ({ st, setO, setD, open, setOpen }) => {
 
 
       <MapPicker id="modal-modal-description" defaultLocation={defaultLocation}
-        zoom={zoom}
+        zoom={15}
         mapTypeId="roadmap"
         style={style}
         onChangeLocation={handleChangeLocation}
