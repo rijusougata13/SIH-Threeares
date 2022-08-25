@@ -21,12 +21,13 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import MUIDataTable from "mui-datatables";
-
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import PieChart from "src/components/PieChart";
 
 import React, { useEffect, useState } from "react";
 import "./equipment.css";
-import "./Material.css";
+// import "./Material.css";
 import axios from "axios";
 import ResponsiveAppBar from "src/components/ResponsiveAppBar";
 import SplitSection from "src/components/SplitSection";
@@ -36,6 +37,8 @@ import equipmentDetails from "../data/equiment_estimator";
 
 const Equipment = () => {
     const [equip, setEquip] = React.useState("");
+    const theme = useTheme();
+    const matches = useMediaQuery(theme.breakpoints.up('sm'));
     const [no, setNo] = useState("");
     const [hours, setHours] = useState("");
     const [emission, setEmission] = useState(0);
@@ -45,34 +48,34 @@ const Equipment = () => {
     const [data, setData] = useState([]);
     // const [bestPackage,setBestPackage]=useState(null);
     var bestPackage = null;
-    var minCostEmission= 1000000000000;
+    var minCostEmission = 1000000000000;
     var compareList = [[]];
 
-    const [planPieChart,setPlanPieChart]=useState([]);
+    const [planPieChart, setPlanPieChart] = useState([]);
 
-    useEffect(()=>{
-      setPlanPieChart([]);
-      compareList?.map((data,id)=> {
-        var tot=0;
-        data.map(val=>{
-            tot+=val.value;
+    useEffect(() => {
+        setPlanPieChart([]);
+        compareList?.map((data, id) => {
+            var tot = 0;
+            data.map(val => {
+                tot += val.value;
+            })
+
+            console.log("DIe", data);
+
+            setPlanPieChart((prev) => [
+                ...prev,
+                { argument: `Plan ${id}`, value: tot },
+            ]);
+
+            // planPieChart.push(
+            //   { argument: data.argument, value: data.value },
+            // )
+
         })
-  
-        console.log("DIe",data);
-        
-        setPlanPieChart((prev) => [
-          ...prev,
-          { argument: `Plan ${id}`, value: tot },
-        ]);
-  
-        // planPieChart.push(
-        //   { argument: data.argument, value: data.value },
-        // )
-  
-    })
-    },[]);
+    }, []);
 
-    compareList=JSON.parse(localStorage.getItem('compareList'));
+    compareList = JSON.parse(localStorage.getItem('compareList'));
 
     var emissions_rate = 0;
     const columns = [
@@ -112,7 +115,7 @@ const Equipment = () => {
                 setGallons((prev) => d[6] + prev);
             });
         }
-        compareList=JSON.parse(localStorage.getItem('compareList'));
+        compareList = JSON.parse(localStorage.getItem('compareList'));
 
     };
     const addNew = ({ id }) => {
@@ -130,28 +133,28 @@ const Equipment = () => {
         ]);
     };
 
-    const addToCompareList = () =>{
+    const addToCompareList = () => {
 
-        console.log("StringValue",data);
-        
-        var currentVal=[];
-        
+        console.log("StringValue", data);
+
+        var currentVal = [];
+
         {
             data.map((d) => {
 
-                currentVal.push(                    {
-                    argument: d[2],value: d[5]
+                currentVal.push({
+                    argument: d[2], value: d[5]
                 }
                 )
-               
+
             });
         }
 
-        if(!compareList)compareList=[[]]
-        console.log("PREvious Value",compareList);
+        if (!compareList) compareList = [[]]
+        console.log("PREvious Value", compareList);
         compareList.push(currentVal);
-        
-        console.log("CurrentValue",currentVal);
+
+        console.log("CurrentValue", currentVal);
 
         localStorage.setItem('compareList', JSON.stringify(compareList));
 
@@ -164,8 +167,8 @@ const Equipment = () => {
     }
 
 
-    const clearCompareList = ()=>{
-    localStorage.removeItem("compareList");
+    const clearCompareList = () => {
+        localStorage.removeItem("compareList");
 
         window.location.reload();
     }
@@ -195,12 +198,16 @@ const Equipment = () => {
                     }}
                 >
                     <Paper elevation={0}
+
+                        sx={{
+                            borderRadius: "20px !important"
+                        }}
                     >
                         <Box
                             display="flex"
+                            flexDirection={matches ? 'row' : 'column'}
                             justifyContent="center"
                             alignItems="center"
-                        // minHeight="100vh"
                         >
                             <Grid
                                 container
@@ -316,36 +323,36 @@ const Equipment = () => {
                                     >
                                         Calculate Emission
                                     </Button>
-                                    <Button  style={{
-                                            fontFamily: "montserrat",
-                                            width: "250px",
-                                            marginLeft: "0px",
-                                            marginTop: "20px",
-                                            marginBottom: "20px",
-                                            background: "white",
-                                            color: "#008000",
-                                            boxShadow: "none",
-                                            border: "1px solid #008000",
-                                            borderRadius: "0px",
-                                            transition: "0.4s ease",
-                                        }}
-                                        onClick={addToCompareList}
-                                        >Add to Comparison List</Button>
                                     <Button style={{
-                                            fontFamily: "montserrat",
-                                            width: "250px",
-                                            marginLeft: "0px",
-                                            marginTop: "20px",
-                                            marginBottom: "20px",
-                                            background: "white",
-                                            color: "#008000",
-                                            boxShadow: "none",
-                                            border: "1px solid #008000",
-                                            borderRadius: "0px",
-                                            transition: "0.4s ease",
-                                        }}
+                                        fontFamily: "montserrat",
+                                        width: "250px",
+                                        marginLeft: "0px",
+                                        marginTop: "20px",
+                                        marginBottom: "20px",
+                                        background: "white",
+                                        color: "#008000",
+                                        boxShadow: "none",
+                                        border: "1px solid #008000",
+                                        borderRadius: "0px",
+                                        transition: "0.4s ease",
+                                    }}
+                                        onClick={addToCompareList}
+                                    >Add to Comparison List</Button>
+                                    <Button style={{
+                                        fontFamily: "montserrat",
+                                        width: "250px",
+                                        marginLeft: "0px",
+                                        marginTop: "20px",
+                                        marginBottom: "20px",
+                                        background: "white",
+                                        color: "#008000",
+                                        boxShadow: "none",
+                                        border: "1px solid #008000",
+                                        borderRadius: "0px",
+                                        transition: "0.4s ease",
+                                    }}
                                         onClick={clearCompareList}
-                                        > Clear Comparison</Button>
+                                    > Clear Comparison</Button>
                                 </div>
                             </Grid>
 
@@ -441,7 +448,7 @@ const Equipment = () => {
                     }}>
                         <div style={{
                             // background: "blue",
-                           
+
                             // padding: "10px",
                             border: "1px solid #008000",
                         }}>
@@ -459,57 +466,57 @@ const Equipment = () => {
 
             )}
 
-          {
-            compareList?.length > 0 && (  <div style={{
-                margin: "20px",
-                padding: "20px",
-                borderRadius: "20px",
-                boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-            }}>
-                <h3>Compare List</h3>
-                <div id="compareList"
-                //  style={{display: 'flex',flexDirection:'row',justifyContent:"space-between"}}
-                  >
-                    {
-                        compareList?.map((data,id)=> {
-                            var tot=0;
-                            data.map(val=>{
-                                tot+=val.value;
-                            })
-                            if(  data.length>0 && tot<minCostEmission){
-                                minCostEmission=tot;
-                                bestPackage=(id);
-                            }
-                            return data.length>0 &&  <div style={{
-                                // background: "blue",
-                                padding: "10px",
-                                border: "1px solid #008000",
-                            }}>
-                                <PieChart
-                                    data={data}
-                                    label={`Plan ${id}`}
-                                />
-                                {
-
-                                    <p>{tot}</p>
+            {
+                compareList?.length > 0 && (<div style={{
+                    margin: "20px",
+                    padding: "20px",
+                    borderRadius: "20px",
+                    boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+                }}>
+                    <h3>Compare List</h3>
+                    <div id="compareList"
+                    //  style={{display: 'flex',flexDirection:'row',justifyContent:"space-between"}}
+                    >
+                        {
+                            compareList?.map((data, id) => {
+                                var tot = 0;
+                                data.map(val => {
+                                    tot += val.value;
+                                })
+                                if (data.length > 0 && tot < minCostEmission) {
+                                    minCostEmission = tot;
+                                    bestPackage = (id);
                                 }
-                            </div>
-                        })
-                    }
-                </div>
-                {bestPackage && ( <PieChart
-                                    data={planPieChart}
-                                    label={`Plan Comparison`}
-                                />)}
-                {bestPackage && ( <p style = {{
-                width: "100%",
-                textAlign: "center",
-                paddingBottom: "10px"
-               }}><b>Best Plan to use is :  Plan {bestPackage}</b></p>)}
+                                return data.length > 0 && <div style={{
+                                    // background: "blue",
+                                    padding: "10px",
+                                    border: "1px solid #008000",
+                                }}>
+                                    <PieChart
+                                        data={data}
+                                        label={`Plan ${id}`}
+                                    />
+                                    {
 
-            </div>
-            )
-        }   
+                                        <p>{tot}</p>
+                                    }
+                                </div>
+                            })
+                        }
+                    </div>
+                    {bestPackage && (<PieChart
+                        data={planPieChart}
+                        label={`Plan Comparison`}
+                    />)}
+                    {bestPackage && (<p style={{
+                        width: "100%",
+                        textAlign: "center",
+                        paddingBottom: "10px"
+                    }}><b>Best Plan to use is :  Plan {bestPackage}</b></p>)}
+
+                </div>
+                )
+            }
         </>
     );
 };

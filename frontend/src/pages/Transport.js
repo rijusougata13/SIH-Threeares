@@ -145,21 +145,17 @@ const Transport = () => {
     addNew(haversine(O, D))
 
     setTransportDataEmission([]);
-    // setTransportDataEmission
-    setTransportDataEmission(prev => [
-      ...prev,
-      { argument: `Road`, value: 1.65 * mass * haversine(O, D) }
-    ]);
+    transportDetails.map(item => {
+      setTransportDataEmission(prev => [
+        ...prev, {
+          argument: `${item.type},${item.engineConfig}`, value: item["gCO2/t-km"] * mass * haversine(O, D)
+        }
+      ])
+    })
 
-    setTransportDataEmission(prev => [
-      ...prev,
-      { argument: `Rail`, value: 0.0157 * mass * haversine(O, D) }
-    ]);
 
-    setTransportDataEmission(prev => [
-      ...prev,
-      { argument: `Air`, value: 1.404 * mass * haversine(O, D) }
-    ]);
+
+
   }
 
   //  function handleChangeLocation (lat, lng, state){
