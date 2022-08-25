@@ -47,10 +47,10 @@ const Material = () => {
   const [dist, setDist] = useState(0)
   const [data, setData] = useState([])
   const [O, setO] = useState({
-    latitude: 0, longitude: 0
+    latitude: 22.7196, longitude: 75.8577
   })
   const [D, setD] = useState({
-    latitude: 0, longitude: 0
+    latitude: 22.5726, longitude: 88.3639
   })
   const [st, setSt] = useState(null)
 
@@ -233,7 +233,7 @@ const Material = () => {
                     required
                     id="outlined-basic"
                     // disabled={true}
-                    label="Origin" variant="outlined" value={O.latitude + " " + O.longitude}
+                    label="Origin" variant="outlined" value={O.latitude + ", " + O.longitude}
                     onClick={() => {
                       setSt('O')
                       handleOpen()
@@ -251,7 +251,7 @@ const Material = () => {
                     size="normal"
                     required
                     id="outlined-basic"
-                    label="Destination" variant="outlined" value={D.latitude + " " + D.longitude} onClick={() => {
+                    label="Destination" variant="outlined" value={D.latitude + ", " + D.longitude} onClick={() => {
                       setSt('D')
                       handleOpen()
                     }} />
