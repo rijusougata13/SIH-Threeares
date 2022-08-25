@@ -28,10 +28,10 @@ const pages = [
     linkTo: '/transport'
   },
 
-  // {
-  //   name: 'LCA Estimator',
-  //   linkTo: '/lca2',
-  // },
+  {
+    name: 'LCA Estimator',
+    linkTo: '/lca',
+  },
   // {
   //   name: 'Inventory',
   //   linkTo: '/inventory'
@@ -65,7 +65,7 @@ const ResponsiveAppBar = () => {
     <AppBar position="static" color="default">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-         
+
           <Typography
             variant="h6"
             noWrap
@@ -122,7 +122,7 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
-          
+
           <Typography
             variant="h5"
             noWrap

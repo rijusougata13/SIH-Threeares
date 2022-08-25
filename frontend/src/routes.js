@@ -37,13 +37,10 @@ export default function Router() {
       element: <Material />
     },
     {
-      path: "/lca2",
+      path: "/lca",
       element: <Lca2 />
     },
-    {
-      path: "/lca3",
-      element: <Lca3 />
-    },
+
     {
       path: "/inventory",
       element: <Inventory />
