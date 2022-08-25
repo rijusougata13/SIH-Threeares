@@ -19,23 +19,24 @@ const pages = [
     name: 'Material Estimator',
     linkTo: '/material',
   },
-  {
-    name: 'Equipments Estimator',
-    linkTo: '/equipment',
-  },
+  // {
+  //   name: 'Equipments Estimator',
+  //   linkTo: '/equipment',
+  // },
   {
     name: 'Transportation Estimator',
     linkTo: '/transport'
   },
 
-  {
-    name: 'LCA Estimator',
-    linkTo: '/lca2',
-  },
-  {
-    name: 'Inventory',
-    linkTo: '/inventory'
-  }];
+  // {
+  //   name: 'LCA Estimator',
+  //   linkTo: '/lca2',
+  // },
+  // {
+  //   name: 'Inventory',
+  //   linkTo: '/inventory'
+  // }
+];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
