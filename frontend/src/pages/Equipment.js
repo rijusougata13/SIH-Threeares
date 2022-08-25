@@ -294,7 +294,7 @@ const Equipment = () => {
                                         }}
                                         onClick={addNew}
                                     >
-                                        ADD New Emission
+                                        Add Equipment
                                     </Button>
 
                                     <Button
@@ -314,7 +314,7 @@ const Equipment = () => {
                                         }}
                                         onClick={calculate}
                                     >
-                                        Calculate
+                                        Calculate Emission
                                     </Button>
                                     <Button  style={{
                                             fontFamily: "montserrat",
@@ -330,7 +330,7 @@ const Equipment = () => {
                                             transition: "0.4s ease",
                                         }}
                                         onClick={addToCompareList}
-                                        >Add To Compare List</Button>
+                                        >Add to Comparison List</Button>
                                     <Button style={{
                                             fontFamily: "montserrat",
                                             width: "250px",
@@ -371,7 +371,7 @@ const Equipment = () => {
                                         }}
 
                                         id="outlined-basic"
-                                        label="Emissions"
+                                        label="Emissions (MT of CO2)"
                                         variant="outlined"
                                         value={emission}
                                     />
@@ -383,7 +383,7 @@ const Equipment = () => {
                                         }}
 
                                         id="outlined-basic"
-                                        label="Gallons"
+                                        label="Fuel Consumed (Gallons)"
                                         variant="outlined"
                                         value={gallons}
                                     />
@@ -501,7 +501,12 @@ const Equipment = () => {
                                     data={planPieChart}
                                     label={`Plan Comparison`}
                                 />)}
-               {bestPackage && ( <p>Best Plan to use is :  Plan {bestPackage}</p>)}
+                {bestPackage && ( <p style = {{
+                width: "100%",
+                textAlign: "center",
+                paddingBottom: "10px"
+               }}><b>Best Plan to use is :  Plan {bestPackage}</b></p>)}
+
             </div>
             )
         }   
