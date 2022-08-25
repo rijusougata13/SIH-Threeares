@@ -32,7 +32,7 @@ import "./Material.css";
 import ResponsiveAppBar from "src/components/ResponsiveAppBar";
 import SplitSection from "src/components/SplitSection";
 import haversine from "haversine";
-import materialDetails from "../data/material_estimator";
+import transportDetails from "../data/transport_estimator";
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import MapPicker from 'react-google-map-picker';
@@ -46,8 +46,8 @@ const Transport = () => {
   const [origin, setOrigin] = useState('')
   const [dest, setDest] = useState('')
   const [mass, setMass] = useState('')
-  const [value, setValue] = React.useState('ROAD');
-  const [dist, setDist] = useState(0)
+  const [gco2, setGco2] = React.useState('');
+  const [type, setType] = useState(null)
   const [data, setData] = useState([])
   const [O, setO] = useState({
     latitude: 22.7196, longitude: 75.8577
@@ -58,7 +58,7 @@ const Transport = () => {
   const [st, setSt] = useState(null)
 
   var emissions_rate = 0
-  const columns = ["Origin", "Destination", "Mass", "Means", "Distance", "Emission"];
+  const columns = ["Origin", "Destination", "Mass", "Type", "Distance", "Emission"];
   const options = {
     selectableRows: false
   };
@@ -95,9 +95,9 @@ const Transport = () => {
 
 
   const handleChange = (event) => {
-
-
-    setValue(event.target.value);
+    console.log(event.target.value)
+    setType(event.target.value['type'] + "," + event.target.value['engineConfig'] + "," + event.target.value['subtype'])
+    setGco2(event.target.value['gCO2/t-km']);
   };
   const addNew = (d) => {
     // console.log(res)
@@ -106,16 +106,16 @@ const Transport = () => {
         O.latitude + ", " + O.longitude,
         D.latitude + ", " + D.longitude,
         mass,
-        value,
-        d,
-        d * mass * emissions_rate,
+        type,
+        d.toFixed(4),
+        (d * mass * gco2 * 0.001).toFixed(4),
 
       ]
     ])
   };
 
   const calculate = async () => {
-    setDist(null)
+    // setDist(null)
     // const request = {
     //   method: "GET",
 
@@ -126,12 +126,12 @@ const Transport = () => {
     //     "Content-Type": "application/json",
     //   },
     // };
-    if (value === 'ROAD')
-      emissions_rate = 1.65
-    else if (value === 'RAIL')
-      emissions_rate = .0157
-    else if (value === 'AIR')
-      emissions_rate = 1.404
+    // if (value === 'ROAD')
+    //   emissions_rate = 1.65
+    // else if (value === 'RAIL')
+    //   emissions_rate = .0157
+    // else if (value === 'AIR')
+    //   emissions_rate = 1.404
 
     // await axios.get(`https://distanceto.herokuapp.com/distance?pin1=${origin}&pin2=${dest}`).then((response) => {
     //   // setDist(parseInt(response.data))
@@ -145,7 +145,7 @@ const Transport = () => {
     addNew(haversine(O, D))
 
     setTransportDataEmission([]);
-
+    // setTransportDataEmission
     setTransportDataEmission(prev => [
       ...prev,
       { argument: `Road`, value: 1.65 * mass * haversine(O, D) }
@@ -293,7 +293,7 @@ const Transport = () => {
                       setMass(e.target.value)
                     }}
                   />
-                  <FormControl
+                  {/* <FormControl
                     display={'flex'}
                     flexDirection={matches ? 'column' : 'row'}
                     style={{
@@ -316,6 +316,32 @@ const Transport = () => {
                       <FormControlLabel value="ROAD" control={<Radio />} label="Road" />
                       <FormControlLabel value="AIR" control={<Radio />} label="Air" />
                     </RadioGroup>
+                  </FormControl> */}
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Transport Type
+                    </InputLabel>
+                    <Select
+                      labelId="TransportType"
+                      id="demo-simple-select"
+                      // value={}
+                      label="Type"
+                      onChange={handleChange}
+
+                      sx={{
+                        // maxWidth: "60vw",
+                        overflow: "hidden"
+                      }}
+                    >
+                      {transportDetails.map((item) => (
+                        <MenuItem value={item}>
+                          {item.engineConfig + ", " + item.type + ", " + item.subtype}
+                        </MenuItem>
+                      ))}
+                      {/* <MenuItem value={10}>Ten</MenuItem>
+                                            <MenuItem value={20}>Twenty</MenuItem>
+                                            <MenuItem value={30}>Thirty</MenuItem> */}
+                    </Select>
                   </FormControl>
                 </Grid>
               </Grid>
