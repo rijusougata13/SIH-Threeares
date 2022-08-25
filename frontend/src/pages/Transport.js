@@ -59,6 +59,8 @@ const Material = () => {
   const options = {
     selectableRows: false
   };
+  const [transportDataEmission, setTransportDataEmission] = useState([]);
+
 
 
   const [defaultLocation, setDefaultLocation] = useState(DefaultLocation);
@@ -138,6 +140,23 @@ const Material = () => {
 
     // console.log(O, D)
     addNew(haversine(O, D))
+
+    setTransportDataEmission([]);
+
+    setTransportDataEmission(prev=>[
+      ...prev,
+      { argument: `Road`, value: 1.65*mass*haversine(O, D) }
+    ]);
+
+    setTransportDataEmission(prev=>[
+      ...prev,
+      { argument: `Rail`, value: 0.0157*mass*haversine(O, D) }
+    ]);
+
+    setTransportDataEmission(prev=>[
+      ...prev,
+      { argument: `Air`, value: 1.404*mass*haversine(O, D) }
+    ]);
   }
 
   //  function handleChangeLocation (lat, lng, state){
@@ -340,6 +359,22 @@ const Material = () => {
                 </Button> */}
               </div>
 
+             {transportDataEmission.length>0 &&  <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  width: "50%",
+                  textAlign: "center",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+               <PieChart
+                  data={transportDataEmission}
+                  label={`Transport `}
+              />
+                </div>
+              }
 
               {/* test */}
               {/* <Grid
