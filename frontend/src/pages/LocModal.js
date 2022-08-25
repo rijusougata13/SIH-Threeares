@@ -31,14 +31,14 @@ const LocModal = ({ st, setO, setD, open, setOpen }) => {
     console.log(st)
     if (st === 'O') {
       setO({
-        latitude: lat,
-        longitude: long
+        latitude: lat.toFixed(4),
+        longitude: long.toFixed(4)
       })
     }
     else if (st === 'D') {
       setD({
-        latitude: lat,
-        longitude: long
+        latitude: lat.toFixed(4),
+        longitude: long.toFixed(4)
       })
     }
 
