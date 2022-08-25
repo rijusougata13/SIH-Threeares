@@ -172,10 +172,17 @@ const clearCompareList = ()=>{
         <div className="main-content" id="calculator-div"
           style={{
             margin: "20px",
-            border: "1px solid #008000"
+            // border: "1px solid #008000",
+            borderRadius: "20px",
+            boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+            marginTop: "40px"
           }}
         >
           <Paper elevation={0}
+
+          sx={{
+            borderRadius: "20px !important"
+          }}
           >
             <Box
               display="flex"
@@ -374,7 +381,9 @@ const clearCompareList = ()=>{
         margin: "20px"
       }}>
         <div style={{
-          border: "1px solid #008000"
+          // border: "1px solid #008000",
+          boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+          borderRadius: "20px"
         }}>
 
           <MUIDataTable
@@ -404,6 +413,7 @@ const clearCompareList = ()=>{
             margin: "20px",
             border: "1px solid #008000",
             padding: "10px !important"
+            
           }}>
             <div style={{
 
@@ -426,11 +436,19 @@ const clearCompareList = ()=>{
       )}
        {
             compareListMaterial?.length > 0 && (  <div style={{
-              margin: "20px"
+              margin: "20px",
+              background: "white",
+              padding: "20px",
+              boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+              borderRadius: "20px",
+              marginBottom: "40px"
             }}>
-                <h3>Compare List</h3>
+                <h3><b>Compare List</b></h3><br />
                 <div id="compareList"
                 //  style={{display: 'flex',flexDirection:'row',justifyContent:"space-between"}}
+                  style={{
+                    
+                  }}
                   >
                     {
                         compareListMaterial?.map((data,id)=> {
