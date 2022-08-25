@@ -210,7 +210,9 @@ const Transport = () => {
         <div className="main-content"
           style={{
             margin: "20px",
-            border: "1px solid #008000"
+            // border: "1px solid #008000",
+            borderRadius: "20px",
+            boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
           }}
         >
           <Paper elevation={0}
@@ -442,7 +444,9 @@ const Transport = () => {
         margin: "20px"
       }}>
         <div style={{
-          border: "1px solid #008000"
+          // border: "1px solid #008000",
+          borderRadius: "20px",
+          boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
         }}>
 
           <MUIDataTable

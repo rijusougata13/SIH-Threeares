@@ -19,10 +19,10 @@ const pages = [
     name: 'Material Estimator',
     linkTo: '/material',
   },
-  // {
-  //   name: 'Equipments Estimator',
-  //   linkTo: '/equipment',
-  // },
+  {
+    name: 'Equipments Estimator',
+    linkTo: '/equipment',
+  },
   {
     name: 'Transportation Estimator',
     linkTo: '/transport'

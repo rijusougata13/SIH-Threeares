@@ -189,7 +189,9 @@ const Equipment = () => {
                 <div className="main-content"
                     style={{
                         margin: "20px",
-                        border: "1px solid #008000"
+                        // border: "1px solid #008000",
+                        borderRadius: "20px",
+                        boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
                     }}
                 >
                     <Paper elevation={0}
@@ -406,7 +408,9 @@ const Equipment = () => {
                 margin: "20px"
             }}>
                 <div style={{
-                    border: "1px solid #008000"
+                    // border: "1px solid #008000",
+                    borderRadius: "20px",
+                    boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
                 }}>
 
                     <MUIDataTable
@@ -437,7 +441,8 @@ const Equipment = () => {
                     }}>
                         <div style={{
                             // background: "blue",
-                            padding: "10px",
+                           
+                            // padding: "10px",
                             border: "1px solid #008000",
                         }}>
                             <PieChart
@@ -455,7 +460,12 @@ const Equipment = () => {
             )}
 
           {
-            compareList?.length > 0 && (  <div style={{}}>
+            compareList?.length > 0 && (  <div style={{
+                margin: "20px",
+                padding: "20px",
+                borderRadius: "20px",
+                boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+            }}>
                 <h3>Compare List</h3>
                 <div id="compareList"
                 //  style={{display: 'flex',flexDirection:'row',justifyContent:"space-between"}}
