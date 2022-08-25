@@ -206,7 +206,7 @@ const clearCompareList = ()=>{
                       onChange={handleChange}
 
                       sx={{
-                        maxWidth: "60vw",
+                        // maxWidth: "60vw",
                         overflow: "hidden"
                       }}
                     >
@@ -271,7 +271,7 @@ const clearCompareList = ()=>{
                     }}
                     onClick={addNew}
                   >
-                    ADD New Emission
+                    Add Aggregates
                   </Button>
 
                   <Button
@@ -291,7 +291,7 @@ const clearCompareList = ()=>{
                     }}
                     onClick={calculate}
                   >
-                    Calculate
+                    Calculate Emission
                   </Button>
                   <Button  style={{
                                             fontFamily: "montserrat",
@@ -307,7 +307,7 @@ const clearCompareList = ()=>{
                                             transition: "0.4s ease",
                                         }}
                                         onClick={addToCompareList}
-                                        >Add To Compare List</Button>
+                                        >Compare Plans</Button>
                                     <Button style={{
                                             fontFamily: "montserrat",
                                             width: "250px",
@@ -344,12 +344,12 @@ const clearCompareList = ()=>{
                   <TextField
                     className="textfield"
                     style={{
-                      margin: "20px",
-                      width: "300px",
+                      // margin: "20px",
+                      width: "100%",
                     }}
 
                     id="outlined-basic"
-                    label="Emissions"
+                    label="Emissions (MT of CO2)"
                     variant="outlined"
                     value={emission}
                   />
@@ -402,6 +402,8 @@ const clearCompareList = ()=>{
         <>
           <div style={{
             margin: "20px",
+            border: "1px solid #008000",
+            padding: "10px !important"
           }}>
             <div style={{
 
@@ -423,7 +425,9 @@ const clearCompareList = ()=>{
 
       )}
        {
-            compareListMaterial?.length > 0 && (  <div style={{}}>
+            compareListMaterial?.length > 0 && (  <div style={{
+              margin: "20px"
+            }}>
                 <h3>Compare List</h3>
                 <div id="compareList"
                 //  style={{display: 'flex',flexDirection:'row',justifyContent:"space-between"}}
@@ -450,7 +454,7 @@ const clearCompareList = ()=>{
                             }
                             return data.length>0 &&  <div style={{
                                 // background: "blue",
-                                padding: "10px",
+                                // padding: "10px",
                                 border: "1px solid #008000",
                             }}>
                                 <PieChart
@@ -459,7 +463,9 @@ const clearCompareList = ()=>{
                                 />
                                 {
 
-                                    <p>{tot}</p>
+                                    <p style = {{
+                                      margin: "10px"
+                                    }}>Total emissions for plan {id}: {tot}</p>
                                 }
                             </div>
                         })
@@ -468,9 +474,13 @@ const clearCompareList = ()=>{
                 </div>
                {bestPackage && ( <PieChart
                                     data={planPieChart}
-                                    label={`Plan Comparison`}
+                                    label={`Plan Optimization Metrics`}
                                 />)}
-               {bestPackage && ( <p>Best Plan to use is :  Plan {bestPackage}</p>)}
+               {bestPackage && ( <p style = {{
+                width: "100%",
+                textAlign: "center",
+                paddingBottom: "10px"
+               }}><b>Best Plan to use is :  Plan {bestPackage}</b></p>)}
 
             </div>
             )
