@@ -1,7 +1,6 @@
-{
-"StaticMaterialTable":[
+const materialDetails=[
  {
-  "Div ID": 901,
+  "DivId": 901,
   "Material Description": "Portland Cement 1",
   "Unit": "Ton",
   "Published Factor": 0.8417127,
@@ -9,7 +8,7 @@
   "Source": "National Renweable Energy Laboratory (Coverted)"
  },
  {
-  "Div ID": 904,
+  "DivId": 904,
   "Material Description": "Binder",
   "Unit": "Ton",
   "Published Factor": 0.156993128515462,
@@ -17,7 +16,7 @@
   "Source": "Life Cycle Assessment of Road: A Pilot Study for Inventory Analysis, Stripple, 2001 (Coverted to CO2 Eq) Table 4.2.11.6"
  },
  {
-  "Div ID": 901,
+  "DivId": 901,
   "Material Description": "FlyAsh",
   "Unit": "Ton",
   "Published Factor": 0.017780820904,
@@ -25,7 +24,7 @@
   "Source": "Inventory Data and Case Studies for Environmental Performance Evaluation of Concrete Structure Construction, Journal of Advanced Concrete Technology table 3"
  },
  {
-  "Div ID": 905,
+  "DivId": 905,
   "Material Description": "Blast Furnace Slag ",
   "Unit": "Ton",
   "Published Factor": 0.02404027,
@@ -33,7 +32,7 @@
   "Source": "Inventory Data and Case Studies for Environmental Performance Evaluation of Concrete Structure Construction, Journal of Advanced Concrete Technology table 3"
  },
  {
-  "Div ID": 905,
+  "DivId": 905,
   "Material Description": "Blast Furnace Slag (ACBFS or GGBFS)",
   "Unit": "Ton",
   "Published Factor": 0.015143963709210657,
@@ -42,7 +41,7 @@
   "Source": "Athena Study: A LIFE CYCLE PERSPECTIVE ON CONCRETE AND ASPHALT ROADWAYS: EMBODIED PRIMARY ENERGY AND GLOBAL WARMING POTENTIAL Appendix B tables 4 and 6"
  },
  {
-  "Div ID": 905,
+  "DivId": 905,
   "Material Description": "HMA Batch Plant",
   "Unit": "Tonne",
   "Published Factor": 0.028598168,
@@ -50,7 +49,7 @@
   "Source": "Athena Study: A LIFE CYCLE PERSPECTIVE ON CONCRETE AND ASPHALT ROADWAYS: EMBODIED PRIMARY ENERGY AND GLOBAL WARMING POTENTIAL Appendix C table 11 Used Avg (Assumed density of 150lbs\/ft^3)"
  },
  {
-  "Div ID": 902,
+  "DivId": 902,
   "Material Description": "Aggregate",
   "Unit": "Ton",
   "Published Factor": 0.006157827879,
@@ -58,7 +57,7 @@
   "Source": "Athena Study: A LIFE CYCLE PERSPECTIVE ON CONCRETE AND ASPHALT ROADWAYS: EMBODIED PRIMARY ENERGY AND GLOBAL WARMING POTENTIAL TA-1 AppendixD (Used avg ) "
  },
  {
-  "Div ID": 904,
+  "DivId": 904,
   "Material Description": "Recycled Asphalt Pavement",
   "Unit": "Ton",
   "Published Factor": 0.004915671232164,
@@ -66,7 +65,7 @@
   "Source": "Athena Study: A LIFE CYCLE PERSPECTIVE ON CONCRETE AND ASPHALT ROADWAYS: EMBODIED PRIMARY ENERGY AND GLOBAL WARMING POTENTIAL Appendix C Table 9 "
  },
  {
-  "Div ID": 923,
+  "DivId": 923,
   "Material Description": "Concrete Batch Plant",
   "Unit": "Tonne",
   "Published Factor": 0.007750833478,
@@ -74,7 +73,7 @@
   "Source": "Athena Study: A LIFE CYCLE PERSPECTIVE ON CONCRETE AND ASPHALT ROADWAYS: EMBODIED PRIMARY ENERGY AND GLOBAL WARMING POTENTIAL Appendix B Summary Table 1 (Assumed density of 145 lbs\/ft^3)"
  },
  {
-  "Div ID": 923,
+  "DivId": 923,
   "Material Description": "Recycled Crushed Concrete",
   "Unit": "Ton",
   "Published Factor": 0.00217724596529107,
@@ -83,7 +82,7 @@
   "Source": "Energy and Greenhouse Gas Emissions Trade-Offs of Recycled Concrete Aggregate Use in Nonstructural Concrete: A North American Case Study, ASCE, 2009 Table 3 (Converted)"
  },
  {
-  "Div ID": 923,
+  "DivId": 923,
   "Material Description": "Load Transfer Assembly",
   "Unit": "Ft",
   "Published Factor": 0.000616330518,
@@ -92,7 +91,7 @@
   "Source": "Athena Study: A LIFE CYCLE PERSPECTIVE ON CONCRETE AND ASPHALT ROADWAYS: EMBODIED PRIMARY ENERGY AND GLOBAL WARMING POTENTIAL Table 3.5 pg 20 Used Avg from report Calculated CO2 Eq "
  },
  {
-  "Div ID": 905,
+  "DivId": 905,
   "Material Description": "Steel Reinf Epoxy Coated",
   "Unit": "Ea",
   "Published Factor": 0.001325163,
@@ -101,7 +100,7 @@
   "Source": "Athena Study: A LIFE CYCLE PERSPECTIVE ON CONCRETE AND ASPHALT ROADWAYS: EMBODIED PRIMARY ENERGY AND GLOBAL WARMING POTENTIAL Table 3.5 pg 20 Used Avg from report Calculated CO2 Eq "
  },
  {
-  "Div ID": 901,
+  "DivId": 901,
   "Material Description": "Portland Cement 2",
   "Unit": "Lbs",
   "Published Factor": 0.00042085635,
@@ -109,7 +108,7 @@
   "Source": "National Renweable Energy Laboratory (Coverted)"
  },
  {
-  "Div ID": 905,
+  "DivId": 905,
   "Material Description": "Steel Reinf Epoxy Coated ",
   "Unit": "Lbs",
   "Published Factor": 0.000259835853,
@@ -118,7 +117,7 @@
   "Source": "Athena Study: A LIFE CYCLE PERSPECTIVE ON CONCRETE AND ASPHALT ROADWAYS: EMBODIED PRIMARY ENERGY AND GLOBAL WARMING POTENTIAL Table 3.5 pg 20 Used Avg from report Calculated CO2 Eq "
  },
  {
-  "Div ID": 905,
+  "DivId": 905,
   "Material Description": "Steel Reinf Pavement Mesh",
   "Unit": "Syd",
   "Published Factor": 0.0035077833,
@@ -127,7 +126,7 @@
   "Source": "Athena Study: A LIFE CYCLE PERSPECTIVE ON CONCRETE AND ASPHALT ROADWAYS: EMBODIED PRIMARY ENERGY AND GLOBAL WARMING POTENTIAL Table 3.5 pg 20 Used Avg from report Calculated CO2 Eq "
  },
  {
-  "Div ID": 902,
+  "DivId": 902,
   "Material Description": "Granular Material",
   "Unit": "Cyd",
   "Published Factor": 0.00010804919657417,
@@ -135,7 +134,7 @@
   "Source": "Life Cycle Assessment of Road: A Pilot Study for Inventory Analysis, Stripple, 2001 (Converted CO2 Eq ) TA-4.2.14.1"
  },
  {
-  "Div ID": 904,
+  "DivId": 904,
   "Material Description": "Sand",
   "Unit": "Cyds",
   "Published Factor": 0.00010804919657417,
@@ -143,7 +142,7 @@
   "Source": "Life Cycle Assessment of Road: A Pilot Study for Inventory Analysis, Stripple, 2001 (Converted CO2 Eq ) TA-4.2.14.1"
  },
  {
-  "Div ID": 904,
+  "DivId": 904,
   "Material Description": "Pavt Mrkg Waterborne Paint White",
   "Unit": "Gal",
   "EIO-LCA Sector": 325510,
@@ -153,7 +152,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 909,
+  "DivId": 909,
   "Material Description": "Pavt Mrkg Glass Beads",
   "Unit": "Lbs",
   "EIO-LCA Sector": 327212,
@@ -163,7 +162,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 907,
+  "DivId": 907,
   "Material Description": "Silt Fence",
   "Unit": "Ft",
   "EIO-LCA Sector": 313210,
@@ -173,7 +172,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 909,
+  "DivId": 909,
   "Material Description": "Pavt Mrkg Plastic Tape",
   "Unit": "Ft",
   "EIO-LCA Sector": 326112,
@@ -183,7 +182,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 909,
+  "DivId": 909,
   "Material Description": "Geotextile Liner",
   "Unit": "Syd",
   "EIO-LCA Sector": 313210,
@@ -193,7 +192,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 920,
+  "DivId": 920,
   "Material Description": "Expansive Waterstop",
   "Unit": "Ft",
   "EIO-LCA Sector": 326122,
@@ -203,7 +202,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 920,
+  "DivId": 920,
   "Material Description": "Fertilizer Chemical Nutrient ",
   "Unit": "Lbs",
   "EIO-LCA Sector": 325311,
@@ -213,7 +212,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 917,
+  "DivId": 917,
   "Material Description": "Seeding Mixture ",
   "Unit": "Lbs",
   "EIO-LCA Sector": 111421,
@@ -223,7 +222,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 920,
+  "DivId": 920,
   "Material Description": "Mulch Blanket",
   "Unit": "Syd",
   "EIO-LCA Sector": 111940,
@@ -234,7 +233,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 923,
+  "DivId": 923,
   "Material Description": "Pipe Underdrain",
   "Unit": "Ft",
   "EIO-LCA Sector": 326122,
@@ -244,7 +243,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 923,
+  "DivId": 923,
   "Material Description": "Dr Structure Precast Concrete Unit",
   "Unit": "Ea",
   "EIO-LCA Sector": 327390,
@@ -255,7 +254,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 923,
+  "DivId": 923,
   "Material Description": "Block Conc",
   "Unit": "Ea",
   "EIO-LCA Sector": 327331,
@@ -265,7 +264,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 923,
+  "DivId": 923,
   "Material Description": "Curing Compound",
   "Unit": "Gal",
   "EIO-LCA Sector": 325998,
@@ -275,7 +274,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 923,
+  "DivId": 923,
   "Material Description": "End Section Concrete",
   "Unit": "Ea",
   "EIO-LCA Sector": 327330,
@@ -286,7 +285,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 909,
+  "DivId": 909,
   "Material Description": "End Section Metal",
   "Unit": "Ea",
   "EIO-LCA Sector": 331110,
@@ -297,7 +296,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 907,
+  "DivId": 907,
   "Material Description": "Fence Post Steel Woven Wire",
   "Unit": "Ea",
   "EIO-LCA Sector": 331110,
@@ -307,7 +306,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 907,
+  "DivId": 907,
   "Material Description": "Fence Woven Wire",
   "Unit": "Ft",
   "EIO-LCA Sector": 331110,
@@ -317,7 +316,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 907,
+  "DivId": 907,
   "Material Description": "Fence Post Wood",
   "Unit": "Ea",
   "EIO-LCA Sector": 32111,
@@ -327,7 +326,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 920,
+  "DivId": 920,
   "Material Description": "Lane Ties Epoxy Coated",
   "Unit": "Ea",
   "EIO-LCA Sector": 331110,
@@ -338,7 +337,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 908,
+  "DivId": 908,
   "Material Description": "Drainage Structure Cover",
   "Unit": "Lbs",
   "EIO-LCA Sector": 327390,
@@ -348,7 +347,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 916,
+  "DivId": 916,
   "Material Description": "Joint Filler Fiber",
   "Unit": "Syd",
   "EIO-LCA Sector": 324122,
@@ -358,7 +357,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 920,
+  "DivId": 920,
   "Material Description": "Joint Sealer Hot Poured Rubber",
   "Unit": "Lbs",
   "EIO-LCA Sector": 326299,
@@ -368,7 +367,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 903,
+  "DivId": 903,
   "Material Description": "Dowel Bar Epoxy Coated",
   "Unit": "Ea",
   "Published Factor": 0.00162657,
@@ -377,7 +376,7 @@
   "Source": "Athena Study: A LIFE CYCLE PERSPECTIVE ON CONCRETE AND ASPHALT ROADWAYS: EMBODIED PRIMARY ENERGY AND GLOBAL WARMING POTENTIAL Table 3.5 pg 20 Used Avg from report Calculated CO2 Eq "
  },
  {
-  "Div ID": 923,
+  "DivId": 923,
   "Material Description": "Pipe Conc",
   "Unit": "Ft",
   "EIO-LCA Sector": 327330,
@@ -388,7 +387,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 904,
+  "DivId": 904,
   "Material Description": "Bond Coat",
   "Unit": "Gal",
   "EIO-LCA Sector": 324121,
@@ -398,7 +397,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 908,
+  "DivId": 908,
   "Material Description": "Guardrail Type B",
   "Unit": "Ft",
   "EIO-LCA Sector": 331110,
@@ -408,7 +407,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 908,
+  "DivId": 908,
   "Material Description": "Underdrain Outlet Ending",
   "Unit": "Ea",
   "EIO-LCA Sector": 326122,
@@ -418,7 +417,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 922,
+  "DivId": 922,
   "Material Description": "Pipe Metal",
   "Unit": "Ft",
   "EIO-LCA Sector": 331110,
@@ -429,7 +428,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 916,
+  "DivId": 916,
   "Material Description": "Riprap ",
   "Unit": "Syd",
   "EIO-LCA Sector": 21231,
@@ -439,7 +438,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 908,
+  "DivId": 908,
   "Material Description": "Handhole Heavy Duty Cover",
   "Unit": "Ea",
   "EIO-LCA Sector": 331110,
@@ -450,7 +449,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 908,
+  "DivId": 908,
   "Material Description": "Waterproofing Membrane Preformed",
   "Unit": "Syd",
   "EIO-LCA Sector": 326291,
@@ -460,7 +459,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 922,
+  "DivId": 922,
   "Material Description": "Pipe RCP 24\"",
   "Unit": "Ft.",
   "EIO-LCA Sector": 327330,
@@ -470,7 +469,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 909,
+  "DivId": 909,
   "Material Description": "Pipe RCP 15\"",
   "Unit": "Ft",
   "EIO-LCA Sector": 327330,
@@ -480,7 +479,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 908,
+  "DivId": 908,
   "Material Description": "Culv Class A CSP 12\"",
   "Unit": "Ft",
   "EIO-LCA Sector": 331110,
@@ -490,7 +489,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 922,
+  "DivId": 922,
   "Material Description": "Pipe RCP 72\"",
   "Unit": "Ft.",
   "EIO-LCA Sector": 327330,
@@ -500,7 +499,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 909,
+  "DivId": 909,
   "Material Description": "End Section Metal 12\"",
   "Unit": "Ea",
   "EIO-LCA Sector": 331110,
@@ -510,7 +509,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 909,
+  "DivId": 909,
   "Material Description": "End Section Metal SLP 1:4",
   "Unit": "Ea.",
   "EIO-LCA Sector": 331110,
@@ -521,7 +520,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 923,
+  "DivId": 923,
   "Material Description": "End Section Concrete 24\"",
   "Unit": "Ea.",
   "EIO-LCA Sector": 327330,
@@ -531,7 +530,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 909,
+  "DivId": 909,
   "Material Description": "End Section Metal 15\"",
   "Unit": "Ea.",
   "EIO-LCA Sector": 331110,
@@ -542,7 +541,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 903,
+  "DivId": 903,
   "Material Description": "Neoprene Seal",
   "Unit": "Ft",
   "EIO-LCA Sector": 325520,
@@ -552,7 +551,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 903,
+  "DivId": 903,
   "Material Description": "Foam Backer Rod",
   "Unit": "Ft",
   "EIO-LCA Sector": 326140,
@@ -562,7 +561,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 923,
+  "DivId": 923,
   "Material Description": "End Section Concrete 72\"",
   "Unit": "Ea.",
   "EIO-LCA Sector": 327330,
@@ -573,7 +572,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 906,
+  "DivId": 906,
   "Material Description": "Piling Steel Sheet",
   "Unit": "Sft",
   "EIO-LCA Sector": 331110,
@@ -583,7 +582,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 922,
+  "DivId": 922,
   "Material Description": "Pipe Plastic",
   "Unit": "Ft",
   "EIO-LCA Sector": 326122,
@@ -594,7 +593,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 916,
+  "DivId": 916,
   "Material Description": "Joint Filler Fiber",
   "Unit": "Sft",
   "EIO-LCA Sector": 324122,
@@ -605,7 +604,7 @@
   "Source": "EIO-LCA 2002 Purchaser Price Model"
  },
  {
-  "Div ID": 903,
+  "DivId": 903,
   "Material Description": "On Highway Combo Truck",
   "Unit": "MT\/Mile",
   "Published Factor": 0.00385759756947342,
@@ -613,311 +612,6 @@
   "Notes": "Used for To-Site Impacts",
   "Source": "National Renweable Energy Laboratory (Coverted) Assumed Fully loaded truck @ 30 tonnes"
  }
-],
-"StaticEquipTable":[
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": "Equip Type ID",
-  "Column2": "Equipment",
-  "Column3": "Load",
-  "Column4": "Avg HP by Equip Type",
-  "Column5": "Fuel Rate (Gal\/hr)",
-  "Column6": "EmissionRate\/hr"
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 1,
-  "Column2": "Aerial Lifts",
-  "Column3": 0.46,
-  "Column4": 60.49286641,
-  "Column5": 0.9275572849533333,
-  "Column6": 9.498464865107618
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 2,
-  "Column2": "Air Compressors",
-  "Column3": 0.48,
-  "Column4": 105.6729863,
-  "Column5": 1.6907677808000001,
-  "Column6": 17.313969305726243
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 3,
-  "Column2": "Bore\/Drill Rigs",
-  "Column3": 0.75,
-  "Column4": 291.1926684,
-  "Column5": 7.27981671,
-  "Column6": 74.54750705541299
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 4,
-  "Column2": "Cement and Mortar Mixers",
-  "Column3": 0.56,
-  "Column4": 10.32136445,
-  "Column5": 0.19266546973333337,
-  "Column6": 1.9729522097102536
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 5,
-  "Column2": "Concrete\/Industrial Saws",
-  "Column3": 0.73,
-  "Column4": 18.61456753,
-  "Column5": 0.4529544765633333,
-  "Column6": 4.638389726351502
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 6,
-  "Column2": "Cranes",
-  "Column3": 0.43,
-  "Column4": 399.0996377,
-  "Column5": 5.720428140366667,
-  "Column6": 58.57890028579677
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 7,
-  "Column2": "Crawler Tractors",
-  "Column3": 0.64,
-  "Column4": 146.8939311,
-  "Column5": 3.1337371968,
-  "Column6": 32.090409016391035
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 8,
-  "Column2": "Crushing\/Proc. Equipment",
-  "Column3": 0.78,
-  "Column4": 142.3400853,
-  "Column5": 3.7008422178000004,
-  "Column6": 37.897734562937345
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 9,
-  "Column2": "Excavators",
-  "Column3": 0.57,
-  "Column4": 168.0827532,
-  "Column5": 3.1935723108,
-  "Column6": 32.70313853428524
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 10,
-  "Column2": "Forklifts",
-  "Column3": 0.3,
-  "Column4": 144.5912079,
-  "Column5": 1.445912079,
-  "Column6": 14.8065734625837
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 11,
-  "Column2": "Generator Sets",
-  "Column3": 0.74,
-  "Column4": 549.2039877,
-  "Column5": 13.547031696600001,
-  "Column6": 138.72566868269297
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 12,
-  "Column2": "Graders",
-  "Column3": 0.61,
-  "Column4": 173.7104241,
-  "Column5": 3.5321119567,
-  "Column6": 36.16988607019501
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 13,
-  "Column2": "Off-Highway Tractors",
-  "Column3": 0.65,
-  "Column4": 266.9833049,
-  "Column5": 5.784638272833335,
-  "Column6": 59.23643130529519
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 14,
-  "Column2": "Off-Highway Trucks",
-  "Column3": 0.57,
-  "Column4": 478.9384615,
-  "Column5": 9.0998307685,
-  "Column6": 93.18499701867054
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 15,
-  "Column2": "Other Construction Equipment",
-  "Column3": 0.62,
-  "Column4": 74.69222097,
-  "Column5": 1.5436392333800002,
-  "Column6": 15.807328841581215
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 16,
-  "Column2": "Other General Industrial Equipmen",
-  "Column3": 0.51,
-  "Column4": 238.0628841,
-  "Column5": 4.0470690297,
-  "Column6": 41.44320098483691
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 17,
-  "Column2": "Other Material Handling Equipment",
-  "Column3": 0.59,
-  "Column4": 190.8370044,
-  "Column5": 3.7531277532000002,
-  "Column6": 38.43315413109396
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 18,
-  "Column2": "Pavers",
-  "Column3": 0.62,
-  "Column4": 100.2321033,
-  "Column5": 2.0714634682000006,
-  "Column6": 21.212407353408462
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 19,
-  "Column2": "Paving Equipment",
-  "Column3": 0.53,
-  "Column4": 103.6978417,
-  "Column5": 1.8319952033666667,
-  "Column6": 18.760180481035672
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 20,
-  "Column2": "Plate Compactors",
-  "Column3": 0.43,
-  "Column4": 8,
-  "Column5": 0.11466666666666667,
-  "Column6": 1.1742210666666666
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 21,
-  "Column2": "Pressure Washers",
-  "Column3": 0.6,
-  "Column4": 0.911496209,
-  "Column5": 0.01822992418,
-  "Column6": 0.18667989258045398
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 22,
-  "Column2": "Pumps",
-  "Column3": 0.74,
-  "Column4": 53.45721672,
-  "Column5": 1.3186113457600002,
-  "Column6": 13.502975763986129
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 23,
-  "Column2": "Rollers",
-  "Column3": 0.56,
-  "Column4": 95.39829553,
-  "Column5": 1.7807681832266669,
-  "Column6": 18.235600426696035
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 24,
-  "Column2": "Rough Terrain Forklifts",
-  "Column3": 0.6,
-  "Column4": 93.40787555,
-  "Column5": 1.8681575110000002,
-  "Column6": 19.130493359893297
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 25,
-  "Column2": "Rubber Tired Dozers",
-  "Column3": 0.59,
-  "Column4": 357.0581395,
-  "Column5": 7.022143410166666,
-  "Column6": 71.9088551631297
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 26,
-  "Column2": "Rubber Tired Loaders",
-  "Column3": 0.54,
-  "Column4": 156.9984968,
-  "Column5": 2.8259729424000004,
-  "Column6": 28.938810722058722
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 27,
-  "Column2": "Scrapers",
-  "Column3": 0.72,
-  "Column4": 312.5029586,
-  "Column5": 7.5000710064,
-  "Column6": 76.80297712683792
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 28,
-  "Column2": "Signal Boards",
-  "Column3": 0.78,
-  "Column4": 20.15541796,
-  "Column5": 0.5240408669600001,
-  "Column6": 5.366335689930488
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 29,
-  "Column2": "Skid Steer Loaders",
-  "Column3": 0.55,
-  "Column4": 43.86876318,
-  "Column5": 0.8042606583000002,
-  "Column6": 8.23587041918949
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 30,
-  "Column2": "Surfacing Equipment",
-  "Column3": 0.45,
-  "Column4": 361.8761062,
-  "Column5": 5.428141592999999,
-  "Column6": 55.58579835479789
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 31,
-  "Column2": "Sweepers\/Scrubbers",
-  "Column3": 0.68,
-  "Column4": 91.13846928,
-  "Column5": 2.0658053036800004,
-  "Column6": 21.154466051274305
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 32,
-  "Column2": "Tractors\/Loaders\/Backhoes",
-  "Column3": 0.55,
-  "Column4": 107.9760403,
-  "Column5": 1.9795607388333336,
-  "Column6": 20.271295833874984
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 33,
-  "Column2": "Trenchers",
-  "Column3": 0.75,
-  "Column4": 62.759095,
-  "Column5": 1.5689773750000002,
-  "Column6": 16.066799013212503
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 34,
-  "Column2": "Welders",
-  "Column3": 0.45,
-  "Column4": 45.43422744,
-  "Column5": 0.6815134116,
-  "Column6": 6.978901788807479
- },
- null,
- {
-  "Column2": "Assumed"
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 35,
-  "Column2": "Work Trucks, Haul Trucks Semis",
-  "Column3": 0.75,
-  "Column4": 250,
-  "Column5": 6.25,
-  "Column6": 64.001875
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 36,
-  "Column2": "GENERATOR",
-  "Column3": 0.75,
-  "Column4": 20,
-  "Column5": 0.5,
-  "Column6": 5.12015
- },
- {
-  "Source: Roadway Construction Emissions Model Version 6.3.2, California Environmental Quality Act Tools, http:\/\/www.airquality.org\/ceqa\/index.shtml": 37,
-  "Column2": "Other"
- }
-]
-}
+];
+
+export default materialDetails
