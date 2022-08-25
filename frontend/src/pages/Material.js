@@ -219,7 +219,8 @@ console.log("MaterialDetails",materialDetails)
 
                       sx={{
                         // maxWidth: "60vw",
-                        overflow: "hidden"
+                        overflow: "hidden",
+                        marginTop: "20px"
                       }}
                     >
                       {/* {
