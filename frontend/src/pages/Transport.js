@@ -472,7 +472,9 @@ const Transport = () => {
       {transportDataEmission.length > 0 && <div
         style={{
           margin: "20px",
-          border: "1px solid #008000",
+          // border: "1px solid #008000",
+          borderRadius: "20px",
+          boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
           padding: "10px !important"
         }}
       >
@@ -508,7 +510,9 @@ const Transport = () => {
       </Modal> */}
 
 
-      <div>
+      <div style={{
+        height: "20px"
+      }}>
         {/* <button onClick={handleResetLocation}>Reset Location</button>
     <label>Latitute:</label><input type='text' value={location.lat} disabled/>
     <label>Longitute:</label><input type='text' value={location.lng} disabled/>
