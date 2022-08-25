@@ -100,8 +100,8 @@ const Material = () => {
     // console.log(res)
     setData(previous => [
       ...previous, [
-        origin,
-        dest,
+        O.latitude + ", " + O.longitude,
+        D.latitude + ", " + D.longitude,
         mass,
         value,
         d,
@@ -143,19 +143,19 @@ const Material = () => {
 
     setTransportDataEmission([]);
 
-    setTransportDataEmission(prev=>[
+    setTransportDataEmission(prev => [
       ...prev,
-      { argument: `Road`, value: 1.65*mass*haversine(O, D) }
+      { argument: `Road`, value: 1.65 * mass * haversine(O, D) }
     ]);
 
-    setTransportDataEmission(prev=>[
+    setTransportDataEmission(prev => [
       ...prev,
-      { argument: `Rail`, value: 0.0157*mass*haversine(O, D) }
+      { argument: `Rail`, value: 0.0157 * mass * haversine(O, D) }
     ]);
 
-    setTransportDataEmission(prev=>[
+    setTransportDataEmission(prev => [
       ...prev,
-      { argument: `Air`, value: 1.404*mass*haversine(O, D) }
+      { argument: `Air`, value: 1.404 * mass * haversine(O, D) }
     ]);
   }
 
@@ -359,7 +359,7 @@ const Material = () => {
                 </Button> */}
               </div>
 
-             {transportDataEmission.length>0 &&  <div
+              {transportDataEmission.length > 0 && <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -369,11 +369,11 @@ const Material = () => {
                   justifyContent: "center",
                 }}
               >
-               <PieChart
+                <PieChart
                   data={transportDataEmission}
                   label={`Transport `}
-              />
-                </div>
+                />
+              </div>
               }
 
               {/* test */}
