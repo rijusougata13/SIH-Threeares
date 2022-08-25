@@ -24,7 +24,7 @@ const pages = [
     linkTo: '/equipment',
   },
   {
-    name: 'Transportation Estimator',
+    name: 'REO',
     linkTo: '/transport'
   },
 
