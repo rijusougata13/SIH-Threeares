@@ -33,13 +33,16 @@ import ResponsiveAppBar from "src/components/ResponsiveAppBar";
 import SplitSection from "src/components/SplitSection";
 import haversine from "haversine";
 import materialDetails from "../data/material_estimator";
-
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import MapPicker from 'react-google-map-picker';
 
 const DefaultLocation = { lat: 22.7196, lng: 75.8577 };
 const DefaultZoom = 10;
 
-const Material = () => {
+const Transport = () => {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('sm'));
   const [origin, setOrigin] = useState('')
   const [dest, setDest] = useState('')
   const [mass, setMass] = useState('')
@@ -194,7 +197,10 @@ const Material = () => {
       </div>
       <div className="main-container">
         <SplitSection
-          heading="Transportation GHG Estimator"
+          style={{
+            overflowWrap: 'normal'
+          }}
+          heading="Route Emission Optimizer"
           description="The ThreeAres Material Estimator allows the user to generate emission reports that estimate the carbon dioxide emissions associated with materials used in highway constructions projects. Materials are classified according to MDOT's Standard Specifications for Construction's Division 9  material classifications. The tool estimates cradle to gate emissions and can be used to differentiate impacts of using composite materials that make up the roadway."
           image="https://cdni.iconscout.com/illustration/premium/thumb/calculating-5329901-4481228.png"
           routepath=""
@@ -211,9 +217,9 @@ const Material = () => {
           >
             <Box
               display="flex"
+              flexDirection={matches ? 'row' : 'column'}
               justifyContent="center"
               alignItems="center"
-            // minHeight="100vh"
             >
               <Grid
                 container
@@ -287,12 +293,14 @@ const Material = () => {
                       setMass(e.target.value)
                     }}
                   />
-                  <FormControl style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    justifyContent: "center"
-                  }}>
+                  <FormControl
+                    display={'flex'}
+                    flexDirection={matches ? 'column' : 'row'}
+                    style={{
+
+                      alignItems: "center",
+                      justifyContent: "center"
+                    }}>
                     <FormLabel id="demo-radio-buttons-group-label">Means &nbsp; &nbsp;</FormLabel>
                     <RadioGroup
                       style={{
@@ -359,22 +367,7 @@ const Material = () => {
                 </Button> */}
               </div>
 
-              {transportDataEmission.length > 0 && <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  width: "50%",
-                  textAlign: "center",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <PieChart
-                  data={transportDataEmission}
-                  label={`Transport `}
-                />
-              </div>
-              }
+
 
               {/* test */}
               {/* <Grid
@@ -446,29 +439,19 @@ const Material = () => {
         height: "20px"
       }}></div>
 
-      {/* {chartDataEmission.length > 0 && (
-        <>
-          <div style={{
-            margin: "20px",
-          }}>
-            <div style={{
-              // background: "blue",
-              padding: "10px",
-              border: "1px solid #008000",
-            }}>
-              <PieChart
-                data={chartDataEmission}
-                label="Emission Rate PieChart"
-              />
-            </div>
-          </div>
-
-          <div className="whitespace" style={{
-            height: "20px"
-          }}></div>
-        </>
-
-      )} */}
+      {transportDataEmission.length > 0 && <div
+        style={{
+          margin: "20px",
+          border: "1px solid #008000",
+          padding: "10px !important"
+        }}
+      >
+        <PieChart
+          data={transportDataEmission}
+          label={`Transport `}
+        />
+      </div>
+      }
 
       {/* <iframe src="https://maps.google.com/maps?&hl=en&q=dermatologist&t=&z=13&ie=UTF8"></iframe> */}
 
@@ -507,4 +490,4 @@ const Material = () => {
   );
 };
 
-export default Material;
+export default Transport;

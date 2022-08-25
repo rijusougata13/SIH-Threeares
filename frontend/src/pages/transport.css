@@ -1,4 +1,4 @@
-.appbar{}
+/* .appbar{}
 .main-container{
     display: flex;
     flex-direction: column;
@@ -20,4 +20,34 @@
 
 .calculate-btn {
     margin: 20px;
+} */
+
+.textfield input {
+    padding: 15px !important;
+}
+#center-container{
+    /* background: black; */
+    display: flex;
+    flex-direction: row ;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    #center-container{
+
+    /* background:red; */
+    flex-direction: column !important ;
+
+}
+.css-f0xsrb-MuiGrid-root{
+    max-width: 1;
+}
+.css-gkopid-MuiGrid-root{
+margin-left: 0 !important;
+} 
+
+.MuiGrid-grid-xs-12 {
+    padding: 20px 20px 20px 20px !important;
+    margin-top: 10px;
+}
 }
