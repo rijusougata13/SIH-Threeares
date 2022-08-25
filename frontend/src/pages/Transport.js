@@ -31,12 +31,12 @@ import "./equipment.css";
 import "./Material.css";
 import ResponsiveAppBar from "src/components/ResponsiveAppBar";
 import SplitSection from "src/components/SplitSection";
-
+import haversine from "haversine";
 import materialDetails from "../data/material_estimator";
 
 import MapPicker from 'react-google-map-picker';
 
-const DefaultLocation = { lat: 22.7196, lng: 75.8577};
+const DefaultLocation = { lat: 22.7196, lng: 75.8577 };
 const DefaultZoom = 10;
 
 const Material = () => {
@@ -46,13 +46,13 @@ const Material = () => {
   const [value, setValue] = React.useState('ROAD');
   const [dist, setDist] = useState(0)
   const [data, setData] = useState([])
-  const [O,setO]= useState({
-    lat:'',long:''
+  const [O, setO] = useState({
+    latitude: 0, longitude: 0
   })
-  const [D,setD]=useState({
-    lat:'',long:''
+  const [D, setD] = useState({
+    latitude: 0, longitude: 0
   })
-  const [st,setSt]=useState(null)
+  const [st, setSt] = useState(null)
 
   var emissions_rate = 0
   const columns = ["Origin", "Destination", "Mass", "Means", "Distance", "Emission"];
@@ -73,16 +73,16 @@ const Material = () => {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    height:'400px', 
+    height: '400px',
     width: '500px',
     maxWidth: '80vw',
     bgcolor: 'background.paper',
     borderRadius: '20px',
     boxShadow: 24,
     p: 4,
-    
+
   };
-  
+
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -108,19 +108,19 @@ const Material = () => {
       ]
     ])
   };
-  
+
   const calculate = async () => {
     setDist(null)
-    const request = {
-      method: "GET",
+    // const request = {
+    //   method: "GET",
 
-      headers: {
-        'no-cors': true,
-        'Access-Control-Allow-Origin': '*',
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    };
+    //   headers: {
+    //     'no-cors': true,
+    //     'Access-Control-Allow-Origin': '*',
+    //     Accept: "application/json",
+    //     "Content-Type": "application/json",
+    //   },
+    // };
     if (value === 'ROAD')
       emissions_rate = 1.65
     else if (value === 'RAIL')
@@ -128,15 +128,16 @@ const Material = () => {
     else if (value === 'AIR')
       emissions_rate = 1.404
 
-    await axios.get(`https://distanceto.herokuapp.com/distance?pin1=${origin}&pin2=${dest}`).then((response) => {
-      // setDist(parseInt(response.data))
-      // 
-      // console.log('axios', response.data)
-      // setRes((parseInt(response.data) * emissions_rate * mass))
-      addNew((response.data))
-    })
+    // await axios.get(`https://distanceto.herokuapp.com/distance?pin1=${origin}&pin2=${dest}`).then((response) => {
+    //   // setDist(parseInt(response.data))
+    //   // 
+    //   // console.log('axios', response.data)
+    //   // setRes((parseInt(response.data) * emissions_rate * mass))
+    //   addNew((response.data))
+    // })
 
-
+    // console.log(O, D)
+    addNew(haversine(O, D))
   }
 
   //  function handleChangeLocation (lat, lng, state){
@@ -146,27 +147,27 @@ const Material = () => {
   //   else
   //   setDest({lat:lat, lng:lng})
   // }
-  
+
   // function handleChangeZoom (newZoom){
   //   setZoom(newZoom);
   // }
 
-  function handleResetLocation(){
-    setDefaultLocation({ ... DefaultLocation});
+  function handleResetLocation() {
+    setDefaultLocation({ ...DefaultLocation });
     setZoom(DefaultZoom);
   }
 
   return (
     <>
-     <LocModal
-      open={open}
-      setOpen={setOpen}
-      st={st}
-      // lat={lat}
-      // lng={lng}
-      setO={setO}
-      setD={setD}
-      
+      <LocModal
+        open={open}
+        setOpen={setOpen}
+        st={st}
+        // lat={lat}
+        // lng={lng}
+        setO={setO}
+        setD={setD}
+
       />
       <div className="appbar">
         <CssBaseline />
@@ -206,7 +207,7 @@ const Material = () => {
               >
 
                 <Grid item xs={12}>
-                {/* <Button
+                  {/* <Button
                   id="calculate-btn"
                   style={{
                     fontFamily: "montserrat",
@@ -232,12 +233,14 @@ const Material = () => {
                     required
                     id="outlined-basic"
                     // disabled={true}
-                    label="Origin" variant="outlined" value={O.lat+" "+O.long}
-                    onClick={()=>{setSt('O')
-                     handleOpen()}}
-                    // onChange={(e) => {
-                    //   setOrigin(e.target.value)
-                    // }}
+                    label="Origin" variant="outlined" value={O.latitude + " " + O.longitude}
+                    onClick={() => {
+                      setSt('O')
+                      handleOpen()
+                    }}
+                  // onChange={(e) => {
+                  //   setOrigin(e.target.value)
+                  // }}
                   />
                   <TextField
                     className="textfield"
@@ -248,8 +251,10 @@ const Material = () => {
                     size="normal"
                     required
                     id="outlined-basic"
-                    label="Destination" variant="outlined" value={D.lat+" "+D.long}  onClick={()=>{setSt('D')
-                    handleOpen()}}/>
+                    label="Destination" variant="outlined" value={D.latitude + " " + D.longitude} onClick={() => {
+                      setSt('D')
+                      handleOpen()
+                    }} />
                   <TextField
                     className="textfield"
                     style={{
@@ -431,7 +436,7 @@ const Material = () => {
       )} */}
 
       {/* <iframe src="https://maps.google.com/maps?&hl=en&q=dermatologist&t=&z=13&ie=UTF8"></iframe> */}
-     
+
       {/* <Button onClick={handleOpen}>Open modal</Button> */}
       {/* <Modal
         open={open}
@@ -453,15 +458,15 @@ const Material = () => {
             apiKey=''/>
 
       </Modal> */}
-      
-      
+
+
       <div>
         {/* <button onClick={handleResetLocation}>Reset Location</button>
     <label>Latitute:</label><input type='text' value={location.lat} disabled/>
     <label>Longitute:</label><input type='text' value={location.lng} disabled/>
     <label>Zoom:</label><input type='text' value={zoom} disabled/> */}
-    
-    
+
+
       </div>
     </>
   );
