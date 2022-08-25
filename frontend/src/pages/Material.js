@@ -25,7 +25,7 @@ import MUIDataTable from "mui-datatables";
 import PieChart from "src/components/PieChart";
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./equipment.css";
 import "./Material.css";
 import axios from "axios";
@@ -41,7 +41,35 @@ const Material = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('sm'));
   const [emission, setEmission] = useState(0);
+  // const planPieChart=[];
+  const [planPieChart,setPlanPieChart]=useState([]);
 
+  useEffect(()=>{
+    setPlanPieChart([]);
+    compareListMaterial?.map((data,id)=> {
+      var tot=0;
+      data.map(val=>{
+          tot+=val.value;
+      })
+
+      console.log("DIe",data);
+      
+      setPlanPieChart((prev) => [
+        ...prev,
+        { argument: `Plan ${id}`, value: tot },
+      ]);
+
+      // planPieChart.push(
+      //   { argument: data.argument, value: data.value },
+      // )
+
+  })
+  },[]);
+  var bestPackage = null;
+    var minCostEmission= 1000000000000;
+  var compareListMaterial = [[]];
+
+  compareListMaterial=JSON.parse(localStorage.getItem('compareListMaterial'));
 
 
   var emissions_rate = 0;
@@ -88,6 +116,44 @@ const Material = () => {
     ]);
   };
 
+  const addToCompareList = () =>{
+
+    console.log("StringValue",data);
+    
+    var currentVal=[];
+    
+    {
+        data.map((d) => {
+
+            currentVal.push(                    {
+                argument: d[1],value: d[3]
+            }
+            )
+           
+        });
+    }
+
+    if(!compareListMaterial)compareListMaterial=[[]]
+    console.log("PREvious Value",compareListMaterial);
+    compareListMaterial.push(currentVal);
+    
+    console.log("CurrentValue",currentVal);
+
+    localStorage.setItem('compareListMaterial', JSON.stringify(compareListMaterial));
+
+    window.location.reload();
+    // setTimeout(()=>{
+    // compareList=JSON.parse(localStorage.getItem('compareList'));
+
+    // },1000);
+
+}
+
+
+const clearCompareList = ()=>{
+    localStorage.removeItem("compareListMaterial");
+    window.location.reload();
+}
   return (
     <>
       <div className="appbar">
@@ -227,6 +293,36 @@ const Material = () => {
                   >
                     Calculate
                   </Button>
+                  <Button  style={{
+                                            fontFamily: "montserrat",
+                                            width: "250px",
+                                            marginLeft: "0px",
+                                            marginTop: "20px",
+                                            marginBottom: "20px",
+                                            background: "white",
+                                            color: "#008000",
+                                            boxShadow: "none",
+                                            border: "1px solid #008000",
+                                            borderRadius: "0px",
+                                            transition: "0.4s ease",
+                                        }}
+                                        onClick={addToCompareList}
+                                        >Add To Compare List</Button>
+                                    <Button style={{
+                                            fontFamily: "montserrat",
+                                            width: "250px",
+                                            marginLeft: "0px",
+                                            marginTop: "20px",
+                                            marginBottom: "20px",
+                                            background: "white",
+                                            color: "#008000",
+                                            boxShadow: "none",
+                                            border: "1px solid #008000",
+                                            borderRadius: "0px",
+                                            transition: "0.4s ease",
+                                        }}
+                                        onClick={clearCompareList}
+                                        > Clear Comparison</Button>
                 </div>
               </Grid>
 
@@ -326,6 +422,59 @@ const Material = () => {
         </>
 
       )}
+       {
+            compareListMaterial?.length > 0 && (  <div style={{}}>
+                <h3>Compare List</h3>
+                <div id="compareList"
+                //  style={{display: 'flex',flexDirection:'row',justifyContent:"space-between"}}
+                  >
+                    {
+                        compareListMaterial?.map((data,id)=> {
+                            var tot=0;
+                            data.map(val=>{
+                                tot+=val.value;
+                            })
+                            
+                            // setPlanPieChart((prev) => [
+                            //   ...prev,
+                            //   { argument: data.argument, value: data.value },
+                            // ]);
+
+                            // planPieChart.push(
+                            //   { argument: data.argument, value: data.value },
+                            // )
+
+                            if(  data.length>0 && tot<minCostEmission){
+                                minCostEmission=tot;
+                                bestPackage=(id);
+                            }
+                            return data.length>0 &&  <div style={{
+                                // background: "blue",
+                                padding: "10px",
+                                border: "1px solid #008000",
+                            }}>
+                                <PieChart
+                                    data={data}
+                                    label={`Plan ${id}`}
+                                />
+                                {
+
+                                    <p>{tot}</p>
+                                }
+                            </div>
+                        })
+
+                    }
+                </div>
+               {bestPackage && ( <PieChart
+                                    data={planPieChart}
+                                    label={`Plan Comparison`}
+                                />)}
+               {bestPackage && ( <p>Best Plan to use is :  Plan {bestPackage}</p>)}
+
+            </div>
+            )
+        }   
     </>
   );
 };

@@ -24,7 +24,7 @@ import MUIDataTable from "mui-datatables";
 
 import PieChart from "src/components/PieChart";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./equipment.css";
 import "./Material.css";
 import axios from "axios";
@@ -47,6 +47,30 @@ const Equipment = () => {
     var bestPackage = null;
     var minCostEmission= 1000000000000;
     var compareList = [[]];
+
+    const [planPieChart,setPlanPieChart]=useState([]);
+
+    useEffect(()=>{
+      setPlanPieChart([]);
+      compareList?.map((data,id)=> {
+        var tot=0;
+        data.map(val=>{
+            tot+=val.value;
+        })
+  
+        console.log("DIe",data);
+        
+        setPlanPieChart((prev) => [
+          ...prev,
+          { argument: `Plan ${id}`, value: tot },
+        ]);
+  
+        // planPieChart.push(
+        //   { argument: data.argument, value: data.value },
+        // )
+  
+    })
+    },[]);
 
     compareList=JSON.parse(localStorage.getItem('compareList'));
 
@@ -141,7 +165,8 @@ const Equipment = () => {
 
 
     const clearCompareList = ()=>{
-        localStorage.clear();
+    localStorage.removeItem("compareList");
+
         window.location.reload();
     }
 
@@ -443,7 +468,7 @@ const Equipment = () => {
                             })
                             if(  data.length>0 && tot<minCostEmission){
                                 minCostEmission=tot;
-                                bestPackage=(id+1);
+                                bestPackage=(id);
                             }
                             return data.length>0 &&  <div style={{
                                 // background: "blue",
@@ -452,7 +477,7 @@ const Equipment = () => {
                             }}>
                                 <PieChart
                                     data={data}
-                                    label={`Package ${id+1}`}
+                                    label={`Plan ${id}`}
                                 />
                                 {
 
@@ -462,7 +487,11 @@ const Equipment = () => {
                         })
                     }
                 </div>
-               {bestPackage && ( <p>Best Package to use is :  Package {bestPackage}</p>)}
+                {bestPackage && ( <PieChart
+                                    data={planPieChart}
+                                    label={`Plan Comparison`}
+                                />)}
+               {bestPackage && ( <p>Best Plan to use is :  Plan {bestPackage}</p>)}
             </div>
             )
         }   
