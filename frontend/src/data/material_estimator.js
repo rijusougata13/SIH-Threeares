@@ -4,21 +4,24 @@ const materialDetails=[
             "Material Description": "Cement",
             "Unit": "MT/Ton",
             "Published Factor": "0.8420000",
-            "Source": "National Renweable Energy Laboratory (Coverted)"
+            "Source": "National Renweable Energy Laboratory (Coverted)",
+            "category":"1",
         },
         {
             "Div ID": "2",
             "Material Description": "Binder",
             "Unit": "MT/Ton",
             "Published Factor": "0.1570000",
-            "Source": "Life Cycle Assessment of Road: A Pilot Study for Inventory Analysis, Stripple, 2001 (Coverted to CO2 Eq) Table 4.2.11.6"
+            "Source": "Life Cycle Assessment of Road: A Pilot Study for Inventory Analysis, Stripple, 2001 (Coverted to CO2 Eq) Table 4.2.11.6",
+            "category":"2",
         },
         {
             "Div ID": "3",
             "Material Description": "FlyAsh",
             "Unit": "MT/Ton",
             "Published Factor": "0.0178000",
-            "Source": "Inventory Data and Case Studies for Environmental Performance Evaluation of Concrete Structure Construction, Journal of Advanced Concrete Technology table 3"
+            "Source": "Inventory Data and Case Studies for Environmental Performance Evaluation of Concrete Structure Construction, Journal of Advanced Concrete Technology table 3",
+            "category":"3",
         },
         {
             "Div ID": "4",
@@ -26,6 +29,8 @@ const materialDetails=[
             "Unit": "MT/Ton",
             "Published Factor": "0.0240000",
             "Source": "Inventory Data and Case Studies for Environmental Performance Evaluation of Concrete Structure Construction, Journal of Advanced Concrete Technology table 3"
+            ,
+            "category":"1",
         },
         {
             "Div ID": "5",
@@ -34,6 +39,8 @@ const materialDetails=[
             "Published Factor": "0.0151000",
             "Notes": "Coverted CO2Eq Assumed Coal Power",
             "Source": "Athena Study: A LIFE CYCLE PERSPECTIVE ON CONCRETE AND ASPHALT ROADWAYS: EMBODIED PRIMARY ENERGY AND GLOBAL WARMING POTENTIAL Appendix B tables 4 and 6"
+            ,"category":"2",
+        
         },
         {
             "Div ID": "6",
@@ -754,6 +761,7 @@ const materialDetails=[
             "Unit": "Ton",
             "$$/Unit (2009)": "0.002439",
             "Published Factor": "0.0024390"
+            
         },
         {
             "Div ID": "88",
