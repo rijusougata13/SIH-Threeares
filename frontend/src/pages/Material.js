@@ -32,7 +32,7 @@ import axios from "axios";
 import ResponsiveAppBar from "src/components/ResponsiveAppBar";
 import SplitSection from "src/components/SplitSection";
 
-import materialDetails from "../data/material_estimator";
+import materialDetails from "../data/material-updated";
 
 const Material = () => {
   const [equip, setEquip] = React.useState("");
@@ -41,6 +41,8 @@ const Material = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('sm'));
   const [emission, setEmission] = useState(0);
+  const [currentCategory,setCurrentCategory]=useState("");
+
   // const planPieChart=[];
   const [planPieChart,setPlanPieChart]=useState([]);
 
@@ -74,7 +76,7 @@ const Material = () => {
 
   var emissions_rate = 0;
   const columns = [
-    "Division",
+    // "Division",
     "Material Name",
     "Weight",
     "Emissions(MT of CO2)",
@@ -104,10 +106,12 @@ const Material = () => {
     }
   };
   const addNew = ({ id }) => {
+    // onClick={()=>{setCurrentCategory(item.DivId)}}
+    setCurrentCategory(equip["DivId"]);
     setData((previous) => [
       ...previous,
       [
-        equip["Div ID"],
+        equip["DivID"],
 
         equip["Material Description"],
         weight,
@@ -154,6 +158,7 @@ const clearCompareList = ()=>{
     localStorage.removeItem("compareListMaterial");
     window.location.reload();
 }
+console.log("MaterialDetails",materialDetails)
   return (
     <>
       <div className="appbar">
@@ -210,11 +215,18 @@ const clearCompareList = ()=>{
                         overflow: "hidden"
                       }}
                     >
-                      {materialDetails.map((item) => (
-                        <MenuItem value={item}>
+                      {/* {
+                        materialDetails.filter((item)=>{
+
+                        })
+                      } */}
+                      {materialDetails.map((item) => {
+                        if(item.DivId == currentCategory || currentCategory == "")
+                        return(
+                        <MenuItem value={item} >
                           {item["Material Description"]}
                         </MenuItem>
-                      ))}
+                      )})}
                       {/* <MenuItem value={10}>Ten</MenuItem>
                                             <MenuItem value={20}>Twenty</MenuItem>
                                             <MenuItem value={30}>Thirty</MenuItem> */}
