@@ -42,9 +42,9 @@ const LcaSelect = ({ label, emission, setEmission }) => {
                 </FormControl>
 
             </Grid>
-            <Grid item xs={12} lg={12}>
+            <Grid item xs={6} lg={12}>
                 <TextField style={{
-                    margin: "20px",
+                    // margin: "20px",
                     width: "300px"
                 }} required id="outlined-basic" label="Weight" variant="standard" value={weight}
                     onChange={(e) => {
@@ -53,7 +53,7 @@ const LcaSelect = ({ label, emission, setEmission }) => {
             </Grid>
 
             <Grid item xs={12} lg={12}>
-                <Button className="next-btn calculate-btn" style={{
+                <Button className="next-btn calculate-btn" id="calculate-btn" style={{
                     width: "300px",
                     textAlign: "center",
                     fontFamily: "montserrat",

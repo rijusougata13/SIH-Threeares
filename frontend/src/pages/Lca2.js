@@ -3,16 +3,19 @@ import { TextField, Button, FormControlLabel, RadioGroup, FormLabel, FormControl
 import { Box } from '@mui/system'
 import MUIDataTable from "mui-datatables";
 import ResponsiveAppBar from 'src/components/ResponsiveAppBar';
-
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import React, { useState } from 'react'
-import './equipment.css'
+// import './equipment.css'
+import './lca2.css'
 import axios from 'axios'
 // import lcaData2 from '../data/lca2_data'
 import LcaSelect from './LcaSelect';
 import SplitSection from 'src/components/SplitSection';
 
 const Lca2 = () => {
-
+    const theme = useTheme();
+    const matches = useMediaQuery(theme.breakpoints.up('sm'));
 
     const [electricity, setElectricty] = useState(0)
     const [emission1, setEmission1] = useState(0)
@@ -139,11 +142,11 @@ const Lca2 = () => {
                                 }}
                                 // indicatorColor="primary"
                                 // textColor="primary"
-                                centered
-
+                                // centere
+                                centered={matches ? true : false}
                             >
-                                <Tab value={0} label="Electricity purchased from grid" />
-                                <Tab value={1} label="Diesel used in generators" />
+                                <Tab value={0} label="Electricity from grid" />
+                                <Tab value={1} label="Diesel from generators" />
                                 <Tab value={2} label="Petrol used" />
 
                             </Tabs>
@@ -297,7 +300,7 @@ const Lca2 = () => {
                                 }}
                                 indicatorColor="primary"
                                 textColor="primary"
-                                centered
+                                centered={matches ? true : false}
                             >
                                 <Tab value={0} label="Subgrade/road bed" />
                                 <Tab value={1} label="Sub base course" />
@@ -464,7 +467,7 @@ const Lca2 = () => {
                                     width: "100%",
                                     textAlign: "center"
                                 }}>
-                                    <Button className="calculate-btn" style={{
+                                    <Button className="calculate-btn" id="emission-btn" style={{
                                         width: "300px",
                                         textAlign: "center",
                                         fontFamily: "montserrat",
@@ -489,7 +492,7 @@ const Lca2 = () => {
                                 </Grid>
 
                                 <Grid item xs={12}>
-                                    <Button className="calculate-btn" style={{
+                                    <Button className="calculate-btn" id="finalCalc-btn" style={{
                                         width: "300px",
                                         textAlign: "center",
                                         fontFamily: "montserrat",
@@ -533,8 +536,7 @@ const Lca2 = () => {
 
 
 
-                        {/* </div> */}
-                        <div className='main-content' style={{
+                        {/* <div className='main-content' style={{
                             justifyContent: 'center',
                             alignContent: 'center',
                             alignItems: 'center',
@@ -622,14 +624,13 @@ const Lca2 = () => {
                                     </Grid>
 
                                 </Grid>
-                            </div>
-                        </div>
+                            </div> 
+                </div>*/}
                     </Paper>
                 </div>
 
 
-            </div>
-            {/* </div > */}
+            </div >
         </>
     )
 }

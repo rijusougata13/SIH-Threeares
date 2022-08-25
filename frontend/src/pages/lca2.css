@@ -6,3 +6,24 @@
 .next-btn:hover {
     color: white !important;
 }
+@media only screen and (max-width: 600px) {
+.MuiFormControl-root{
+    width:fit-content !important;
+}
+.css-9q3kl4-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-9q3kl4-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-9q3kl4-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
+padding-right: 150px !important;
+}
+#calculate-btn{
+    width: auto !important;
+
+}
+#emission-btn{
+    width: auto !important;
+
+}
+#finalCalc-btn{
+    width: auto !important;
+
+
+}
+}
