@@ -7,6 +7,9 @@ import "./VehicleGHG.css";
 
 const VehicleGHG = () => {
 
+    const [engineSize, setEngineSize] = useState("");
+    const [cylinders, setCylinders] = useState("");
+    const [fuelConsumption, setFuelConsumption] = useState("");
     const [fuelType, setFuelType] = useState("");
 
     const Item = styled(Paper)(({ theme }) => ({
@@ -62,21 +65,27 @@ const VehicleGHG = () => {
             <Grid item xs={12} lg={6}>
                 <Item>
                     <FormControl fullWidth>
-                    <TextField fullwidth id="outlined-basic" label="Engine size (L)" variant="outlined" />
+                    <TextField fullwidth id="outlined-basic" label="Engine size (L)" variant="outlined" 
+                    onChange={(e) => setEngineSize(e.target.value)}
+                    />
                     </FormControl>
                 </Item>
             </Grid>
             <Grid item xs={12} lg={6}>
                 <Item>
                 <FormControl fullWidth>
-                <TextField fullwidth id="outlined-basic" label="Cyclinders" variant="outlined" />
+                <TextField fullwidth id="outlined-basic" label="Cyclinders" variant="outlined" 
+                onChange={(e) => setEngineSize(e.target.value)}
+                />
                 </FormControl>
                 </Item>
             </Grid>
             <Grid item xs={12} lg={6}>
                 <Item>
                 <FormControl fullWidth>
-                <TextField fullwidth id="outlined-basic" label="Fuel consumption (L/100km)" variant="outlined" />
+                <TextField fullwidth id="outlined-basic" label="Fuel consumption (L/100km)" variant="outlined" 
+                onChange={(e) => setEngineSize(e.target.value)}
+                />
                 </FormControl>
                 </Item>
             </Grid>
