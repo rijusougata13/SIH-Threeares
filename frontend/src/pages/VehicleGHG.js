@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import SplitSection from "src/components/SplitSection";
-import { Grid, styled, Paper, TextField, Select, MenuItem, FormControl, InputLabel, Button } from "@mui/material";
+import { Grid, styled, Paper, TextField, Select, MenuItem, FormControl, InputLabel, Button, ListItem } from "@mui/material";
 import "./VehicleGHG.css";
 import axios from 'axios'
 const VehicleGHG = () => {
@@ -70,34 +70,34 @@ const VehicleGHG = () => {
                     }}
                 >
                     <Grid item xs={12} lg={6}>
-                        <Item>
+                        <ListItem>
                             <FormControl fullWidth>
                                 <TextField fullwidth  label="Engine size (L)" variant="outlined" value={engineSize}
                                     onChange={(e) => setEngineSize(e.target.value)}
                                 />
                             </FormControl>
-                        </Item>
+                        </ListItem>
                     </Grid>
                     <Grid item xs={12} lg={6}>
-                        <Item>
+                        <ListItem>
                             <FormControl fullWidth>
                                 <TextField fullwidth label="Cyclinders" variant="outlined" value={cylinders}
                                     onChange={(e) => setCylinders(e.target.value)}
                                 />
                             </FormControl>
-                        </Item>
+                        </ListItem>
                     </Grid>
                     <Grid item xs={12} lg={6}>
-                        <Item>
+                        <ListItem>
                             <FormControl fullWidth>
                                 <TextField fullwidth  label="Fuel consumption (L/100km)" variant="outlined" value={fuelConsumption}
                                     onChange={(e) => setFuelConsumption(e.target.value)}
                                 />
                             </FormControl>
-                        </Item>
+                        </ListItem>
                     </Grid>
                     <Grid item xs={12} lg={6}>
-                        <Item>
+                        <ListItem>
                             <FormControl fullWidth>
                                 <InputLabel fullwidth id="demo-simple-select-label">Fuel type</InputLabel>
                                 <Select
@@ -115,7 +115,7 @@ const VehicleGHG = () => {
                                     <MenuItem value={"0,0,1"}>Ethanol (E85)</MenuItem>
                                 </Select>
                             </FormControl>
-                        </Item>
+                        </ListItem>
                     </Grid>
 
                     <Button

@@ -84,7 +84,7 @@ const Lca2 = () => {
                 <SplitSection
                     heading="LCA Estimator"
                     description="The LCA Estimator is a carbon footprint framework, to estimate total CO2 emissions during the full life cycle of any road in India. As a first step toward developing this framework, it was recognized that understanding all possible sources of direct and indirect CO2 emissions during the full life period of any road is vital. The possible sources of CO2 emissions (direct and indirect) during any road cycle are taken into consideration here. "
-                    image="https://i.pinimg.com/originals/58/48/a5/5848a573cb4e7fb8ce9e834a3dd425e6.gif"
+                    image="https://i.pinimg.com/originals/da/83/47/da8347dcb9b4e70c5d01780db65a139b.gif"
                     routepath=""
                     height="90vh"
                     border="30px solid white"
