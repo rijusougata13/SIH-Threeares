@@ -248,6 +248,7 @@ const Equipment = () => {
                                             paddingBottom: '10px'
                                         }}
                                         size="normal"
+                                        autoComplete='off'
                                         required
                                         id="outlined-basic"
                                         label="Number Used"
@@ -262,6 +263,7 @@ const Equipment = () => {
                                         style={{
                                             width: "100%",
                                         }}
+                                        autoComplete='off'
                                         size="normal"
                                         required
                                         id="outlined-basic"
