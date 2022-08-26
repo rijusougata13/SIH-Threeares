@@ -45,7 +45,7 @@ export default function SplitSection(props) {
             justifyContent: "center"
             }}>
 
-            {props.videourl && <iframe width="100%" height="100%" src={props.videourl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}
+            {props.videourl && <iframe width="100%" height="100%" src={props.videourl} title="YouTube video player" frameborder="0" allow="muted; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen muted autoplay></iframe>}
             {!props.videourl && <img src={props.image} style={{
               height: props.imageHeight, 
               width: props.imageWidth,

@@ -76,7 +76,7 @@ const Material = () => {
 
   var emissions_rate = 0;
   const columns = [
-    // "Division",
+    "Division",
     "Material Name",
     "Weight",
     "Emissions(MT of CO2)",
@@ -248,6 +248,7 @@ console.log("MaterialDetails",materialDetails)
                       width: "100%",
 
                     }}
+                    autoComplete='off'
 
 
                     size="normal"

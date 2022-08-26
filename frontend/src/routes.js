@@ -11,6 +11,7 @@ import Material from './pages/Material';
 import Lca2 from './pages/Lca2';
 import Lca3 from './pages/Lca3';
 import Inventory from './pages/Inventory';
+import VehicleGHG from './pages/VehicleGHG';
 // ----------------------------------------------------------------------
 
 export default function Router() {
@@ -46,6 +47,11 @@ export default function Router() {
       element: <Inventory />
 
     },
+
+    {
+      path: "/vehicleGHG",
+      element: <VehicleGHG />
+    }
 
 
   ]);
