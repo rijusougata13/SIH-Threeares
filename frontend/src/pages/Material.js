@@ -31,8 +31,10 @@ import "./Material.css";
 import axios from "axios";
 import ResponsiveAppBar from "src/components/ResponsiveAppBar";
 import SplitSection from "src/components/SplitSection";
+import materialsList from '../data/mat2';
 
 import materialDetails from "../data/material-updated";
+import { ViewKanban } from "@mui/icons-material";
 
 const Material = () => {
   const [equip, setEquip] = React.useState("");
@@ -42,6 +44,8 @@ const Material = () => {
   const matches = useMediaQuery(theme.breakpoints.up('sm'));
   const [emission, setEmission] = useState(0);
   const [currentCategory,setCurrentCategory]=useState("");
+  const [qualityElement,setQualityElement]=useState([]);
+  const [qualityVal,setQualityVal]=useState(null);
 
   // const planPieChart=[];
   const [planPieChart,setPlanPieChart]=useState([]);
@@ -91,6 +95,11 @@ const Material = () => {
   const handleChange = (event) => {
     setEquip(event.target.value);
   };
+
+  const handleChange2 = (e) =>{
+    console.log("VALASD",e.target.value.simulation)
+    setQualityVal(e.target.value);
+  }
   const calculate = () => {
     setEmission(0);
     setChartDataEmission([]);
@@ -153,7 +162,13 @@ const Material = () => {
 
 }
 
-
+const qualityAdd = ()=>{
+  console.log("ADFUCK",parseInt(qualityVal['simulation']['Tensile Strength']))
+  setQualityElement((prev) => [
+    ...prev,
+    { argument: `${qualityVal.name} Tensile Strength  = ${parseInt(qualityVal['simulation']['Tensile Strength'])}`, value:parseInt(qualityVal['simulation']['Tensile Strength'])},
+  ]);
+}
 const clearCompareList = ()=>{
     localStorage.removeItem("compareListMaterial");
     window.location.reload();
@@ -520,7 +535,104 @@ console.log("MaterialDetails",materialDetails)
 
             </div>
             )
-        }   
+        } 
+        <div 
+
+        className="hideinmobile"
+        style={{
+                margin: "20px",
+                background: "white !important",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center"
+
+            }}>
+              <h3>Quality Checker Material</h3>
+                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+
+
+
+                    sx={{
+                        margin: "20px",
+                        background: "white !important",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        borderRadius: "20px",
+                        boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+                    }}
+                >
+                    <Grid item xs={12} lg={12}>
+                        {/* <Item> */}
+                            <FormControl fullWidth>
+                            <InputLabel id="demo-simple-select-label">
+                      Materials
+                    </InputLabel>
+                    <Select
+                      labelId="Materials"
+                      // id="demo-simple-select"
+                      value={qualityVal?.name}
+                      label="Material"
+                      onChange={handleChange2}
+
+                      sx={{
+                        maxWidth: "99%",
+                        overflow: "hidden",
+                        marginTop: "20px"
+                      }}
+                    >
+                      {/* {
+                        materialDetails.filter((item)=>{
+
+                        })
+                      } */}
+                      {materialsList.map((item) => {
+                        return(
+                        <MenuItem value={item} key={item.matid} >
+                          {item["name"]}
+                        </MenuItem>
+                      )})}
+                      {/* <MenuItem value={10}>Ten</MenuItem>
+                                            <MenuItem value={20}>Twenty</MenuItem>
+                                            <MenuItem value={30}>Thirty</MenuItem> */}
+                    </Select>
+                            </FormControl>
+                        {/* </Item> */}
+                    </Grid>
+                    
+                    
+
+                    <Button
+
+                        className="btn"
+
+                        style={{
+                            fontFamily: "montserrat",
+                            width: "250px",
+                            marginLeft: "0px",
+                            marginTop: "20px",
+                            marginBottom: "20px",
+                            background: "white",
+                            color: "#008000",
+                            boxShadow: "none",
+                            border: "1px solid #008000",
+                            borderRadius: "0px",
+                            transition: "0.4s ease",
+                        }}
+                    onClick={e=>qualityAdd()}
+                    >Calculate</Button>
+                    {qualityElement.length>0  && 
+
+                     <PieChart
+                                        data={qualityElement}
+                                        // label={`Quality Checker Material`}
+                                    />}
+                </Grid>
+
+
+
+            </div>
     </>
   );
 };

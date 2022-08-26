@@ -7,13 +7,21 @@
     flex-direction: row ;
     
 }
+.hideinmobile{
+    visibility: inherit;
+}
 
 @media only screen and (max-width: 600px) {
     #center-container{
 
     /* background:red; */
     flex-direction: column !important ;
+    
+}
 
+.hideinmobile{
+    visibility: hidden;
+    display: none;
 }
 .css-f0xsrb-MuiGrid-root{
     max-width: 1;
@@ -27,3 +35,4 @@ margin-left: 0 !important;
     margin-top: 10px;
 }
 }
+
