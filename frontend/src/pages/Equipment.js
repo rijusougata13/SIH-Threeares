@@ -473,7 +473,7 @@ const Equipment = () => {
                     borderRadius: "20px",
                     boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
                 }}>
-                    <h3>Compare List</h3>
+                    <h3>Comparison List Metrics</h3>
                     <div id="compareList"
                     //  style={{display: 'flex',flexDirection:'row',justifyContent:"space-between"}}
                     >
@@ -506,7 +506,7 @@ const Equipment = () => {
                     </div>
                     {bestPackage && (<PieChart
                         data={planPieChart}
-                        label={`Plan Comparison`}
+                        label={`Plan Comparison Metrics`}
                     />)}
                     {bestPackage && (<p style={{
                         width: "100%",
