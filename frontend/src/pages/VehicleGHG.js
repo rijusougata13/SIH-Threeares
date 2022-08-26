@@ -48,9 +48,7 @@ const VehicleGHG = () => {
 
                 <SplitSection
                     heading="Vehicle GHG Predictor"
-                    description="The main objectives of the THREEARES project are to achieve tangible, long‐term benefits for
-            the global environment and to contribute proactively to the shaping of dynamic sustainable
-            road development policies going forward."
+                    description="This prototype is based on a kaggle dataset. We aim to predict the amount of carbon dioxide emitting from different cars using supervised learning techniques (specifically regression is used here). Regression is a widely used learning algorithm which helps in predicting continuous numerical outputs."
                     image="https://cdn.dribbble.com/users/2065768/screenshots/4438259/whatwedo---dribbble.gif"
                     height="400px"
                     imageHeight="100%"

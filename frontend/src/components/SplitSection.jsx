@@ -36,7 +36,7 @@ export default function SplitSection(props) {
             borderRadius: "0px",
             height: '100%'
             }}>
-            <h1 style={{fontSize: "3.5rem"}}>{props.heading}</h1>
+            <h1 style={{fontSize: "3.0rem"}}>{props.heading}</h1>
             <p style={{
               color: "#555555",
               fontWeight: "bolder",
