@@ -144,14 +144,33 @@ const Transport = () => {
     // console.log(O, D)
     addNew(haversine(O, D))
 
-    setTransportDataEmission([]);
-    transportDetails.map(item => {
-      setTransportDataEmission(prev => [
-        ...prev, {
-          argument: `${item.type},${item.engineConfig}`, value: item["gCO2/t-km"] * mass * haversine(O, D)
-        }
-      ])
-    })
+    // setTransportDataEmission([]);
+    
+    setTransportDataEmission(prev => [
+      ...prev, {
+        argument: `Road`, value: 1.65 * mass * haversine(O, D)
+      }
+    ])
+
+    setTransportDataEmission(prev => [
+      ...prev, {
+        argument: `Rail`, value: 0.0157 * mass * haversine(O, D)
+      }
+    ])
+
+    setTransportDataEmission(prev => [
+      ...prev, {
+        argument: `Air`, value: 1.404 * mass * haversine(O, D)
+      }
+    ])
+
+    // transportDetails.map(item => {
+    //   setTransportDataEmission(prev => [
+    //     ...prev, {
+    //       argument: `${item.type},${item.engineConfig}`, value: item["gCO2/t-km"] * mass * haversine(O, D)
+    //     }
+    //   ])
+    // })
 
 
 
@@ -370,6 +389,8 @@ const Transport = () => {
                   }}
                   onClick={calculate}>ADD New Emission</Button>
 
+                  
+
                 {/* <Button
                   id="calculate-btn"
                   style={{
@@ -465,7 +486,10 @@ const Transport = () => {
         height: "20px"
       }}></div>
 
-      {transportDataEmission.length > 0 && <div
+      {/* {
+        console.log("Piechart",transportDataEmission)
+      } */}
+      {<div
         style={{
           margin: "20px",
           // border: "1px solid #008000",
