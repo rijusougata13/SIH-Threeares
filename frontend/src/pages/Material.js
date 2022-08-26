@@ -248,6 +248,7 @@ console.log("MaterialDetails",materialDetails)
                       width: "100%",
 
                     }}
+                    autoComplete='off'
 
 
                     size="normal"
