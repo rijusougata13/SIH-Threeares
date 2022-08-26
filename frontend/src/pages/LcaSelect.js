@@ -43,8 +43,9 @@ const LcaSelect = ({ label, emission, setEmission }) => {
 
             </Grid>
             <Grid item xs={6} lg={12}>
-                <TextField style={{
+                <TextField autoComplete='off' style={{
                     // margin: "20px",
+
                     width: "300px"
                 }} required id="outlined-basic" label="Weight" variant="standard" value={weight}
                     onChange={(e) => {
@@ -73,7 +74,8 @@ const LcaSelect = ({ label, emission, setEmission }) => {
                 <TextField style={{
                     margin: "20px",
                     width: "300px"
-                }} disabled={true} id="outlined-basic" label="Emissions (kg CO2)" variant="standard" value={emission}
+
+                }} disabled={true} autoComplete='off' id="outlined-basic" label="Emissions (kg CO2)" variant="standard" value={emission}
                 />
             </Grid>
         </div>
