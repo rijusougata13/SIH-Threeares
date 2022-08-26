@@ -72,7 +72,7 @@ const VehicleGHG = () => {
                     <Grid item xs={12} lg={6}>
                         <Item>
                             <FormControl fullWidth>
-                                <TextField fullwidth id="outlined-basic" label="Engine size (L)" variant="outlined" value={engineSize}
+                                <TextField fullwidth  label="Engine size (L)" variant="outlined" value={engineSize}
                                     onChange={(e) => setEngineSize(e.target.value)}
                                 />
                             </FormControl>
@@ -81,7 +81,7 @@ const VehicleGHG = () => {
                     <Grid item xs={12} lg={6}>
                         <Item>
                             <FormControl fullWidth>
-                                <TextField fullwidth id="outlined-basic" label="Cyclinders" variant="outlined" value={cylinders}
+                                <TextField fullwidth label="Cyclinders" variant="outlined" value={cylinders}
                                     onChange={(e) => setCylinders(e.target.value)}
                                 />
                             </FormControl>
@@ -90,7 +90,7 @@ const VehicleGHG = () => {
                     <Grid item xs={12} lg={6}>
                         <Item>
                             <FormControl fullWidth>
-                                <TextField fullwidth id="outlined-basic" label="Fuel consumption (L/100km)" variant="outlined" value={fuelConsumption}
+                                <TextField fullwidth  label="Fuel consumption (L/100km)" variant="outlined" value={fuelConsumption}
                                     onChange={(e) => setFuelConsumption(e.target.value)}
                                 />
                             </FormControl>
