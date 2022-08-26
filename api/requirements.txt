@@ -1,4 +1,5 @@
 flask
-pgeocode
+pickle
 requests
 gunicorn
+sklearn
