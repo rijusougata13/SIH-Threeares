@@ -197,7 +197,7 @@ const Transport = () => {
             overflowWrap: 'normal'
           }}
           heading="Route Emission Optimizer"
-          description="The ThreeAres Material Estimator allows the user to generate emission reports that estimate the carbon dioxide emissions associated with materials used in highway constructions projects. Materials are classified according to MDOT's Standard Specifications for Construction's Division 9  material classifications. The tool estimates cradle to gate emissions and can be used to differentiate impacts of using composite materials that make up the roadway."
+          description="Transport heralds the development of a region. The demand for infrastructure augmentation increases with the region’s pursuit of development goals. The basic infrastructures required for the region’s economic growth are roads, railways, water and air connectivity. With the increase in economic activities, the dependence of fossil fuel based energy sources and consequent green house gas (GHG) emissions have increased rapidly in recent times. The transport sector in India consumes about 16.9% (36.5 mtoe: million tonnes of oil equivalent) of total energy (217 mtoe in 2005-06). "
           image="https://cdn.kibrispdr.org/data/1789/map-gif-16.gif"
           routepath=""
           height="90vh"

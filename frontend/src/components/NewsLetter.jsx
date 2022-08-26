@@ -13,7 +13,7 @@ const NewsLetter = () => {
       marginTop: "40px"
     }}
     className="newsletter">
-      <h1 style={{fontSize: ""}}>Sign up for our Newsletter</h1>
+      <h1 style={{fontSize: ""}}>Leave Us A Feedback!</h1>
       <p style={{
         paddingLeft: "40px",
         paddingRight: "40px",
@@ -22,10 +22,10 @@ const NewsLetter = () => {
         color: "#555555",
         fontWeight: "bolder",
         fontFamily: "Montserrat"
-      }}>Sign up for our newsletter to receive the latest news and updates about our ongoing and upcoming featuers, and become a part of the Threeares family. Enter your email below and click on send to get added to our mailing list now!</p>
+      }}>You can help make the world a bit greener too by sending us your invaluable feedback, and become a part of the Threeares family. Enter your message below and click on send to send out your feedback to us.</p>
     
     <div style={{display: "flex", justifyContent: "center"}}>
-    <TextField className="textfield" id="outlined-basic" label="Email" variant="outlined" 
+    <TextField className="textfield" id="outlined-basic" label="Message" variant="outlined" 
     style = {{
       width: "600px",
       margin: "20px",

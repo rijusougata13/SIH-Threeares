@@ -83,7 +83,7 @@ const Lca2 = () => {
             <div className="main-container">
                 <SplitSection
                     heading="LCA Estimator"
-                    description="The ThreeAres Material Estimator allows the user to generate emission reports that estimate the carbon dioxide emissions associated with materials used in highway constructions projects. Materials are classified according to MDOT's Standard Specifications for Construction's Division 9  material classifications. The tool estimates cradle to gate emissions and can be used to differentiate impacts of using composite materials that make up the roadway."
+                    description="The LCA Estimator is a carbon footprint framework, to estimate total CO2 emissions during the full life cycle of any road in India. As a first step toward developing this framework, it was recognized that understanding all possible sources of direct and indirect CO2 emissions during the full life period of any road is vital. The possible sources of CO2 emissions (direct and indirect) during any road cycle are taken into consideration here. "
                     image="https://i.pinimg.com/originals/58/48/a5/5848a573cb4e7fb8ce9e834a3dd425e6.gif"
                     routepath=""
                     height="90vh"
