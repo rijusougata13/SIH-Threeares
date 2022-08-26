@@ -146,21 +146,51 @@ const Transport = () => {
 
     // setTransportDataEmission([]);
     
+    // setTransportDataEmission(prev => [
+    //   ...prev, {
+    //     argument: `Road`, value: 1.65 * mass * haversine(O, D)
+    //   }
+    // ])
+
+    // setTransportDataEmission(prev => [
+    //   ...prev, {
+    //     argument: `Rail`, value: 0.0157 * mass * haversine(O, D)
+    //   }
+    // ])
+
+    // setTransportDataEmission(prev => [
+    //   ...prev, {
+    //     argument: `Air`, value: 1.404 * mass * haversine(O, D)
+    //   }
+    // ])
+
+
+
+
+
+
+
     setTransportDataEmission(prev => [
       ...prev, {
-        argument: `Road`, value: 1.65 * mass * haversine(O, D)
+        argument: `Rigid (4X2Axle) 4UD`, value: 307.2 * mass * haversine(O, D)
       }
     ])
 
     setTransportDataEmission(prev => [
       ...prev, {
-        argument: `Rail`, value: 0.0157 * mass * haversine(O, D)
+        argument: `Rigid (4X2Axle) 4RD`, value: 197.2 * mass * haversine(O, D)
       }
     ])
 
     setTransportDataEmission(prev => [
       ...prev, {
-        argument: `Air`, value: 1.404 * mass * haversine(O, D)
+        argument: `Tractor (4X2Axle)`, value: 84 * mass * haversine(O, D)
+      }
+    ])
+
+    setTransportDataEmission(prev => [
+      ...prev, {
+        argument: `Tractor (6X2Axle)`, value: 58.3 * mass * haversine(O, D)
       }
     ])
 
@@ -489,7 +519,7 @@ const Transport = () => {
       {/* {
         console.log("Piechart",transportDataEmission)
       } */}
-      {<div
+      {transportDataEmission.length > 0 && <div
         style={{
           margin: "20px",
           // border: "1px solid #008000",
