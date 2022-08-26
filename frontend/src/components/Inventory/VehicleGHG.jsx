@@ -52,7 +52,19 @@ export default function VehicleGHG(props) {
               fontFamily: "Montserrat",
               marginTop: "20px"
               
-            }}>{/* <a style={{marginRight: "10px"}} href="#">Link 4</a> */}
+            }}>
+            <p style={{marginTop: "10px"}}>Research References</p>
+            <a style={{marginRight: "10px"}} href="https://theicct.org/wp-content/uploads/2021/12/eu-hdv-co2-standards-baseline-data-sept21.pdf">Link 1</a>
+            {/* <a style={{marginRight: "10px"}} href="https://www.researchgate.net/figure/Carbon-emissions-in-material-transportation_tbl2_322538087">Link 2</a>
+            <a style={{marginRight: "10px"}} href="https://www.unep.org/explore-topics/energy/what-we-do/transport">Link 3</a> */}
+            <p style={{marginTop: "10px"}}>Datasets</p>
+        <p><a href="https://www.kaggle.com/datasets/debajyotipodder/co2-emission-by-vehicles" target="_blank"> Dataset Link </a>
+            </p>
+           < p style={{marginTop: "10px"}}>Google CoLab Link:</p>
+        <p><a href="https://colab.research.google.com/drive/1GySCWm4V_eR6uTZVohdx3rrLv1WRZO-I?usp=sharing" target="_blank"> Dataset Link </a>
+            </p>
+              
+              {/* <a style={{marginRight: "10px"}} href="#">Link 4</a> */}
 
             {/* <p style={{marginTop: "10px"}}>Datasets</p> */}
         {/* <a href="https://docs.google.com/spreadsheets/d/1XDfnp0NjRDuVJ7zlAun5KXuws6Cp9z0yBE0Rwqo7DBA/edit#gid=0" target="_blank"> Dataset Link </a> */}
