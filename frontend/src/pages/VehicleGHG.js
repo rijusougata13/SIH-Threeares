@@ -111,7 +111,11 @@ const VehicleGHG = () => {
                 </Item>
             </Grid>
 
-            <Button style={{
+            <Button 
+            
+            className="btn"
+
+            style={{
                 fontFamily: "montserrat",
                 width: "250px",
                 marginLeft: "0px",
