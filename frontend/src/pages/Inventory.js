@@ -6,6 +6,7 @@ import ResponsiveAppBar from 'src/components/ResponsiveAppBar';
 import TransportGHG from 'src/components/Inventory/TansportGHG';
 import MaterialGHG from 'src/components/Inventory/MaterialGHG';
 import EquipmentGHG from 'src/components/Inventory/EquipmentGHG';
+import SplitSection from 'src/components/SplitSection';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import LcaGHG from 'src/components/Inventory/LcaGHG';
 
@@ -18,6 +19,16 @@ const Inventory = () => {
             </div>
 
             <div className='main-container'>
+
+                <SplitSection 
+                heading="Inventory"
+                description="This inventory is a storehouse of all the research articles that have helped us to build our solution prototype. It conatins the citations, references, and embedded links to all of the hypotheses that aided us into curating, maintaining, and optimizing out datasets. "
+                image="https://cdn.dribbble.com/users/1677926/screenshots/6797295/folder.gif"
+                height="400px"
+                imageHeight="100%"
+                imageWidth="100%"
+                />
+
                 <AnimationOnScroll animateIn="animate__fadeInLeft" delay={300} animateOnce={true}>
                 <TransportGHG
                     heading="Route Emission Estimator"
