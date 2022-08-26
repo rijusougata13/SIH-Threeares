@@ -572,7 +572,9 @@ const Lca2 = () => {
 
 
 
-                        {/* <div className='main-content' style={{
+                        <div className='main-content' style={{
+                            display: "flex",
+                            flexDirection: "column",
                             justifyContent: 'center',
                             alignContent: 'center',
                             alignItems: 'center',
@@ -589,10 +591,17 @@ const Lca2 = () => {
                             </Grid>
 
                             <div style={{
-                                border: "1px solid #008000",
+                                // border: "1px solid #008000",
+                                borderRadius: "20px",
+                                boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
                                 margin: "20px",
                                 padding: "20px",
                                 textAlign: "center",
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                width: "100%"
 
                             }}>
                                 <Grid container
@@ -601,6 +610,12 @@ const Lca2 = () => {
                                     direction={"column"} spacing={5}
                                     justifyContent="center"
 
+                                    style={{
+                                        display: "flex !important",
+                                        flexDirection: "column",
+                                        alignItems: "center",
+                                        justifyContent: "center"
+                                    }}
 
                                 >
 
@@ -609,7 +624,7 @@ const Lca2 = () => {
 
                                     <Grid item xs={12}>
                                         <TextField style={{
-                                            width: "500px"
+                                            width: "100% !important"
                                         }} required id="outlined-basic" label="Length of road (in miles)" variant="standard" value={distance}
                                             onChange={(e) => {
                                                 setDistance(e.target.value)
@@ -618,7 +633,7 @@ const Lca2 = () => {
 
                                     <Grid item xs={12}>
                                         <TextField style={{
-                                            width: "500px"
+                                            // width: "500px"
                                         }} required id="outlined-basic" label="Average Daily Traffic" variant="standard" value={adt}
                                             onChange={(e) => {
                                                 setAdt(e.target.value)
@@ -627,7 +642,7 @@ const Lca2 = () => {
 
                                     <Grid item xs={12}>
                                         <TextField style={{
-                                            width: "500px"
+                                            // width: "500px"
                                         }} required id="outlined-basic" label="Days" variant="standard" value={days}
                                             onChange={(e) => {
                                                 setDays(e.target.value)
@@ -636,10 +651,10 @@ const Lca2 = () => {
 
                                     <Grid item xs={12}>
                                         <Button className="calculate-btn" style={{
-                                            width: "300px",
+                                            // width: "300px",
                                             textAlign: "center",
                                             fontFamily: "montserrat",
-                                            width: "300px",
+                                            // width: "300px",
                                             marginLeft: "0px",
                                             marginTop: "20px",
                                             marginBottom: "20px",
@@ -654,14 +669,14 @@ const Lca2 = () => {
 
                                         <TextField style={{
                                             margin: "20px",
-                                            width: "300px"
+                                            // width: "300px"
                                         }} disabled={true} id="outlined-basic" label="Emissions (MT CO2 emissions/year)" variant="standard" value={operation}
                                         />
                                     </Grid>
 
                                 </Grid>
                             </div> 
-                </div>*/}
+                </div>
                     </Paper>
                 </div>
 
