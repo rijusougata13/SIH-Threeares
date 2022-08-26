@@ -76,7 +76,7 @@ const Material = () => {
 
   var emissions_rate = 0;
   const columns = [
-    // "Division",
+    "Division",
     "Material Name",
     "Weight",
     "Emissions(MT of CO2)",
