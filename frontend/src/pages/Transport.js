@@ -145,7 +145,7 @@ const Transport = () => {
     addNew(haversine(O, D))
 
     // setTransportDataEmission([]);
-    
+
     // setTransportDataEmission(prev => [
     //   ...prev, {
     //     argument: `Road`, value: 1.65 * mass * haversine(O, D)
@@ -165,7 +165,7 @@ const Transport = () => {
     // ])
 
 
-
+    setTransportDataEmission([])
 
 
 
@@ -419,7 +419,7 @@ const Transport = () => {
                   }}
                   onClick={calculate}>ADD New Emission</Button>
 
-                  
+
 
                 {/* <Button
                   id="calculate-btn"
