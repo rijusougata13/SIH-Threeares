@@ -500,7 +500,7 @@ const Transport = () => {
       >
         <PieChart
           data={transportDataEmission}
-          label={`Transport `}
+          label={`Plan Optimization Metric`}
         />
       </div>
       }
