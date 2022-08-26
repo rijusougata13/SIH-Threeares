@@ -33,6 +33,10 @@ const pages = [
     linkTo: '/lca',
   },
   {
+    name: 'Vehicle GHG',
+    linkTo: '/vehicleGHG'
+  },
+  {
     name: 'Inventory',
     linkTo: '/inventory'
   }
